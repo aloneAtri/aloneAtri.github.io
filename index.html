@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aloneAtri</title>
+    <link rel="stylesheet" href="style-self.css">
+    <script src="js-self.js"></script>
+</head>
+
+<body>
+
+    <!-- <body background="测试.jpg" style="  background-repeat:no-repeat ;background-size:100% 100%;
+    background-attachment: fixed;"> -->
+
+    <!-- 导航栏 -->
+    <div class="nav">
+        <a href="blogger.html" id="top">我的博客</a>
+        <a href="index.html">首页</a>
+        <a href="#">主题切换</a>
+        <a href="#">收藏夹</a>
+        <a href="#">留言板</a>
+    </div>
+
+    <!-- 顶端部分 -->
+    <div class="top">
+        <!-- 公告栏 -->
+        <div class="announce border">
+            <h1 style="text-shadow: 0px 0px 5px  black;">公告看留言板块</h1>
+        </div>
+        <!-- 搜索栏 -->
+        <div class="search">
+            <form>
+                <input type="text" value="输入搜索内容" style="width: 180px;">
+                &nbsp;
+                &nbsp;
+                <input class="button" type="submit" value="搜索">
+            </form>
+        </div>
+
+    </div>
+
+    <!-- 网页主体部分 -->
+    <div class="main">
+        <!-- 鼠标图片 -->
+        <img id="mouse-move" src="./images/鼠标图片.png" alt="">
+
+        <!-- 右侧浮动栏 -->
+        <div class="right-float">
+            <div style="width: 150px;height: 150px;margin-bottom: 10px;">
+                <img src="./images/智乃.png" alt="">
+            </div>
+            <div>
+                <a href="#top"><img class="border" src="./images/return-top.png" alt=""></a>
+            </div>
+        </div>
+
+        <!-- 左侧 -->
+        <div class="left">
+            <!-- 左侧大盒子01 -->
+            <div class="box1 border">
+                <div class="theme"><a href="#">更新日志</a></div>
+                <div
+                    style="font-size: 20px; background-color: black;color: white; width: 100px;margin: 20px auto;  border-radius: 5px;">
+                    20220712
+                </div>
+                <div class="image01" style="background-image: url(./images/测试2.png);">
+                </div>
+            </div>
+
+            <!-- 左侧大盒子02 -->
+            <div class="box1 border">
+                <div>
+                    <div class="theme"><a href="#">若能再次与你相见</a></div>
+                    <div class="image01" style="background-image: url(./images/测试5.jpg);"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧 -->
+        <div class="right">
+
+            <!-- 音乐模块 -->
+            <iframe frameborder="no" class="border" marginwidth="0" marginheight="20" width=330 height=86
+                src="https://music.163.com/outchain/player?type=2&id=29129653&auto=1&height=66"></iframe>
+
+            <!-- <iframe frameborder="no" class="border" marginwidth="0" marginheight="0" width=330 height=86
+            src="https://music.163.com/outchain/player?type=2&id=440403809&auto=1&height=66"></iframe> -->
+
+            <!-- 登陆界面 -->
+            <div class="load border">
+                <form>
+                    <table>
+                        <tr>
+                            <td style="color: white;"> <label for="username">用户名:</label></td>
+                            <td><input type="text" id="username"></td>
+                        </tr>
+                        <tr>
+                            <td style="color: white;"><label for="password">密码:</td></label>
+                            <td><input type="password" id="password"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input class="button" type="submit" value="登陆"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+            <!-- 留言板垮，链接索引 -->
+            <div class="board border">
+                <h2 style="color: yellow;">近期更新</h2>
+                <ul>
+                    <li>
+                        <h3 style="color: white;">7月12日完成初步结构</h3>
+                    </li>
+                </ul>
+                <br />
+                <ul>
+                    <li> <a href="#"> <strong>我的游戏下载01</strong></a></li>
+                </ul>
+            </div>
+
+            <!-- 文章索引 -->
+            <div class="text border">
+                <a href="blogger.html">
+                    <h1 style="color:greenyellow;text-shadow: 0px 0px 0px 10px green;">我的博客</h1>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 图片预加载区域 -->
+    <div class="background" style="display: none;">
+        <img src="./background/背景1.png" alt="">
+        <img src="./background/背景2.png" alt="">
+        <img src="./background/背景3.png" alt="">
+        <img src="./background/背景4.png" alt="">
+        <img src="./background/背景5.png" alt="">
+        <img src="./background/背景6.png" alt="">
+        <img src="./background/背景7.png" alt="">
+        <img src="./background/背景8.png" alt="">
+        <img src="./background/背景9.png" alt="">
+        <img src="./background/背景10.png" alt="">
+        <img src="./background/背景11.png" alt="">
+        <img src="./background/背景12.png" alt="">
+        <!-- <img src="./background/背景13.png" alt="">
+        <img src="./background/背景14.png" alt=""> -->
+    </div>
+
+
+
+
+
+    <script>
+        // var img = document.getElementById('img01');
+        var body = document.body;//获取body元素
+        var mouseImg = document.querySelector('#mouse-move')//获取鼠标移动元素并创建移动事件
+        var img = document.querySelector('.background').querySelectorAll('img');//获取背景图片
+        // 鼠标移动特效函数
+        document.addEventListener('mousemove', function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            mouseImg.style.top = y + 10 + 'px';
+            mouseImg.style.left = x + 10 + 'px';
+
+        })
+        //图片切换函数
+        function time1() {
+            // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 12) + '.png)';
+            body.style.backgroundImage = 'url(' + img[getRandom(1, 12)].src + ')';
+        }
+        setInterval(time1, 5000)
+
+
+        // 随机数函数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+    </script>
+</body>
+
+
+</html>
