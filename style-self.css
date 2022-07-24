@@ -242,6 +242,7 @@ a:active {
 
 
 /* 我的博客界面css样式 */
+/* 游戏介绍界面样式 */
 .box2 {
     float: left;
     width: 750px;
@@ -273,4 +274,8 @@ a:active {
     background-color: skyblue;
     color: blue;
     box-shadow: 0px 0px 10px 3px blue;
+}
+
+.box2 h2 {
+    color: black;
 }

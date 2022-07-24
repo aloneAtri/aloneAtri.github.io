@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+    <link rel="stylesheet" href="style-self.css">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="blogger.html" id="top">我的博客</a>
+        <a href="index.html">首页</a>
+        <a href="#">主题切换</a>
+        <a href="#">收藏夹</a>
+        <a href="#">留言板</a>
+    </div>
+    <!-- 网页主题部分 -->
+    <div class="main">
+
+        <!-- 鼠标图片 -->
+        <img id="mouse-move" src="./images/鼠标图片.png" alt="">
+
+        <!-- 右侧浮动栏 -->
+        <div class="right-float">
+            <div style="width: 150px;height: 150px;margin-bottom: 10px;">
+                <a href="#top"><img src="./images/智乃.png" alt=""></a>
+            </div>
+            <div>
+                <a href="#top"><img class="border" src="./images/return-top.png" alt=""></a>
+            </div>
+        </div>
+
+        <div class="left">
+
+            <div style="height: 1500px; ;" class="box2 border">
+                <div>
+                    <h1 style="color: white;text-shadow: 0px 0px 10px black;">若能与你再次相见</h1>
+                </div>
+                <div style="height: 160px;" class="passage">
+                    <h2>题记</h2>
+                    <p>一次偶然的机会接触到了苹果妹，本游戏作为中岛大河的初作，一脉相承着ab3社的生死观描写。在循循渐进的日常中逐渐刻画出人物的形象，在渐渐拉长的时间线之中，淡然的走向离别。本作借助于时间轮回，通过拥有无限回溯能力的怀表，一次又一次的尝试改变未来，一次又一次的失败。可是，未来真的注定是无法改变的吗？即使是一点点的偏移......推完之后，心里有些惋惜和不舍，也借此机会重新回味一下这部感人的作品。
+                    </p>
+                </div>
+
+                <div class="passage1">
+                    <h2>作品信息</h2>
+                    <ul>
+                        <li>原名:できない私が、くり返す。 中译名：若能与你再次相见</li>
+                        <li>企画/剧本——中岛大河 原画——秋空もみぢ;蒼月しのぶ 音乐——西坂恭平</li>
+                        <li>重要Tag:生死观，穿越，宿命论，剧情锁，泣系</li>
+                        <li>全线通关时长参考:15～20小时(主推女主线)</li>
+                    </ul>
+                </div>
+
+                <div style="height: 200px;" class="passage">
+                    <h2>内容简介</h2>
+                    <ul>
+                        <li>【未来无法改变】</li>
+                        <li>【无论回到过去多少次，也没有任何意义】</li>
+                        <li>【即使对过去做任何事，未来也不会改变】</li>
+                        <li>没错，“已经确定的未来”是无法改变的。拥有时间回溯能力却无法干涉着未来，无论怎么样做终会到达哪个注定“未来”，那么一次又一次的回溯真的没有意义吗？</li>
+                        <li>理所当然的，对于那些即将迎来死期的人，无论进行怎样的尝试终究难逃死亡的收束。</li>
+                    </ul>
+                </div>
+
+                <div class="passage1">
+                    <h2>个人简评</h2>
+                    <li>剧情:B 诗乃线作为剧情锁设置下的产物拥有着其中最高的完成度，缓缓推进的平淡日常之中为情感的爆发铺下了伏笔，反转稍显刻意，为te线的出现和本文的主题高度契合。</li>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div style="float: left;margin: 20px;">
+                <iframe class="border" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                    src="https://music.163.com/outchain/player?type=2&id=29129654&auto=1&height=66"></iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- 图片预加载区域 -->
+    <div class="background" style="display: none;">
+        <img src="./background/背景1.png" alt="">
+        <img src="./background/背景2.png" alt="">
+        <img src="./background/背景3.png" alt="">
+        <img src="./background/背景4.png" alt="">
+        <img src="./background/背景5.png" alt="">
+        <img src="./background/背景6.png" alt="">
+        <img src="./background/背景7.png" alt="">
+        <img src="./background/背景8.png" alt="">
+        <img src="./background/背景9.png" alt="">
+        <img src="./background/背景10.png" alt="">
+        <img src="./background/背景11.png" alt="">
+        <img src="./background/背景12.png" alt="">
+        <!-- <img src="./background/背景13.png" alt="">
+        <img src="./background/背景14.png" alt=""> -->
+    </div>
+
+
+
+    <script>
+        var body = document.body;//获取body元素
+        var mouseImg = document.querySelector('#mouse-move')//获取鼠标移动元素并创建移动事件
+        var img = document.querySelector('.background').querySelectorAll('img');//获取背景图片
+        // 鼠标移动特效函数
+        document.addEventListener('mousemove', function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            mouseImg.style.top = y + 10 + 'px';
+            mouseImg.style.left = x + 10 + 'px';
+        })
+        //图片切换函数
+        function time1() {
+            // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 12) + '.png)';
+            body.style.backgroundImage = 'url(' + img[getRandom(1, 12)].src + ')';
+        }
+        setInterval(time1, 5000)
+
+        // 随机数函数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+
+</body>
+
+</html>
