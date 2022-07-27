@@ -185,6 +185,7 @@ a:active {
     color: white;
 }
 
+/* 首页图片盒 */
 .image01 {
     width: 700px;
     height: 390px;
@@ -197,6 +198,18 @@ a:active {
     border-radius: 5px;
 }
 
+.image02 {
+    width: 700px;
+    height: 390px;
+    margin: 30px auto;
+    margin-top: 60px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100%;
+    background-attachment: scroll;
+    border: 10px grey solid;
+    border-radius: 5px;
+}
 
 .border {
     text-align: center;
