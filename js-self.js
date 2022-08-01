@@ -1,10 +1,10 @@
 // var img = document.getElementById('img01');
 var body = document.body;//获取body元素
 var img = document.querySelector('.background').querySelectorAll('img');//获取背景图片
+
 var nav = document.querySelector('.nav').querySelectorAll('a');//获取导航栏
 var nav1 = document.querySelector('#nav1');//下拉列表
 var theme = document.querySelectorAll('.image01');
-
 // 导航栏下拉列表
 nav[2].onmousemove = function () {
     nav1.style.display = 'block';
@@ -18,6 +18,8 @@ nav1.onmousemove = function () {
 nav1.onmouseout = function () {
     nav1.style.display = 'none';
 }
+
+
 
 
 var mouseImg = document.querySelector('#mouse-move')//获取鼠标移动元素并创建移动事件

@@ -91,6 +91,7 @@ a:active {
 }
 
 .nav {
+    position: relative;
     text-align: center;
     background-color: rgb(33, 30, 23);
     opacity: 0.8;
@@ -98,8 +99,19 @@ a:active {
 }
 
 #nav1 {
+    position: absolute;
     display: none;
     text-align: center;
+}
+
+#theme {
+    position: relative;
+}
+
+.nav div {
+    display: inline-block;
+    width: 120px;
+    height: 60px;
 }
 
 .nav a {
@@ -139,9 +151,11 @@ a:active {
 }
 
 .button {
-    width: 40px;
+    width: 50px;
     height: 30px;
     border: 1px black solid;
+    margin: 10px 20px;
+    margin-bottom: 0px;
 }
 
 .search input {

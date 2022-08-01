@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aloneAtri</title>
     <link rel="stylesheet" href="style-self.css">
+    <script src="jquery.min.js"></script>
 </head>
 
 <body>
@@ -16,17 +17,19 @@
 
     <!-- 导航栏 -->
     <div class="nav">
-        <a href="blogger.html" id="top">我的博客</a>
-        <a href="index.html">首页</a>
-        <a href="#" id="theme">主题切换</a>
-        <a href="#">收藏夹</a>
+        <div><a href="blogger.html" id="top">我的博客</a></div>
+        <div><a href="index.html">首页</a></div>
+        <div id="theme">
+            <a href="#">主题切换</a>
+            <!-- 下拉列表 -->
+            <div id="nav1" class="nav"> <a href="#">主题1</a></div>
+        </div>
+        <div><a href="#">收藏夹</a></div>
         <a href="#">留言板</a>
     </div>
 
-    <!-- 下拉列表 -->
-    <div id="nav1" class="nav">
-        <a href="#">测试</a>
-    </div>
+
+
 
     <!-- 顶端部分 -->
     <div class="top">
@@ -118,7 +121,8 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input class="button" type="submit" value="登陆"></td>
+                            <td><input class="button" type="submit" value="登陆"><input class="button" type="button"
+                                    value="注册"></td>
                         </tr>
                     </table>
                 </form>
@@ -174,6 +178,15 @@
 
     <!-- js文件引入 -->
     <script src="js-self.js"> </script>
+
+    <script>
+        //跳转进入注册页面
+        var button = document.querySelectorAll('.button');
+        button[2].onclick = function () {
+            window.location.href = "register.html";
+        }
+
+    </script>
 </body>
 
 
