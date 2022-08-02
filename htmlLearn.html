@@ -8,7 +8,9 @@
     <title>Document</title>
     <script src="jquery.min.js"></script>
     <style>
-
+        .color {
+            color: red;
+        }
     </style>
 </head>
 
@@ -29,8 +31,8 @@
 
     <script>
         $('ul li').click(function () {
-            $(this).css('color', 'red').siblings().css('color', '');
-        })
+            $('ul').toggleClass('color');
+        });
     </script>
 </body>
 
