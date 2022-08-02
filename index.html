@@ -183,10 +183,9 @@
 
     <script>
         //跳转进入注册页面
-        var button = document.querySelectorAll('.button');
-        button[2].onclick = function () {
+        $('.button:eq(2)').click(function () {
             window.location.href = "register.html";
-        }
+        });
 
     </script>
 </body>
