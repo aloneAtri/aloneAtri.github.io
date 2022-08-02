@@ -28,7 +28,9 @@ document.addEventListener('mousemove', function (e) {
 })
 
 //图片切换函数
-time1();
+$(function () {
+    time1();
+})
 function time1() {
     // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 13) + '.png)';
     $('body').css('backgroundImage', 'url(./background/背景' + getRandom(1, 13) + '.png)');
