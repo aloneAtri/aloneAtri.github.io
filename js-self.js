@@ -1,19 +1,7 @@
 var img = document.querySelector('.background').querySelectorAll('img');//获取背景图片
 
 // var theme = document.querySelectorAll('.image01');
-// 导航栏下拉列表
-$('.nav a:eq(2)').mouseenter(function () {
-    $('#nav1').css('display', 'block');
-});
-$('.nav a:eq(2)').mouseout(function () {
-    $('#nav1').css('display', 'none');
-})
-$('#nav1').mouseenter(function () {
-    $(this).css('display', 'block');
-})
-$('#nav1').mouseout(function () {
-    $(this).css('display', 'none');
-})
+
 
 
 
@@ -27,9 +15,23 @@ document.addEventListener('mousemove', function (e) {
 
 })
 
-//图片切换函数
+
 $(function () {
+    //图片切换函数
     time1();
+    // 导航栏下拉列表
+    $('.nav a:eq(2)').mouseenter(function () {
+        $('#nav1').show();
+    });
+    $('.nav a:eq(2)').mouseout(function () {
+        $('#nav1').hide();
+    });
+    $('#nav1').mouseenter(function () {
+        $(this).show();
+    });
+    $('#nav1').mouseout(function () {
+        $(this).hide();
+    });
 })
 function time1() {
     // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 13) + '.png)';

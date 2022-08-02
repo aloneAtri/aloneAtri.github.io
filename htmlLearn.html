@@ -7,15 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="jquery.min.js"></script>
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <video src="C:\videos\贱卖神复键录像疑似流出.mkv"></video>
+    <!-- <video src="C:\videos\贱卖神复键录像疑似流出.mkv"></video> -->
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>
+            <p>2</p>
+        </li>
+        <p>3</p>
+        <li>1</li>
+        <li>1</li>
+    </ul>
 
     <div style="background-color: pink;height: 200px;width: 200px;"></div>
 
     <script>
-        $('video')[0].play();
+        $('ul li').click(function () {
+            $(this).css('color', 'red').siblings().css('color', '');
+        })
     </script>
 </body>
 
