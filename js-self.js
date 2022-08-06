@@ -1,10 +1,5 @@
 var img = document.querySelector('.background').querySelectorAll('img');//获取背景图片
 
-// var theme = document.querySelectorAll('.image01');
-
-
-
-
 var mouseImg = document.querySelector('#mouse-move')//获取鼠标移动元素并创建移动事件
 // 鼠标移动特效函数
 document.addEventListener('mousemove', function (e) {
@@ -15,29 +10,36 @@ document.addEventListener('mousemove', function (e) {
 
 })
 
-
 $(function () {
+    $('body').css('backgroundImage', 'url(./background/背景' + getRandom(1, 19) + '.png)');
     //图片切换函数
     time1();
+
     // 导航栏下拉列表
-    $('.nav a:eq(2)').mouseenter(function () {
+    $('#theme').mouseover(function () {
         $('#nav1').show();
     });
-    $('.nav a:eq(2)').mouseout(function () {
+    $('#theme').mouseout(function () {
         $('#nav1').hide();
     });
-    $('#nav1').mouseenter(function () {
-        $(this).show();
-    });
-    $('#nav1').mouseout(function () {
-        $(this).hide();
-    });
+
+    // setInterval(time1, 5000);
 })
+
 function time1() {
     // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 13) + '.png)';
-    $('body').css('backgroundImage', 'url(./background/背景' + getRandom(1, 13) + '.png)');
+    var i = 100;
+    $('body').css('backgroundImageOpacity', 50 + '%');
+    //图片动态大小变化和图片切换
+    timer2 = setInterval(() => {
+        i += 0.1;
+        if (i >= 105) {
+            i = 100;
+            $('body').css('backgroundImage', 'url(./background/背景' + getRandom(1, 19) + '.png)');
+        }
+        $('body').css('backgroundSize', i + '%');
+    }, 100);
 }
-setInterval(time1, 5000)
 
 
 // 随机数函数
