@@ -12,112 +12,50 @@
             margin: 0;
             padding: 0;
         }
-
-        .main {
-            position: relative;
-            left: 50%;
-            top: 30%;
-            width: 500px;
-            height: 400px;
-            /* background-color: red; */
-        }
-
-        .left {
-            position: absolute;
-            top: 40%;
-            width: 50px;
-            height: 50px;
-            background-color: pink;
-        }
-
-        .right {
-            position: absolute;
-            top: 40%;
-            right: 0px;
-            width: 50px;
-            height: 50px;
-            background-color: pink;
-
-        }
-
-        .box {
-            float: left;
-            width: 500px;
-            height: 400px;
-            background-color: aqua;
-        }
-
-        ul li {
-            list-style-type: none;
-            float: left;
-        }
-
-        .img {
-            width: 1500px;
-            height: 400px;
-        }
-
-        .circle li {
-            width: 20px;
-            height: 20px;
-            margin: 5px;
-            background-color: #fff;
-        }
-
-        .yellow {
-            background-color: yellow;
-        }
-
-        .white {
-            background-color: #fff;
-        }
     </style>
 </head>
 
 <body>
-    <div class="main">
-        <div class="left"></div>
-        <div class="right"></div>
-        <div style="position: absolute;left: 40%;bottom: 0%;">
-            <ul class="circle">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-        <div class="img">
-            <ul>
-                <li>
-                    <div style="background-color: blue;" class="box"></div>
-                </li>
-                <li>
-                    <div style="background-color: red;" class="box"></div>
-                </li>
-                <li>
-                    <div style="background-color: pink;" class="box"></div>
-                </li>
-            </ul>
-        </div>
 
     </div>
+    <div style="background-color: pink;width: 200px;height: 200px;">1111</div>
+    <div style="background-color: pink;width: 200px;height: 200px;">1111</div>
+    <div style="background-color: pink;width: 200px;height: 200px;">1111</div>
+    <p>111</p>
+
 
     <script>
         $(function () {
-            $('.left').hide();
-            $('.right').hide();
-            $('.main').mouseover(function () {
-                $('.left').show();
-                $('.right').show();
-            });
-            $('.main').mouseout(function () {
-                $('.left').hide();
-                $('.right').hide();
-            });
-            $('.circle li').mouseenter(function () {
-                $(this).css('backgroundColor', 'yellow').siblings().css('backgroundColor', '');
-            });
+            time1();
         })
+        function time1() {
+            // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 13) + '.png)';
+            var i = 100;
+
+            //图片动态大小变化和图片切换
+            timer2 = setInterval(() => {
+                i += 0.1;
+                if (i >= 105) {
+                    i = 100;
+                    // $('#bgc').css('opacity', 1);
+                    // $('#bgc').fadeIn(500);
+                    $('#bgc').stop().fadeTo(1500, 1);
+                    $('#bgc').css('backgroundImage', 'url(./background/背景' + getRandom(1, 19) + '.png)');
+                }
+                if (i >= 104) {
+                    $('#bgc').stop().fadeTo(500, 0.5);
+                }
+                $('#bgc').css('backgroundSize', i + '%');
+            }, 100);
+
+            // $('body').fadeTo(500, 0.5);
+        }
+
+
+        // 随机数函数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
     </script>
 </body>
 

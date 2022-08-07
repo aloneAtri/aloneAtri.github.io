@@ -3,13 +3,24 @@
     padding: 0;
 }
 
-body {
-    height: 1500px;
-    /* background-image: url(./images/测试1.png); */
+#bgc {
+    position: absolute;
+    height: 2500px;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 100%;
     background-attachment: fixed;
+    z-index: -10;
+}
+
+body {
+    /* background-image: url(./images/测试1.png); */
+    /* height: 1500px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100%;
+    background-attachment: fixed; */
     font-family: "微软雅黑";
     line-height: 1.5;
     font-size: 16px;
@@ -99,6 +110,12 @@ a:active {
 }
 
 #nav1 {
+    position: absolute;
+    display: none;
+    text-align: center;
+}
+
+#nav2 {
     position: absolute;
     display: none;
     text-align: center;
@@ -230,6 +247,7 @@ a:active {
 }
 
 .border {
+    z-index: 10;
     text-align: center;
     border-radius: 5px;
     background: rgba(33, 30, 23, 0.4);

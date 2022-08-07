@@ -12,8 +12,9 @@
 
 <body>
 
-    <!-- <body background="测试.jpg" style="  background-repeat:no-repeat ;background-size:100% 100%;
-    background-attachment: fixed;"> -->
+
+    <!-- 背景图片 -->
+    <div id="bgc"></div>
 
     <!-- 导航栏 -->
     <div class="nav">
@@ -22,10 +23,24 @@
         <div id="theme">
             <a href="#">主题切换</a>
             <!-- 下拉列表 -->
-            <div id="nav1" class="nav"> <a href="#">主题1</a></div>
+            <ul id="nav1" class="nav">
+                <li>
+                    <div> <a href="#">主题1</a></div>
+                </li>
+                <li>
+                    <div><a href="#">主题2</a></div>
+                </li>
+            </ul>
         </div>
         <div><a href="#">收藏夹</a></div>
-        <a href="#">留言板</a>
+        <div id="wallpaper" style="position: relative;;">
+            <a href="#">壁纸</a>
+            <ul id="nav2" class="nav">
+                <li id="hidewp"><a href="#">隐藏界面</a></li>
+                <li id="obvious"><a href="#">显示界面</a></li>
+            </ul>
+        </div>
+        <div><a href="#">留言板</a></div>
     </div>
 
 
@@ -180,20 +195,7 @@
 
     <!-- js文件引入 -->
     <script src="js-self.js"> </script>
-
-    <script>
-        $(function () {
-            //跳转进入注册页面
-            $('.button:eq(2)').click(function () {
-                window.location.href = "register.html";
-            })
-            //输入选取
-            $('input').focus(function () {
-                if (this.value == '输入搜索内容')
-                    this.value = '';
-            })
-        })
-    </script>
+    <script src="js-index.js"></script>
 </body>
 
 

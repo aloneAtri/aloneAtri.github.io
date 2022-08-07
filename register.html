@@ -19,89 +19,119 @@
             height: 20px;
         }
     </style>
+    <script src="jquery.min.js"></script>
+    <!-- <script src="js-self.js"></script> -->
 </head>
 
-<body style="height: 500px;background-image: url(./images/测试1.png);">
+<!-- <body style="height: 500px;background-image: url(./images/测试1.png);"> -->
 
-    <!-- 导航栏 -->
-    <div class="nav">
-        <div><a href="blogger.html" id="top">我的博客</a></div>
-        <div><a href="index.html">首页</a></div>
-        <div id="theme">
-            <a href="#">主题切换</a>
+<!-- 背景图片 -->
+<div id="bgc" style="height:1000px;"></div>
 
-            <!-- 下拉列表 -->
-            <div id="nav1" class="nav">
-                <a href="#">主题1</a>
-            </div>
-        </div>
-        <div><a href="#">收藏夹</a></div>
-        <a href="#">留言板</a>
+<!-- 导航栏 -->
+<div class="nav">
+    <div><a href="blogger.html" id="top">我的博客</a></div>
+    <div><a href="index.html">首页</a></div>
+    <div id="theme">
+        <a href="#">主题切换</a>
+        <!-- 下拉列表 -->
+        <ul id="nav1" class="nav">
+            <li>
+                <div> <a href="#">主题1</a></div>
+            </li>
+            <li>
+                <div><a href="#">主题2</a></div>
+            </li>
+        </ul>
     </div>
-
-    <!-- 鼠标图片 -->
-    <img id="mouse-move" src="./images/鼠标图片.png" alt="">
-
-    <!-- 注册账号界面 -->
-    <div class="border" style="width: 600px;margin: 40px auto;">
-        <table id="interface" style="color: yellow;font-size: 18px;">
-            <tr>
-                <td>昵称</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>邮箱</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>用户名</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>密码</td>
-                <td><input class="password" type="password"></td>
-                <td style="width: 170px;" class="message">
-                    请输入6~16位数字
-                </td>
-            </tr>
-            <tr>
-                <td>重复密码</td>
-                <td><input class="password" type="password"></td>
-                <td class="message">
-                    与之前密码不一致
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input style="height: 30px;width: 50px;color: black;" type="button" value="注册"></td>
-            </tr>
-
-        </table>
+    <div><a href="#">收藏夹</a></div>
+    <div id="wallpaper" style="position: relative;;">
+        <a href="#">壁纸</a>
+        <ul id="nav2" class="nav">
+            <li id="hidewp"><a href="#">观看壁纸</a></li>
+            <li id="obvious"><a href="#">显示界面</a></li>
+        </ul>
     </div>
+    <div><a href="#">留言板</a></div>
+</div>
+
+<!-- 鼠标图片 -->
+<img id="mouse-move" src="./images/鼠标图片.png" alt="">
+
+<!-- 注册账号界面 -->
+<div class="border" style="width: 600px;margin: 40px auto;">
+    <table id="interface" style="color: yellow;font-size: 18px;">
+        <tr>
+            <td>昵称</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>用户名</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input class="password" type="password"></td>
+            <td style="width: 170px;" class="message">
+                请输入6~16位数字
+            </td>
+        </tr>
+        <tr>
+            <td>重复密码</td>
+            <td><input class="password" type="password"></td>
+            <td class="message">
+                与之前密码不一致
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input style="height: 30px;width: 50px;color: black;" type="button" value="注册"></td>
+        </tr>
+
+    </table>
+</div>
 
 
 
 
 
-    <!-- 图片预加载区域 -->
-    <div class="background" style="display: none;">
-    </div>
+<!-- 图片预加载区域 -->
+<div class="background" style="display: none;">
+</div>
 
 
-    <script src="js-self.js"></script>
-    <script>
-        var password = document.querySelector('.password');
-        var message = document.querySelector('.message');
-        console.log(message);
-        password.onblur = function () {
-            if (this.value.length < 6) {
-                message.innerHTML = '密码不能少于6位数';
-            }
-            if (this.value.length >= 6) {
-                message.innerHTML = '当前的密码可以使用';
-            }
+<!-- <script src="js-self.js"></script> -->
+<script src="js-register.js"></script>
+<script>
+    $(function () {
+        $('#bgc').css('backgroundImage', 'url(./background/背景' + 19 + '.png)')
+    })
+    // 密码提示区域
+    var password = document.querySelector('.password');
+    var message = document.querySelector('.message');
+    console.log(message);
+    password.onblur = function () {
+        if (this.value.length < 6) {
+            message.innerHTML = '密码不能少于6位数';
         }
-    </script>
+        if (this.value.length >= 6) {
+            message.innerHTML = '当前的密码可以使用';
+        }
+    }
+    var mouseImg = document.querySelector('#mouse-move')//获取鼠标移动元素并创建移动事件
+    // 鼠标移动特效函数
+    document.addEventListener('mousemove', function (e) {
+        var x = e.pageX;
+        var y = e.pageY;
+        mouseImg.style.top = y + 10 + 'px';
+        mouseImg.style.left = x + 10 + 'px';
+
+    })
+</script>
 </body>
 
 </html>
