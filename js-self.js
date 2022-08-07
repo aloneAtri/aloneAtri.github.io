@@ -80,16 +80,14 @@ function time1() {
             i = 100;
             // $('#bgc').css('opacity', 1);
             // $('#bgc').fadeIn(500);
-            $('#bgc').stop().fadeTo(1500, 1);
             var num = getRandom(1, 19);
             //保证图片不重复
             if (num == flag) {
                 var num = getRandom(1, 19);
-                $('#bgc').css('backgroundImage', 'url(./background/背景' + num + '.png)');
             }
-            else {
-                $('#bgc').css('backgroundImage', 'url(./background/背景' + num + '.png)');
-            }
+            $('#bgc').css('backgroundImage', 'url(./background/背景' + num + '.png)');
+            $('#bgc').stop().fadeTo(1500, 1);
+
             var flag = num;
         }
         if (i >= 104) {
