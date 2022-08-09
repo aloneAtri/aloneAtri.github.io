@@ -1,16 +1,19 @@
 $(function () {
 
-    $('#right-arrow,#left-arrow').stop().hide();
-
+    // 轮播图
+    $('#right-arrow,#left-arrow,#turn-box').stop().hide();
+    // 轮播图左右箭头
     $('#left-box1').hover(function () {
         // over
-        $('#right-arrow,#left-arrow').stop().show();
+        $('#right-arrow,#left-arrow,#turn-box').stop().show();
     }, function () {
         // out
-        $('#right-arrow,#left-arrow').stop().hide();
-
+        $('#right-arrow,#left-arrow,#turn-box').stop().hide();
     }
     );
+
+    $('#turn-img li div').eq(0).css('background-image', 'linear-gradient(35deg,yellow, orange)');
+
     //跳转进入注册页面
     $('.button:eq(2)').click(function () {
         window.location.href = "register.html";

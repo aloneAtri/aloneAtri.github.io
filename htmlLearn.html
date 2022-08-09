@@ -23,38 +23,38 @@
             width: 100px;
             background-color: pink
         }
+
+        div {
+            position: relative;
+            width: 250px;
+            height: 40px;
+            border: 2px solid black;
+        }
+
+        div::after {
+            position: absolute;
+            content: '';
+            top: 15%;
+            right: 5%;
+            width: 15px;
+            height: 15px;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            transform: rotate(45deg);
+        }
+
+        ul {
+            float: left;
+        }
     </style>
 </head>
 
 <body>
-    <div style="width: 4v 00px;">
-
-        <div>
-            <ul>
-                <li>
-                    <div class="tab" index="1"></div>
-                </li>
-                <li>
-                    <div class="tab" index="2"></div>
-                </li>
-                <li>
-                    <div class="tab" index="3"></div>
-                </li>
-                <li>
-                    <div class="tab" index="4"></div>
-                </li>
-            </ul>
-        </div>
-
-        <div>
-            <ul id="list">
-                <li>1111</li>
-                <li>2222</li>
-                <li>3333</li>
-            </ul>
-        </div>
-
-    </div>
+    <ul>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
 
 
     <script>

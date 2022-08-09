@@ -246,10 +246,43 @@ a:active {
 #left-arrow,
 #right-arrow {
     position: absolute;
-    height: 20px;
-    width: 20px;
-    top: 50%;
+    height: 30px;
+    width: 30px;
+    top: 45%;
+    background: rgba(33, 30, 23, 0.4);
+
+}
+
+#left-arrow::after,
+#right-arrow::after {
+    position: absolute;
+    content: '';
+    top: 10px;
+    right: 6px;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+}
+
+#turn-box {
+    position: absolute;
+    bottom: 0%;
+    left: 35%;
+}
+
+#turn-img>li {
+    float: left;
+}
+
+.turn-img {
+    width: 10px;
+    height: 10px;
+    margin: 10px 10px;
+    border-radius: 50%;
     background-color: #fff;
+    border: 2px solid black;
 }
 
 .border {
