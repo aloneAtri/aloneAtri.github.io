@@ -20,7 +20,7 @@
     <div class="nav">
         <div><a href="blogger.html" id="top">我的博客</a></div>
         <div><a href="index.html">首页</a></div>
-        <div id="theme">
+        <div id="theme" style="position: relative;">
             <a href="#">主题切换</a>
             <!-- 下拉列表 -->
             <ul id="nav1" class="nav">
@@ -56,7 +56,7 @@
         <div class="search">
             <form>
                 <div style="display: inline-block;">
-                    <input type="text" value="输入搜索内容" style="width: 200px;margin-top: 10px;">
+                    <input id="search" type="text" value="输入搜索内容" style="width: 200px;margin-top: 10px;">
                 </div>
                 <div style="display: inline-block;">
                     <input style="margin:0px ;margin-left: 10px;" class="button" type="submit" value="搜索">
@@ -89,7 +89,10 @@
                 <div>
                     <div class="box-font"> 20220712</div>
                 </div>
-                <div class="image01" style="background-image: url(./images/测试2.png);">
+                <div id="left-box1" class="image01" style="background-image: url(./images/测试2.png);">
+                    <!-- 左右箭头 -->
+                    <div id="left-arrow" style="left:0%;"></div>
+                    <div id="right-arrow" style="right:0%"></div>
                 </div>
             </div>
 
@@ -138,8 +141,8 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input class="button" type="submit" value="登陆"><input class="button" type="button"
-                                    value="注册"></td>
+                            <td><input id="load" class="button" type="submit" value="登陆"><input class="button"
+                                    type="button" value="注册"></td>
                         </tr>
                     </table>
                 </form>

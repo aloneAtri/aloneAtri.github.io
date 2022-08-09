@@ -12,50 +12,72 @@
             margin: 0;
             padding: 0;
         }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .tab {
+            float: left;
+            height: 50px;
+            width: 100px;
+            background-color: pink
+        }
     </style>
 </head>
 
 <body>
+    <div style="width: 4v 00px;">
+
+        <div>
+            <ul>
+                <li>
+                    <div class="tab" index="1"></div>
+                </li>
+                <li>
+                    <div class="tab" index="2"></div>
+                </li>
+                <li>
+                    <div class="tab" index="3"></div>
+                </li>
+                <li>
+                    <div class="tab" index="4"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <ul id="list">
+                <li>1111</li>
+                <li>2222</li>
+                <li>3333</li>
+            </ul>
+        </div>
 
     </div>
-    <div style="background-color: pink;width: 200px;height: 200px;">1111</div>
-    <div style="background-color: pink;width: 200px;height: 200px;">1111</div>
-    <div style="background-color: pink;width: 200px;height: 200px;">1111</div>
-    <p>111</p>
 
 
     <script>
         $(function () {
-            time1();
+            $('#list li').hide();
+
+            $('.tab').hover(function () {
+                // over
+                $(this).css('backgroundColor', 'blue');
+                console.log(this.getAttribute('index'));
+                var num = this.getAttribute('index') - 1;
+                $('#list li').eq(num).show();
+                // $(this).attr('index');
+                // $(this).siblings('backgroundColor', 'pink');
+            }, function () {
+                // out
+                $(this).css('backgroundColor', 'pink');
+                var num = this.getAttribute('index') - 1;
+                $('#list li').eq(num).hide();
+            }
+            );
         })
-        function time1() {
-            // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 13) + '.png)';
-            var i = 100;
 
-            //图片动态大小变化和图片切换
-            timer2 = setInterval(() => {
-                i += 0.1;
-                if (i >= 105) {
-                    i = 100;
-                    // $('#bgc').css('opacity', 1);
-                    // $('#bgc').fadeIn(500);
-                    $('#bgc').stop().fadeTo(1500, 1);
-                    $('#bgc').css('backgroundImage', 'url(./background/背景' + getRandom(1, 19) + '.png)');
-                }
-                if (i >= 104) {
-                    $('#bgc').stop().fadeTo(500, 0.5);
-                }
-                $('#bgc').css('backgroundSize', i + '%');
-            }, 100);
-
-            // $('body').fadeTo(500, 0.5);
-        }
-
-
-        // 随机数函数
-        function getRandom(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
     </script>
 </body>
 

@@ -3,6 +3,27 @@
     padding: 0;
 }
 
+ul {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+input {
+    border: 1px orangered solid;
+    border-radius: 5px;
+    outline: none;
+    background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+}
+
+p {
+    text-indent: 2em;
+}
+
+/* 背景图片 */
 #bgc {
     position: absolute;
     height: 2500px;
@@ -27,26 +48,7 @@ body {
     cursor: url(./images/mouse1.png), auto;
 }
 
-ul {
-    list-style: none;
-}
-
-a {
-    color: black;
-    text-decoration: none;
-}
-
-
-input {
-    border: 1px orangered solid;
-    border-radius: 5px;
-    outline: none;
-}
-
-p {
-    text-indent: 2em;
-}
-
+/* 右下角浮动栏 */
 .right-float {
     position: fixed;
     width: 150px;
@@ -56,18 +58,21 @@ p {
     text-align: center;
 }
 
+/* 鼠标光效 */
 #mouse-move {
-    z-index: -99;
+    z-index: -5;
     position: absolute;
     transform: translate(-50%, -50%);
 }
 
+/* 顶端部分 公告栏 搜索栏 */
 .top {
     height: 100px;
     width: 1200px;
     margin: auto;
 }
 
+/* 网页主体 */
 .main {
     width: 1200px;
     margin: auto;
@@ -78,8 +83,7 @@ p {
     align-items: center;
 }
 
-
-
+/* 导航栏板块链接 */
 a:link {
     color: black;
 }
@@ -109,20 +113,11 @@ a:active {
     /* 透明度 */
 }
 
-#nav1 {
-    position: absolute;
-    display: none;
-    text-align: center;
-}
-
+#nav1,
 #nav2 {
     position: absolute;
     display: none;
     text-align: center;
-}
-
-#theme {
-    position: relative;
 }
 
 .nav div {
@@ -173,6 +168,7 @@ a:active {
     border: 1px black solid;
     margin: 10px 20px;
     margin-bottom: 0px;
+    background: linear-gradient(35deg, #CCFFFF, #FFCCCC)
 }
 
 .search input {
@@ -235,15 +231,25 @@ a:active {
 
 /* 首页图片盒 */
 .image01 {
+    position: relative;
     width: 700px;
     height: 390px;
     margin: 30px auto;
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 100%;
-    background-attachment: scroll;
+    /* background-attachment: scroll; */
     border: 10px grey solid;
     border-radius: 5px;
+}
+
+#left-arrow,
+#right-arrow {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    background-color: #fff;
 }
 
 .border {

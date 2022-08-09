@@ -27,6 +27,7 @@ $(function () {
     }
     );
 
+    //隐藏/显示壁纸
     $('#wallpaper').hover(function () {
         // over
         $('#nav2').stop().slideDown(100);
@@ -35,7 +36,6 @@ $(function () {
         $('#nav2').stop().slideUp(100);
     }
     );
-
     //壁纸选项
     $('#hidewp').click(function () {
         // $('*').hide();
@@ -51,23 +51,34 @@ $(function () {
 
     });
 
+    // 屏蔽F12
+    // document.onkeydown = function () {
+    //     if (window.event && window.event.keyCode == 123) {
+    //         alert("F12被禁用");
+    //         event.keyCode = 0;
+    //         event.returnValue = false;
+    //     }
+    //     if (window.event && window.event.keyCode == 13) {
+    //         window.event.keyCode = 505;
+    //     }
+    //     if (window.event && window.event.keyCode == 8) {
+    //         alert(str + "\n请使用Del键进行字符的删除操作！");
+    //         window.event.returnValue = false;
+    //     }
+    // }
+
+    //屏蔽右键
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    })
+
+
+    // document.addEventListener('keyup', function (e) {
+    //     console.log(e.key);
+    // })
+
 })
 
-// function time1() {
-//     // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 13) + '.png)';
-//     var i = 100;
-
-//     //图片动态大小变化和图片切换
-//     timer2 = setInterval(() => {
-//         i += 0.1;
-//         if (i >= 105) {
-//             i = 100;
-//             $('body').css('backgroundImage', 'url(./background/背景' + getRandom(1, 19) + '.png)');
-//         }
-//         $('body').css('backgroundSize', i + '%');
-//     }, 100);
-
-// }
 
 function time1() {
     // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 13) + '.png)';
@@ -103,4 +114,22 @@ function time1() {
 // 随机数函数
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+
+
+    //弃用图片切换函数
+    // function time1() {
+    //     // body.style.backgroundImage = 'url(' + './background/背景' + getRandom(1, 13) + '.png)';
+    //     var i = 100;
+
+    //     //图片动态大小变化和图片切换
+    //     timer2 = setInterval(() => {
+    //         i += 0.1;
+    //         if (i >= 105) {
+    //             i = 100;
+    //             $('body').css('backgroundImage', 'url(./background/背景' + getRandom(1, 19) + '.png)');
+    //         }
+    //         $('body').css('backgroundSize', i + '%');
+    //     }, 100);
+
+    // }
 }

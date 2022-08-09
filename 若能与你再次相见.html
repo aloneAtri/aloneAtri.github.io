@@ -7,16 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>若能与你再次相见</title>
     <link rel="stylesheet" href="style-self.css">
+    <script src="jquery.min.js"></script>
 </head>
 
 <body>
+
+    <!-- 背景图片 -->
+    <div id="bgc"></div>
+
+    <!-- 导航栏 -->
     <div class="nav">
-        <a href="blogger.html" id="top">我的博客</a>
-        <a href="index.html">首页</a>
-        <a href="#">主题切换</a>
-        <a href="#">收藏夹</a>
-        <a href="#">留言板</a>
+        <div><a href="blogger.html" id="top">我的博客</a></div>
+        <div><a href="index.html">首页</a></div>
+        <div id="theme">
+            <a href="#">主题切换</a>
+            <!-- 下拉列表 -->
+            <ul id="nav1" class="nav">
+                <li>
+                    <div> <a href="#">主题1</a></div>
+                </li>
+                <li>
+                    <div><a href="#">主题2</a></div>
+                </li>
+            </ul>
+        </div>
+        <div><a href="#">收藏夹</a></div>
+        <div id="wallpaper" style="position: relative;;">
+            <a href="#">壁纸</a>
+            <ul id="nav2" class="nav">
+                <li id="hidewp"><a href="#">隐藏界面</a></li>
+                <li id="obvious"><a href="#">显示界面</a></li>
+            </ul>
+        </div>
+        <div><a href="#">留言板</a></div>
     </div>
+
     <!-- 网页主题部分 -->
     <div class="main">
 
@@ -77,8 +102,8 @@
 
         <div class="right">
             <div style="float: left;margin: 20px;">
-                <iframe class="border" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-                    src="https://music.163.com/outchain/player?type=2&id=29129654&auto=1&height=66"></iframe>
+                <iframe id="music" class="border" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330
+                    height=86 src="https://music.163.com/outchain/player?type=2&id=29129654&auto=1&height=66"></iframe>
             </div>
 
         </div>
