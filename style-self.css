@@ -243,6 +243,10 @@ a:active {
     border-radius: 5px;
 }
 
+#left-box1 {
+    overflow: hidden;
+}
+
 #left-arrow,
 #right-arrow {
     position: absolute;
@@ -283,6 +287,18 @@ a:active {
     border-radius: 50%;
     background-color: #fff;
     border: 2px solid black;
+}
+
+.lunbo-img {
+    position: relative;
+    float: left;
+    width: 700px;
+    height: 390px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    border-radius: 5px;
+    background-size: 100%;
+    /* background-image: url(./images/测试2.png); */
 }
 
 .border {

@@ -84,29 +84,50 @@
         <!-- 左侧 -->
         <div class="left">
             <!-- 左侧大盒子01 -->
-            <div class="box1 border">
+            <div class="box1 border" style="position: relative;">
                 <div class="theme"><a href="#">更新日志</a></div>
                 <div>
                     <div class="box-font"> 20220712</div>
                 </div>
-                <div id="left-box1" class="image01" style="background-image: url(./images/测试2.png);">
+                <!-- 轮播图 -->
+                <div id="left-box1" class="image01">
+                    <!-- 滚动区域 -->
+                    <ul id="lunbo-list" style="width: 3500px;">
+                        <li>
+                            <!-- <div id="left-box1" class="image01" style="background-image: url(./images/测试2.png);"></div> -->
+                            <div class="lunbo-img" style="background-image: url(./images/测试2.png);"></div>
+                        </li>
+                        <li>
+                            <div class="lunbo-img" style="background-image: url(./images/测试3.png);"></div>
+                        </li>
+                        <li>
+                            <div class="lunbo-img" style="background-image: url(./images/测试7.png);"></div>
+                        </li>
+                        <li>
+                            <div class="lunbo-img" style="background-image: url(./images/测试6.png);"></div>
+                        </li>
+                        <li>
+                            <!-- <div id="left-box1" class="image01" style="background-image: url(./images/测试2.png);"></div> -->
+                            <div class="lunbo-img" style="background-image: url(./images/测试2.png);"></div>
+                        </li>
+                    </ul>
                     <!-- 左右箭头 -->
                     <div id="left-arrow" style="left:0%;"></div>
                     <div id="right-arrow" style="right:0%;transform: rotate(180deg);"></div>
                     <div id="turn-box">
                         <ul id="turn-img">
                             <li>
-                                <div class="turn-img"></div>
+                                <div data-index="0" class="turn-img"></div>
                             </li>
                             <li>
-                                <div class="turn-img"></div>
+                                <div data-index="1" class="turn-img"></div>
 
                             </li>
                             <li>
-                                <div class="turn-img"></div>
+                                <div data-index="2" class="turn-img"></div>
                             </li>
                             <li>
-                                <div class="turn-img"></div>
+                                <div data-index="3" class="turn-img"></div>
                             </li>
                         </ul>
                     </div>
@@ -194,6 +215,7 @@
 
     <!-- 图片预加载区域 -->
     <div class="background" style="display: none;">
+        <!-- <img src="./images/测试2.png" alt=""> -->
         <img src="./background/背景1.png" alt="">
         <img src="./background/背景2.png" alt="">
         <img src="./background/背景3.png" alt="">
@@ -216,6 +238,12 @@
     <!-- js文件引入 -->
     <script src="js-self.js"> </script>
     <script src="js-index.js"></script>
+    <script>
+        $(function () {
+
+        })
+
+    </script>
 </body>
 
 
