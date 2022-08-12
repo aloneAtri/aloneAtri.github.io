@@ -66,10 +66,11 @@ $(function () {
     // 监听轮播图，防止切换标签轮播图失效
     // 回来到当前页面，清除残留定时器的影响，执行定时器
     window.onfocus = function () {
-        clearInterval(timer)
-        timer = setInterval(function () {
-            button_right.click()
-        }, 2000)
+        clearInterval(timer);
+        timer = setInterval(() => {
+            index++;
+            turnPlay();
+        }, 3000);
     }
     // 离开当前页面清除定时器，避免定时器生成堆积
     window.onblur = function () {

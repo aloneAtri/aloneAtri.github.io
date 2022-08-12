@@ -12,7 +12,7 @@
 
 <body>
     <!-- 背景图片 -->
-    <div id="bgc" style="height: 1500px;"></div>
+    <div id="bgc" style="height: 2000px;"></div>
 
     <!-- 导航栏 -->
     <div class="nav">
@@ -58,18 +58,68 @@
         </div>
 
         <div class="left">
-            <div class="box2 border">
+            <div class="box2 border" style="height: 1500px;">
                 <div>
                     <h1 style="color: white;text-shadow: 0px 0px 10px black;">欢迎来到我的网站</h1>
                 </div>
                 <div class="passage">
-                    <p>这是我建立的第一个属于自己的网站，从0开始一步步亲手搭建，看着网站的逐渐完善也颇有感慨和自豪感。网站的初衷是用来分享一些资源吗，写一些游戏的测评和推荐，再次之余记录一下自己的学习记录写写博客。
+                    <p>网站的初衷是用来分享一些资源,写一些游戏的测评和推荐,再次之余记录一下自己的学习记录写写博客。
                     </p>
-                    <p>随着时间的推移，希望能加入更多的模块，更好的完善网站，也希望能分享一些自己的经历和游戏（自己写着玩玩的）。</p>
+                    <p style="color: purple;">随着时间的推移,希望能加入更多的模块,更好的完善网站,也希望能分享一些自己的经历和游戏。</p>
+                    <P style="color: seagreen;">2022年8月8日,初步学习了部分js和jq框架等知识,为网页添加了部分动画效果。计划于几天后做一个前端html,css,js的知识汇总总结。
+                    </P>
                 </div>
-                <div class="passage1">
-                    <P>2022年8月8日,初步学习了部分js和jq知识,为网页添加了部分动画效果。</P>
-                    <p></p>
+                <div class="passage1" style="height: 420px;">
+                    <h1 style="color:blueviolet">html部分</h1>
+                    <div style="color:slateblue;">
+                        <p><strong>块级元素的特点：</strong> ① 自己独占一行。② 高度,宽度、外边距以及内边距都可以控制。③ 宽度默认是容器（父级宽度）的100%。
+                            ④ 是一个容器及盒子,里面可以放行内或者块级元素。例如：'h1'~'h6','p','div','ul','ol','li','dd','dt'等。其中'div'最为典型。
+                        </p>
+                        <p>
+                            <strong>行内元素的特点：</strong>① 相邻行内元素在一行上,一行可以显示多个。② 高、宽直接设置是无效的。③ 默认宽度就是它本身内容的宽度。④
+                            行内元素只能容纳文本或其他行内元素。例如'a','strong','em','input','textarea','br/','span'。其中'span'最为典型。
+                        </p>
+                        <p style="color:red ;">
+                            在行内元素中有几个特殊的标签 —— 'img'、'input'、'td',它们同时具有块元素和行内元素的特点。 有些资料称它们为行内块元素。
+                        </p>
+                        <p>
+                            <strong>基本标签:</strong>'a'超链接,'img'图片,'video视频','h1~h6'标题,'p段落','div'块级元素,'span'行内元素。
+                        </p>
+                        <p>
+                            <strong>表格标签: </strong>'table'标签。 一行表格 'tr' 内容'td'/'th'。列表标签 'ul'/'ol' 内容'li' 自定义列表 'dl'
+                            名词'dt'
+                            名词解释'dd'。
+                        </p>
+                        <p>
+                            <strong>表格标签: </strong> form标签。 <strong>表单控件：</strong>
+                            input标签,type=text文本框,password密码框,button按钮,radio单选框,checkbox复选框,file上传文件,submit提交数据,
+                            select下拉列表,textarea文本域。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="passage" style="height: 500px;">
+                    <h1 style="color: orangered;">css部分</h1>
+                    <div style="color: rgb(123, 3, 123);">
+                        <p><strong>选择器:</strong>*通配符选择器,div标签选择器,.class类名选择器,#id名字选择器,ul li后代选择器（所有）,
+                            ul>li后代选择器（亲儿子,并集选择器s1,s2,s3,伪类选择器div::after。
+                        </p>
+                        <p>
+                            <strong>字体样式:</strong>'font-family'字体样式,'font-size'字体大小, 'font-weight'字体粗细。
+                        </p>
+                        <p>
+                            <strong>文本样式:</strong>'color'颜色,'text-align'文本对齐方式,'text-decoration'文本装饰,'text-indent'文本缩进,'line-height'行间距,行间距等于字体高度居中。
+                        </p>
+                        <p>
+                            <strong>伪类选择器:</strong>'a:link'未访问,'a:visited'访问过的,'a:hover'鼠标悬停链接,'a:active'鼠标按下未弹起链接。'input:focus'选取获得焦点的表单元素（input用的多）。
+                        </p>
+                        <p>
+                            <strong>背景图片设置:</strong>'background-color'背景颜色,'background-image'背景图片(css3新增线性渐变色),'background-repeat'背景图片平铺,'background-attachment'背景图片附着位置,'background-size'图片放入盒子的大小,'background-positon'背景图片定位,'background:rgba背景颜色透明度'。
+                        </p>
+                        <p>
+                            <strong>css三大特性:</strong>①层叠性后面写的样式会覆盖前面写的样式。②继承性:子代的样式会优先继承自父亲的样式。③优先级:!importan1000,行内样式0100,id选择器0010,类选择器0001,通配符或者继承自父类0000。
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,7 +130,6 @@
                     height=86 src="https://music.163.com/outchain/player?type=2&id=29129654&auto=1&height=66"></iframe>
             </div>
             <!-- <div style="background-color: pink;float: left;width: 200px;height: 200px;"></div> -->
-
         </div>
 
     </div>
