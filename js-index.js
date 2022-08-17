@@ -16,12 +16,31 @@ $(function () {
     // 轮播图点击切换功能
     $('#right-arrow').click(function (e) {
         index++;
-        turnPlay();
+        if (index >= 5) {
+            index = 0;
+            translatex = -index * 700;
+            $('#turn-img li').siblings().children().css('background-image', '');
+            $('#turn-img li').eq(0).children().css('background-image', 'linear-gradient(35deg,yellow, orange)');
+            $('#lunbo-list').css('transition', 'none');
+            $('#lunbo-list').css('transform', 'translateX(' + translatex + 'px)');
+        }
+        else {
+            turnPlay();
+        }
     });
 
     $('#left-arrow').click(function (e) {
         index--;
-        turnPlay();
+        if (index < 0) {
+            index = 3;
+            translatex = -index * 700;
+            $('#turn-img li').siblings().children().css('background-image', '');
+            $('#turn-img li').eq(3).children().css('background-image', 'linear-gradient(35deg,yellow, orange)');
+            $('#lunbo-list').css('transition', 'none');
+            $('#lunbo-list').css('transform', 'translateX(' + translatex + 'px)');
+        } else {
+            turnPlay();
+        }
     });
 
     // 初始化小圆圈
@@ -32,8 +51,8 @@ $(function () {
         // over
         clearInterval(timer);
         timer = null;
-        $(this).siblings().children().css('background-image', '');
-        $(this).children().css('background-image', 'linear-gradient(35deg,yellow, orange)');
+        $(this).siblings().children().css('background-image', '').css('transform', '');
+        $(this).children().css('background-image', 'linear-gradient(35deg,yellow, orange)').css('transform', 'scale(1.1)');
         index = $(this).children().attr('data-index');
         var translatex = -index * 700;
         $('#lunbo-list').css('transition', 'all 0.5s');
@@ -102,18 +121,22 @@ $(function () {
         }
     });
 
+    $('#register').click(function () {
+        window.location.href = "register.html";
+    })
+
     // 切换图片函数
     function turnPlay() {
         var translatex = -index * 700;
         $('#lunbo-list').css('transition', 'all 0.5s');
         $('#lunbo-list').css('transform', 'translateX(' + translatex + 'px)');
-        if (index == 4) {
-            $('#turn-img li').siblings().children().css('background-image', '');
-            $('#turn-img li').eq(index - 4).children().css('background-image', 'linear-gradient(35deg,yellow, orange)');
+        if (index >= 4) {
+            $('#turn-img li').siblings().children().css('background-image', '').css('transform', '');
+            $('#turn-img li').eq(0).children().css('background-image', 'linear-gradient(35deg,yellow, orange)').css('transform', 'scale(1.1)');
         }
         else {
-            $('#turn-img li').siblings().children().css('background-image', '');
-            $('#turn-img li').eq(index).children().css('background-image', 'linear-gradient(35deg,yellow, orange)');
+            $('#turn-img li').siblings().children().css('background-image', '').css('transform', '');
+            $('#turn-img li').eq(index).children().css('background-image', 'linear-gradient(35deg,yellow, orange)').css('transform', 'scale(1.1)');
         }
     }
 

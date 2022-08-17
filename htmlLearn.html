@@ -6,85 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="jquery.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        .tab {
-            float: left;
-            height: 50px;
-            width: 100px;
-            background-color: pink
-        }
-
-        div {
-            position: relative;
-            width: 250px;
-            height: 40px;
-            border: 2px solid black;
-        }
-
-        div::after {
-            position: absolute;
-            content: '';
-            top: 15%;
-            right: 5%;
-            width: 15px;
-            height: 15px;
-            border-right: 2px solid black;
-            border-bottom: 2px solid black;
-            transform: rotate(45deg);
-        }
-
-        ul li {
-            float: left;
-        }
-    </style>
+    <link rel="stylesheet" href="style-self.css">
+    <link rel="stylesheet" href="./iconfont.css">
 </head>
 
-<body>
-    <ul>
-        <li>
-            <div></div>
-        </li>
-        <li>
-            <div></div>
-        </li>
-        <li>
-            <div></div>
-        </li>
-    </ul>
+<body style="background-image: url(./background/背景16.png); background-repeat: no-repeat;background-position: center top;
+background-size: 100%;background-attachment: fixed;">
+    <!-- 背景图片 -->
+    <!-- <div
+        style="width: 800px;height: 500px;background-color: pink;background-image: url(./images/测试10.png);z-index: -15;">
+    </div> -->
+
+    <!-- 鼠标移动特效 -->
+    <span class="js-cursor-container"></span>
+    <!-- <span class="iconfont icon-31mima"></span> -->
 
 
-    <script>
-        $(function () {
-            $('#list li').hide();
 
-            $('.tab').hover(function () {
-                // over
-                $(this).css('backgroundColor', 'blue');
-                console.log(this.getAttribute('index'));
-                var num = this.getAttribute('index') - 1;
-                $('#list li').eq(num).show();
-                // $(this).attr('index');
-                // $(this).siblings('backgroundColor', 'pink');
-            }, function () {
-                // out
-                $(this).css('backgroundColor', 'pink');
-                var num = this.getAttribute('index') - 1;
-                $('#list li').eq(num).hide();
-            }
-            );
-        })
 
-    </script>
+    <script src="sakura.js"></script>
+    <script src="mousemove.js"></script>
 </body>
 
 </html>

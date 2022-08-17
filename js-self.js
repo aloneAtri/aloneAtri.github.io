@@ -1,13 +1,13 @@
 // var img = document.querySelector('.background').querySelectorAll('img');//获取背景图片
 
-var mouseImg = document.querySelector('#mouse-move')//获取鼠标移动元素并创建移动事件
-// 鼠标移动特效函数
-document.addEventListener('mousemove', function (e) {
-    var x = e.pageX;
-    var y = e.pageY;
-    mouseImg.style.top = y + 10 + 'px';
-    mouseImg.style.left = x + 10 + 'px';
-})
+// var mouseImg = document.querySelector('#mouse-move')//获取鼠标移动元素并创建移动事件
+// // 鼠标移动特效函数
+// document.addEventListener('mousemove', function (e) {
+//     var x = e.pageX;
+//     var y = e.pageY;
+//     mouseImg.style.top = y + 10 + 'px';
+//     mouseImg.style.left = x + 10 + 'px';
+// })
 
 $(function () {
     // $('body').css('backgroundImage', 'url(./background/背景' + getRandom(1, 19) + '.png)');

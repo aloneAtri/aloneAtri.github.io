@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注册界面</title>
     <link rel="stylesheet" href="style-self.css">
+    <link rel="stylesheet" href="iconfont.css">
     <style>
         #interface {
             text-align: center;
@@ -29,35 +30,35 @@
 <body style="background-image: url(./background/背景16.png); background-repeat: no-repeat;background-position: center top;
 background-size: 100%;background-attachment: fixed;">
 
+    <!-- 鼠标移动特效 -->
+    <span class="js-cursor-container"></span>
+
     <!-- 导航栏 -->
     <div class="nav">
-        <div><a href="blogger.html" id="top">我的博客</a></div>
-        <div><a href="index.html">首页</a></div>
-        <div id="theme">
-            <a href="#">主题切换</a>
+        <div><a href="blogger.html" id="top"><span class="iconfont icon-bokeyuan"></span> 我的博客</a></div>
+        <div><a href="index.html"><span class="iconfont icon-shouye"></span> 首页</a></div>
+        <div id="theme" style="position: relative;">
+            <a href="#"><span class="iconfont icon-zhuti"></span> 主题切换</a>
             <!-- 下拉列表 -->
             <ul id="nav1" class="nav">
                 <li>
-                    <div> <a href="#">主题1</a></div>
+                    <div><a href="#">主题1</a></div>
                 </li>
                 <li>
                     <div><a href="#">主题2</a></div>
                 </li>
             </ul>
         </div>
-        <div><a href="#">收藏夹</a></div>
+        <div><a href="#"><span class="iconfont icon-shoucang"></span> 收藏夹</a></div>
         <div id="wallpaper" style="position: relative;;">
-            <a href="#">壁纸</a>
+            <a href="#"><span class="iconfont icon-tupianbizhi"></span> 壁纸</a>
             <ul id="nav2" class="nav">
                 <li id="hidewp"><a href="#">隐藏界面</a></li>
                 <li id="obvious"><a href="#">显示界面</a></li>
             </ul>
         </div>
-        <div><a href="#">留言板</a></div>
+        <div><a href="#"><span class="iconfont icon-liuyan"></span> 留言板</a></div>
     </div>
-
-    <!-- 鼠标图片 -->
-    <img id="mouse-move" src="./images/鼠标图片.png" alt="">
 
     <!-- 注册账号界面 -->
     <div class="border" style="width: 600px;margin: 40px auto;">
@@ -107,6 +108,8 @@ background-size: 100%;background-attachment: fixed;">
 
     <!-- <script src="js-self.js"></script> -->
     <script src="register.js"></script>
+    <script src="mousemove.js"></script>
+    <script src="sakura.js"></script>
     <script>
 
 

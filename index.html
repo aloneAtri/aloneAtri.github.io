@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aloneAtri</title>
     <link rel="stylesheet" href="style-self.css">
+    <link rel="stylesheet" href="./iconfont.css">
     <script src="jquery.min.js"></script>
 </head>
 
@@ -16,31 +17,35 @@
     <!-- 背景图片 -->
     <div id="bgc"></div>
 
+    <!-- 鼠标移动特效 -->
+    <span class="js-cursor-container"></span>
+
+
     <!-- 导航栏 -->
     <div class="nav">
-        <div><a href="blogger.html" id="top">我的博客</a></div>
-        <div><a href="index.html">首页</a></div>
+        <div><a href="blogger.html" id="top"><span class="iconfont icon-bokeyuan"></span> 我的博客</a></div>
+        <div><a href="index.html"><span class="iconfont icon-shouye"></span> 首页</a></div>
         <div id="theme" style="position: relative;">
-            <a href="#">主题切换</a>
+            <a href="#"><span class="iconfont icon-zhuti"></span> 主题切换</a>
             <!-- 下拉列表 -->
             <ul id="nav1" class="nav">
                 <li>
-                    <div> <a href="#">主题1</a></div>
+                    <div><a href="#">主题1</a></div>
                 </li>
                 <li>
                     <div><a href="#">主题2</a></div>
                 </li>
             </ul>
         </div>
-        <div><a href="#">收藏夹</a></div>
+        <div><a href="#"><span class="iconfont icon-shoucang"></span> 收藏夹</a></div>
         <div id="wallpaper" style="position: relative;;">
-            <a href="#">壁纸</a>
+            <a href="#"><span class="iconfont icon-tupianbizhi"></span> 壁纸</a>
             <ul id="nav2" class="nav">
                 <li id="hidewp"><a href="#">隐藏界面</a></li>
                 <li id="obvious"><a href="#">显示界面</a></li>
             </ul>
         </div>
-        <div><a href="#">留言板</a></div>
+        <div><a href="#"><span class="iconfont icon-liuyan"></span> 留言板</a></div>
     </div>
 
 
@@ -56,11 +61,14 @@
         <div class="search">
             <form>
                 <div style="display: inline-block;">
-                    <input id="search" type="text" value="输入搜索内容" style="width: 200px;margin-top: 10px;">
+                    <input id="search" type="text" value="输入搜索内容" style="width: 240px;margin-top: 10px;">
                 </div>
-                <div style="display: inline-block;">
+                <!-- <div style="display: inline-block;">
                     <input style="margin:0px ;margin-left: 10px;" class="button" type="submit" value="搜索">
-                </div>
+                </div> -->
+                <span
+                    style="display: inline-block;color: white;font-size: 25px;vertical-align: middle;margin-left: 5px;"
+                    class="iconfont icon-sousuo"></span>
             </form>
         </div>
 
@@ -69,7 +77,7 @@
     <!-- 网页主体部分 -->
     <div class="main">
         <!-- 鼠标图片 -->
-        <img id="mouse-move" src="./images/鼠标图片.png" alt="">
+        <!-- <img id="mouse-move" src="./images/鼠标图片.png" alt=""> -->
 
         <!-- 右侧浮动栏 -->
         <div class="right-float">
@@ -159,28 +167,31 @@
         <div class="right">
 
             <!-- 音乐模块 -->
-            <iframe frameborder="no" class="border" marginwidth="0" marginheight="20" width=330 height=86
-                src="https://music.163.com/outchain/player?type=2&id=29129653&auto=1&height=66"></iframe>
-
-            <!-- <iframe frameborder="no" class="border" marginwidth="0" marginheight="0" width=330 height=86
-            src="https://music.163.com/outchain/player?type=2&id=440403809&auto=1&height=66"></iframe> -->
+            <!-- <iframe frameborder="no" class="border" marginwidth="0" marginheight="20" width=330 height=86
+                src="https://music.163.com/outchain/player?type=2&id=29129653&auto=1&height=66"></iframe> -->
+            <iframe class="border" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                src="https://music.163.com/outchain/player?type=2&id=440403794&auto=1&height=66"></iframe>
 
             <!-- 登陆界面 -->
             <div class="load border">
                 <form>
                     <table>
                         <tr>
-                            <td style="color: white;"> <label for="username">用户名:</label></td>
+                            <td style="color: white;"> <label for="username"><span
+                                        style="vertical-align: middle;font-size: 20px;"
+                                        class="iconfont icon-yonghu"></span>用户</label></td>
                             <td><input type="text" id="username"></td>
                         </tr>
                         <tr>
-                            <td style="color: white;"><label for="password">密码:</td></label>
+                            <td style="color: white;"><label for="password"><span style="font-size: 20px;"
+                                        class="iconfont icon-mima"></span>密码
+                            </td></label>
                             <td><input type="password" id="password"></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input id="load" class="button" type="submit" value="登陆"><input class="button"
-                                    type="button" value="注册"></td>
+                            <td><input id="load" class="button" type="submit" value="登陆"><input id="register"
+                                    class="button" type="button" value="注册"></td>
                         </tr>
                     </table>
                 </form>
@@ -235,21 +246,16 @@
         <img src="./background/背景18.png" alt="">
         <img src="./background/背景19.png" alt="">
         <img src="./background/背景20.png" alt="">
-        <!-- <img src="./background/背景14.png" alt="">
     </div>
 
 
 
 
     <!-- js文件引入 -->
-        <script src="js-self.js"> </script>
-        <script src="js-index.js"></script>
-        <script>
-            $(function () {
-
-            })
-
-        </script>
+    <script src="js-self.js"> </script>
+    <script src="js-index.js"></script>
+    <script src="mousemove.js"></script>
+    <!-- <script src="sakura.js"></script> -->
 </body>
 
 

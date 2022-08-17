@@ -32,7 +32,7 @@ p {
     background-position: center top;
     background-size: 100%;
     background-attachment: fixed;
-    z-index: -10;
+    z-index: -11;
 }
 
 body {
@@ -176,13 +176,14 @@ a:active {
 }
 
 .load {
-    float: left;
+    /* float: left; */
     width: 250px;
     height: 100px;
     border: 2px solid rgb(33, 30, 23);
     border-top-width: 20px;
     padding-left: 5px;
     padding-top: 10px;
+    padding-bottom: 10px;
     margin: 20px;
     border-radius: 5px;
     background: rgba(33, 30, 23, 0.3);
@@ -204,12 +205,13 @@ a:active {
 }
 
 .box1 {
-    float: left;
+    /* float: left; */
     width: 750px;
     height: 600px;
     padding: 20px;
     margin: 20px;
     margin-left: 0px;
+    margin-bottom: 50px;
     box-shadow: 0px 0px 10px 3px black;
 }
 
@@ -321,10 +323,11 @@ a:active {
 }
 
 .board {
-    float: left;
+    /* float: left; */
     width: 250px;
     height: 500px;
     margin: 20px;
+    margin-top: 40px;
     margin-left: 25px;
     border-top: 20px black solid;
 }
@@ -335,11 +338,12 @@ a:active {
 }
 
 .text {
-    float: left;
+    /* float: left; */
     width: 250px;
     height: 400px;
     margin: 20px;
     margin-left: 25px;
+    margin-top: 40px;
     border-top: 20px black solid;
 }
 
@@ -359,7 +363,6 @@ a:active {
 }
 
 .passage {
-    float: laft;
     width: 700px;
     height: 150px;
     margin: 20px auto;
@@ -371,10 +374,10 @@ a:active {
 }
 
 .passage1 {
-    float: laft;
     width: 700px;
     height: 150px;
     margin: 20px auto;
+    margin-top: 20px;
     text-align: left;
     border-radius: 5px;
     background-color: skyblue;
