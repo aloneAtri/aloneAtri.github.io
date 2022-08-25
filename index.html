@@ -8,7 +8,10 @@
     <title>aloneAtri</title>
     <link rel="stylesheet" href="style-self.css">
     <link rel="stylesheet" href="./iconfont.css">
+    <!-- jq导入 -->
     <script src="jquery.min.js"></script>
+    <!-- vue导入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
@@ -169,24 +172,24 @@
             <!-- 音乐模块 -->
             <!-- <iframe frameborder="no" class="border" marginwidth="0" marginheight="20" width=330 height=86
                 src="https://music.163.com/outchain/player?type=2&id=29129653&auto=1&height=66"></iframe> -->
+
             <iframe class="border" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
                 src="https://music.163.com/outchain/player?type=2&id=440403794&auto=1&height=66"></iframe>
 
             <!-- 登陆界面 -->
             <div class="load border">
-                <form>
+                <form method="post">
                     <table>
                         <tr>
-                            <td style="color: white;"> <label for="username"><span
-                                        style="vertical-align: middle;font-size: 20px;"
+                            <td style="color: white;"> <label for="username"><span style="font-size: 18px;"
                                         class="iconfont icon-yonghu"></span>用户</label></td>
-                            <td><input type="text" id="username"></td>
+                            <td><input type="text" name="username" id="username"></td>
                         </tr>
                         <tr>
                             <td style="color: white;"><label for="password"><span style="font-size: 20px;"
                                         class="iconfont icon-mima"></span>密码
                             </td></label>
-                            <td><input type="password" id="password"></td>
+                            <td><input type="password" name="password" id="password"></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -255,6 +258,10 @@
     <script src="js-self.js"> </script>
     <script src="js-index.js"></script>
     <script src="mousemove.js"></script>
+    <!-- vue -->
+    <script>
+
+    </script>
     <!-- <script src="sakura.js"></script> -->
 </body>
 
