@@ -23,6 +23,10 @@ p {
     text-indent: 2em;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 /* 背景图片 */
 #bgc {
     position: absolute;
