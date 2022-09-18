@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+    <link rel="stylesheet" href="style-self.css">
+    <link rel="stylesheet" href="iconfont.css">
+    <link rel="icon" href="/images/图标.ico" type="image/gif">
+    <script src="jquery.min.js"></script>
+    <style>
+        .left-part {
+            margin: 20px;
+            width: 800px;
+            height: 1200px;
+            border: 2px black solid;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 背景图片 -->
+    <div id="bgc" style="height: 2500px;"></div>
+
+    <!-- 鼠标移动特效 -->
+    <span class="js-cursor-container"></span>
+
+    <!-- 导航栏 -->
+    <div class="nav">
+        <div><a href="blogger.html" id="top"><span class="iconfont icon-bokeyuan"></span> 我的博客</a></div>
+        <div><a href="index.html"><span class="iconfont icon-shouye"></span> 首页</a></div>
+        <div id="theme" style="position: relative;">
+            <a href="#"><span class="iconfont icon-zhuti"></span> 主题切换</a>
+            <!-- 下拉列表 -->
+            <ul id="nav1" class="nav">
+                <li>
+                    <div><a href="#">主题1</a></div>
+                </li>
+                <li>
+                    <div><a href="#">主题2</a></div>
+                </li>
+            </ul>
+        </div>
+        <div><a href="#"><span class="iconfont icon-shoucang"></span> 收藏夹</a></div>
+        <div id="wallpaper" style="position: relative;;">
+            <a href="#"><span class="iconfont icon-tupianbizhi"></span> 壁纸</a>
+            <ul id="nav2" class="nav">
+                <li id="hidewp"><a href="#">隐藏界面</a></li>
+                <li id="obvious"><a href="#">显示界面</a></li>
+            </ul>
+        </div>
+        <div><a href="#"><span class="iconfont icon-liuyan"></span> 留言板</a></div>
+    </div>
+
+    <!-- 网页主题部分 -->
+    <div class="main">
+
+        <!-- 右侧浮动栏 -->
+        <div class="right-float">
+            <div style="width: 150px;height: 150px;margin-bottom: 10px;">
+                <a href="#top"><img src="./images/智乃.png" alt=""></a>
+            </div>
+            <div>
+                <a href="#top"><img class="border" src="./images/return-top.png" alt=""></a>
+            </div>
+        </div>
+
+        <div class="left-part border" style="background-color: rgba(255, 255, 255,0.4);float: left;">
+            <div style="background: #8080C0;width: 200px;margin: 20px auto;border-radius: 5px;">
+                <h1 style="color: rgb(255, 255, 2);text-shadow: 0px 0px 10px 3px orange;">留言板块</h1>
+            </div>
+        </div>
+
+
+
+        <div class="right" style="width: 300px;">
+            <div>
+                <div class="border" style="width: 200px;height: 30px;background-color: black;">
+                    <h3 style="padding-left: 20px; color: white;position: absolute;position: left;">评论区</h3>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+
+            <div style="float: left;margin: 20px;">
+                <iframe id="music" class="border" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330
+                    height=86 src="https://music.163.com/outchain/player?type=2&id=29129654&auto=1&height=66"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- 图片预加载区域 -->
+    <div class="background" style="display: none;">
+    </div>
+
+
+
+    <!-- js文件引入 -->
+    <script src="js-self.js"></script>
+    <script src="mousemove.js"></script>
+    <script>
+        $('#music').hide();
+
+    </script>
+</body>
+
+</html>
