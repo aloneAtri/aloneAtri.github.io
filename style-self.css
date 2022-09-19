@@ -389,6 +389,18 @@ a:active {
     box-shadow: 0px 0px 10px 3px blue;
 }
 
+.passage2 {
+    width: 700px;
+    height: 150px;
+    margin: 20px auto;
+    margin-top: 20px;
+    text-align: left;
+    border-radius: 5px;
+    background-color: rgb(220, 232, 133);
+    color: green;
+    box-shadow: 0px 0px 10px 3px green;
+}
+
 .box2 h2 {
     color: black;
 }
