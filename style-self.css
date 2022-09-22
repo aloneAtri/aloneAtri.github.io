@@ -102,7 +102,7 @@ a:hover {
 
 .nav a:hover {
     background-color: skyblue;
-    text-shadow: 0px 0px 5px greenyellow;
+    text-shadow: 0px 0px 2px greenyellow;
 }
 
 a:active {
@@ -112,8 +112,8 @@ a:active {
 .nav {
     position: relative;
     text-align: center;
-    background-color: rgb(33, 30, 23);
-    /* background: -webkit-linear-gradient(top, rgba(0,0,0,1)0%,rgba(0,0,0,0.5)66%, rgba(0,0,0,0)99%); */
+    /* background-color: rgb(33, 30, 23); */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0.5)66%, rgba(0, 0, 0, 0)99%);
     opacity: 0.8;
     /* 透明度 */
 }
@@ -397,7 +397,7 @@ a:active {
     margin-top: 20px;
     text-align: left;
     border-radius: 5px;
-    background-color: rgb(220, 232, 133);
+    background-color: rgb(197, 249, 136);
     color: green;
     box-shadow: 0px 0px 10px 3px green;
 }
