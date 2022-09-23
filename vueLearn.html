@@ -10,14 +10,27 @@
 </head>
 
 <body>
-    <div class="test">
-        <input type="text" @keyup.enter="prevent">
-        <input type="text" @keyup.enter="prevent">
-        <input type="text" @keyup.enter="prevent">
+    <div class="test" id="root">
+        <h1>hello {{msg}}</h1>
+        <a @click="showInfo" :href="url.toUpperCase()">百度</a>
+        <input type="text" v-model:value="msg">
+        <button @click="showInfo()">111</button>
     </div>
 
 
     <script>
+       const x = new Vue({
+            el:'#root',
+            data:{
+               msg:'java',
+               url:'https://www.baidu.com'
+            },
+            methods: {
+                showInfo (){
+                    alert('222');
+                }
+            }
+        })
     </script>
 </body>
 
