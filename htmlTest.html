@@ -6,55 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./iconfont.css">
-    <link rel="stylesheet" href="style-self.css">
-    <script src="jquery.min.js"></script>
     <style>
-        div {
-            width: 200px;
+        .img1 {
+            background-attachment: fixed;
             height: 200px;
-            border: 10px black solid;
+            background-size: 100%;
+        }
+
+        .box {
+            height: 200px;
         }
     </style>
-    <script>
-        function test() {
-            window.location.href = "my";
-        }
-        function ajaxtest() {
-            var ajax = new XMLHttpRequest();
-            ajax.onreadystatechange = function () {
-                // alert(ajax.readyState);
-                var result = ajax.responseText;
-                // $('div').html() = result;
-                // $('div').html(result);
-                $('div').html("发送成功");
-                console.log(result);
-                console.log(111);
-            }
-            ajax.open("get", 'htmlTest.html');
-            ajax.send(null);
-        }
-    </script>
 </head>
 
 <body>
-    <input id="button" type="button" value="测试ajax" onclick="ajaxtest()">
-    <div>
+    <div class="img1" style="background-image: url(/background/背景1.png);"></div>
+    <div class="box"></div>
+    <div class="box"></div>
 
-    </div>
+    <div class="img1" style="background-image: url(/background/背景1.png);"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="img1" style="background-image: url(/background/背景1.png);"></div>
+    <div class="img1" style="background-image: url(/background/背景1.png);"></div>
 
-    <a href="htmlLearn.html">连接</a>
-    <script>
-
-        $(function () {
-            $('#button').click(function (e) {
-                e.preventDefault();
-                console.log(111);
-            });
-            $('div').html("文本测试");
-        })
-
-    </script>
 </body>
 
 </html>

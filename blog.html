@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+    <link rel="stylesheet" href="留言板页面图标\iconfont.css">
+    <link rel="icon" href="/images/图标.ico" type="image/gif">
+    <!-- jq导入 -->
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        body {
+            font-family: "思源宋体 CN";
+            background-color: rgb(255, 255, 255);
+            font-size: 1.4em;
+            line-height: 1.5;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .bg1 {
+            background-image: url('./background/樱花.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100%;
+            background-attachment: fixed;
+            height: 1400px;
+            text-align: center;
+        }
+
+        .bg2 {
+            background-image: url('./background/背景1.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100%;
+            background-attachment: fixed;
+            height: 600px;
+            text-align: center;
+        }
+
+        .box1 {
+            height: 800px;
+            background-image: url('/background/背景16.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100%;
+            background-attachment: fixed;
+            margin-bottom: 100px;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        ul {
+            margin-top: 5px;
+            list-style: none;
+        }
+
+        .nav {
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1)0%, rgba(255, 255, 255, 0.5)66%, rgba(255, 255, 255, 0)99%);
+            height: 50px;
+        }
+
+        .nav :visited {
+            color: black;
+        }
+
+        .nav a:hover {
+            color: white;
+            text-shadow: 0px 0px 3px yellowgreen;
+        }
+
+        .nav-1 {
+            display: inline-block;
+        }
+
+        .nav-1 li {
+            margin-right: 50px;
+            float: left;
+            font-weight: 500;
+        }
+
+        .content1 {
+            height: 600px;
+            width: 1200px;
+            margin: auto;
+            /* background-color: #fff; */
+        }
+
+        .content1-left {
+            position: absolute;
+            float: left;
+            width: 200px;
+
+        }
+
+        .content1-ul {
+            margin-top: 300px;
+        }
+
+        .content1-ul li {
+            width: 500px;
+            height: 130px;
+            margin: 20px;
+            margin-left: 100px;
+        }
+
+        .content1-ul img {
+            width: 500px;
+            height: 130px;
+            size: 100%;
+        }
+
+        #pic1 {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 600px;
+            height: 200px;
+            size: 100%;
+        }
+
+        .info {
+            width: 1200px;
+            margin: auto;
+        }
+
+        .infomation {
+            margin-left: 200px;
+            text-align: left;
+        }
+
+        .infomation dd,
+        .infomation dt {
+            margin-right: 20px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 鼠标移动特效 -->
+    <span class="js-cursor-container"></span>
+
+    <!-- 音乐模块 -->
+    <iframe id="music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+        src="https://music.163.com/outchain/player?type=2&id=440403809&auto=1&height=66"></iframe>
+
+
+    <div class="bg1">
+
+        <div class="box1">
+
+            <div class="nav">
+                <ul class="nav-1">
+                    <li><a href="index.html">TOP</a></li>
+                    <li><a href="#">STORY</a></li>
+                    <li><a href="#">CHARACTER</a></li>
+                    <li><a href="#">GRAPHIC</a></li>
+                    <li><a href="#">SPECIAL</a></li>
+                    <li><a href="#">PRODUCT</a></li>
+                    <li><a href="#">BGM</a></li>
+                </ul>
+
+            </div>
+
+            <div class="content1">
+                <div class="content1-left">
+                    <!-- <img id="pic1" src="/background/背景1.png" alt=""> -->
+                    <ul class="content1-ul">
+                        <!-- <li><img src="/background/背景12.png" alt=""></li>
+                        <li><img src="/background/背景12.png" alt=""></li>
+                        <li><img src="/background/背景12.png" alt=""></li>
+                        <li><img src="/background/背景12.png" alt=""></li> -->
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="info">
+            <hr>
+            <h2 style="letter-spacing: 10px;">INFORMATION</h2>
+            <dl class="infomation">
+                <dt>20220923</dt>
+                <dd>博客界面开始搭建</dd>
+            </dl>
+        </div>
+
+        <!-- <div class="box"></div> -->
+
+    </div>
+
+
+
+
+    <div class="bg2">
+        <div style="height: 300px;"></div>
+    </div>
+    <div class="bg1"></div>
+
+    <!-- js文件引入 -->
+    <script src="js-self.js"></script>
+    <script src="mousemove.js"></script>
+    <script>
+        $(function () {
+            $('#music').hide();
+            $('.info').hide();
+            $(window).scroll(function () {
+                var scroH = $(document).scrollTop();  //滚动高度
+                var viewH = $(window).height();  //可见高度 
+                var contentH = $(document).height();  //内容高度
+
+                if (scroH < 400) {
+                    $('.info').fadeOut(1000);
+                }
+                if (scroH > 400) {  //距离顶部大于100px时
+                    console.log("距离顶部大于800px时");
+                    // $('.info').show();
+                    $('.info').fadeIn(1000);
+                }
+
+
+            });
+        })
+
+    </script>
+</body>
+
+</html>

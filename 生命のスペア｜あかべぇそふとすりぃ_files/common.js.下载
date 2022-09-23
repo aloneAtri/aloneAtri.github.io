@@ -1,0 +1,265 @@
+$(window).load(function () {
+	$(".loading").fadeOut();
+	efade();
+});
+
+function efade(){
+	$(".entrance").fadeOut();
+	//$(".popup").colorbox({open:true});
+	$("#head .mv").addClass("move");
+	$("#head h1,#head h3,#head ul,#head_yoyaku,#head_movie,#head_trial,#head_master").css({display:"none"});
+		setTimeout(function(){
+			$("#head h1").stop().delay(3500).queue(function(){
+				$(this).css({display:"block"}).addClass("animated slideInUp");
+			});
+			$("#head h3").stop().delay(3800).queue(function(){
+				$(this).css({display:"block"}).addClass("animated slideInUp");
+			});
+			$("#head h2").stop().delay(3000).fadeOut(1000);
+			$("#head_trial").stop().delay(3800).fadeIn(500).queue(function() {
+        	$(this).addClass("animated pulse infinite");
+      		});
+      		$("#head_movie").stop().delay(4000).fadeIn(500);
+			$("#head ul").stop().delay(4000).queue(function(){
+				$(this).css({display:"block"}).addClass("animated slideInUp");
+			});
+	}, 1000); 
+}
+
+var flag = true;
+
+$(document).ready(function(){
+	//colorbox
+   $(".grap").colorbox();
+   $(".inline").colorbox({inline:true, width:870});
+	$(".youtube").colorbox({iframe:true, innerWidth:800, innerHeight:450});
+	$(".ifr").colorbox({iframe:true, innerWidth:890, innerHeight:500});
+   
+   if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+    		$("#g_nav").css({position:"absolute"});
+    		$("#sec3_obj3").css({display:"none"});
+    	} else {
+    	$("#story h2,#story .text,#story .img1,#story .img2").css({opacity:"0"});
+    	$(window).scroll(function(){
+	    	var y = $(this).scrollTop();
+	    	$('#intervalValue').val(y);
+	    	
+		    if (y > 70) {
+	    		$(".nav_bg").stop().animate({"opacity":"1"});
+	    	}else{
+	    		$(".nav_bg").stop().animate({"opacity":"0"});
+	    	}
+			if (y > 900) {
+		    		$("#story h2").stop().animate({
+		    			opacity:1,
+		    			top:"100px"
+		    			});
+					$("#story .text").stop().animate({
+			    		opacity:1,
+			    		right: "28px"
+			    		});
+					$("#story .img1").stop().animate({
+			    		opacity:1,
+			    		left:"0"
+			    		});
+					$("#story .img2").stop().animate({
+			    		opacity:1,
+			    		left:"30px"
+			    		});
+		    	}else{
+		    	    $("#story h2").stop().animate({
+		    			opacity:0,
+		    			top: "0"
+		    			});
+		    		$("#story .text").stop().animate({
+			    		opacity:0,
+			    		right: "-100px"
+			    		});
+					$("#story .img1").stop().animate({
+			    		opacity:0,
+			    		left:"-100px"
+			    		});
+					$("#story .img2").stop().animate({
+			    		opacity:0,
+			    		left:"-100px"
+			    		});
+		    }
+			if (y > 1500) {
+		    		$("#obj1").stop().animate({
+		    			opacity:1,
+		    			right:"0"
+		    			});
+		    	}else{
+		    	    $("#obj1").stop().animate({
+		    			opacity:0,
+		    			right: "-100px"
+		    			});
+		    }
+			if (y > 3200) {
+				if(!flag){
+					flag = true;
+					$("#graphic li").each(function(i) {
+						$(this).css({"transition":"500ms","transition-delay":100*i+"ms",opacity:"1"});
+						});
+						
+		    		$("#sec3_obj1").stop().delay(1000).animate({
+		    			opacity:1,
+		    			right:"200px",
+		    			bottom:"200px"
+		    			});
+		    		$("#sec3_obj2").stop().delay(1050).animate({
+		    			opacity:1,
+		    			right:"300px"
+		    			});
+		    		}
+		    	}else{
+			    	if(flag){
+				    		flag = false;
+				    		$("#graphic li").css({ "transition":"0ms","transition-delay":"0ms",opacity:"0" });
+				    	    $("#sec3_obj1").stop().animate({
+				    			opacity:0,
+				    			right:"0",
+				    			bottom:"300px"
+				    			});
+				    		$("#sec3_obj2").stop().animate({
+				    			opacity:0,
+				    			right:"0"
+				    			});
+			    		}
+		    	}
+		    if(y > 2000 && y < 3100){
+		    	$("#sec3_obj3").show();
+		    	$("#sec3_obj3").css({ top:(-1400+(y-2000)*1.68)+"px" });
+		    }else $("#sec3_obj3").hide();
+		    	
+		    $(".sakura_wp1").css("background-position", "0 " + parseInt( y / 5 ) + "px");
+			$(".sakura_wp2").css("background-position", "0 " + parseInt( y / 50 ) + "px");
+			$(".sakura_wp3").css("background-position", "0 " + parseInt( y / 200 ) + "px");
+	    });
+    }
+	
+	$(".charabox h2").delay(500).addClass("animated fadeInDown");
+	setTimeout(function(){
+	    $(".charabox h4").stop().delay(50).queue(function() {
+     	$(this).addClass("animated fadeInUp").dequeue();
+     	});
+     	$(".charabox h3").stop().delay(100).queue(function() {
+     	$(this).addClass("animated fadeInUp").dequeue();
+     	});
+	}, 500); 
+	
+	$(".sp-box h2").delay(500).css({visibility:"visible"}).addClass("animated fadeInDown");
+	
+	// scroll
+   $('a[href^=#]').click(function() {
+      var speed = 800; // ミリ秒
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+
+function itemSelect(id_and_no){
+	var id = id_and_no.substr(0, id_and_no.indexOf("_"));
+	var no = id_and_no.substr(id_and_no.indexOf("_")+1);
+	// ボタン自体のハイライト
+	var obj = $("#"+id);							// 指定IDのオブジェクトを得る
+	var btn = $("#"+id+" li:nth-child("+no+")");	// 指定IDの指定番目の子オブジェクトを得る
+	obj.children().removeClass("btn_on");			// 指定IDの子全てのonクラス剥ぎ取り
+	obj.children().removeClass("btn_off");			// 指定IDの子全てのにoffクラス貼り付け
+	btn.removeClass("btn_off");						// 自分だけoff剥ぎ取り
+	btn.addClass("btn_on");							// 自分だけon貼り付け
+	// 自分に関連付けられたgroup,noだけ表示を行う
+	var target = btn.attr("group");
+	var group = target.substr(0, target.indexOf("_"));
+	var no = target.substr(target.indexOf("_")+1);
+	$("#"+group).children().hide();
+	$("#"+group+" div:nth-child("+no+")").fadeIn(500);
+}
+
+$(function() {
+	$(".groupStyle").click(function(){
+		var id = $(this).parent().attr("id");
+		var no = $(this).parent().children().index(this);
+		itemSelect(id+"_"+(no+1));
+	});
+	itemSelect("chara-nav_1");
+	itemSelect("sp-nav_3");
+
+});
+
+var curBgm = 1;
+var bgmElement = {};
+
+(function(){
+	if(typeof(bgmElement["bgm01"]) == "undefined")bgmElement["bgm01"] = new Audio("bgm.mp3");
+})();
+
+function bgmPlayById(id, no){
+	bgmStopById("bgm01");
+	var obj = bgmElement[id];
+	obj.play();
+	curBgm = no;
+	$(".bgm_object").removeClass("bgm_off");
+	$(".bgm_object").removeClass("bgm_on");
+	$(".bgm_object").addClass("bgm_on");
+}
+
+function bgmStopById(id){
+	//var obj = document.getElementById(id);
+	var obj = bgmElement[id];
+	obj.pause();
+	obj.currentTime = 0;
+}
+
+function bgmOnOff(){
+
+	if($(".bgm_object").hasClass("bgm_on")){
+		// bgm_offの画像にするためのコード
+		$(".bgm_object").addClass("bgm_off");
+		$(".bgm_object").removeClass("bgm_on");
+		bgmStopById("bgm01");
+	}else{
+		// bgm_onの画像にするためのコード
+		$(".bgm_object").addClass("bgm_on");
+		$(".bgm_object").removeClass("bgm_off");
+		bgmPlayById("bgm01");
+	}
+}
+
+var soundIdList = {};
+
+function addClickEventForSoundClass(){
+	var soundClass = "sound";
+	var objs = document.getElementsByClassName( soundClass );	// クラス名が付いた要素を全て取得
+	// 全要素にクリックイベントを設置
+	for(var i=objs.length-1; i >= 0; i--){
+		objs[i].style.cursor = 'pointer';
+		objs[i].onclick = function(){
+			var file = this.getAttribute("file");	// ファイルパス取得
+			// 未生成なら、<audio id=ファイル名 src=ファイル名>タグを生成
+			if(typeof(soundIdList[file])=="undefined" || soundIdList[file] != 1){
+				var audio = document.createElement("audio");
+				audio.id = file;
+				audio.src = file;
+				document.body.appendChild(audio);
+			}
+			// 全体停止
+			var keys = Object.keys(soundIdList);
+			for(var j=keys.length-1; j >= 0; j--){
+				var elm = document.getElementById(keys[j]);
+				if(elm != null){
+					elm.pause();
+					elm.currentTime = 0;
+				}
+			}
+			// 再生
+			document.getElementById(file).play();
+			soundIdList[file] = 1;
+		}
+	}
+};
+
+window.onload =addClickEventForSoundClass;

@@ -75,7 +75,6 @@ $(function () {
     // document.addEventListener('keyup', function (e) {
     //     console.log(e.key);
     // })
-    console.log($('#nav ul').children().eq(0));
 
     //主题1
     $('#nav1').children().eq(0).click(
@@ -85,6 +84,7 @@ $(function () {
             $('.border').css('background-color', 'rgba(33, 30, 23, 0.4)');
             // $('.nav ul').css('background-color', 'pink');
             $('.nav a').css('color', 'white');
+            // $('#nav1 a').css('background', 'rgb(33, 30, 23)');
             $('.box1').show();
         });
 
@@ -95,13 +95,6 @@ $(function () {
             $('.border').css('background-color', 'rgba(255, 255, 255, 0.4)');
             $('.nav a').css('color', 'black');
             // $('.nav a').css('font-weight', 'bolder');
-            $('.nav a').hover(function () {
-                // over
-                $('.nav a').css('background-color', 'rgba(0,0,0,0)');
-            }, function () {
-                // out
-            }
-            );
             $('.box1').eq(1).hide();
             $('.box1').eq(2).hide();
         });
