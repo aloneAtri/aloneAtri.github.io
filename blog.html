@@ -54,7 +54,7 @@
             background-position: center top;
             background-size: 100%;
             background-attachment: fixed;
-            margin-bottom: 100px;
+            margin-bottom: -200px;
         }
 
         a:link {
@@ -134,6 +134,7 @@
         .info {
             width: 1200px;
             margin: auto;
+            margin-bottom: 100px;
         }
 
         .infomation {
@@ -203,9 +204,15 @@
             </dl>
         </div>
 
-        <!-- <div class="box"></div> -->
 
+        <!-- <div class="box"></div> -->
+        <div id="story" style="width: 650px;height: 100px;margin: auto;">
+            <img src="./background/story.png" alt="">
+        </div>
     </div>
+
+
+
 
 
 
@@ -223,19 +230,28 @@
     <script>
         $(function () {
             $('#music').hide();
+            $('#story').hide();
             $('.info').hide();
             $(window).scroll(function () {
                 var scroH = $(document).scrollTop();  //滚动高度
                 var viewH = $(window).height();  //可见高度 
                 var contentH = $(document).height();  //内容高度
                 var div = $('.info');
-                if (scroH < 400) {
+                if (scroH < 100) {
                     $('.info').fadeOut(1000);
                 }
-                if (scroH > 400) {  //距离顶部大于100px时
+                if (scroH > 100) {  //距离顶部大于100px时
                     console.log("距离顶部大于800px时");
                     // $('.info').show();
                     div.fadeIn(1000);
+                }
+                if (scroH < 250) {
+                    $('#story').fadeOut(2000);
+                }
+                if (scroH > 250) {  //距离顶部大于100px时
+                    console.log("距离顶部大于800px时");
+                    // $('.info').show();
+                    $('#story').fadeIn(2000);
                 }
 
 
