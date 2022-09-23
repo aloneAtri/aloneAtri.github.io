@@ -28,7 +28,7 @@
         }
 
         .bg1 {
-            background-image: url('./background/樱花.png');
+            background-image: url('./background/sakura.png');
             background-repeat: no-repeat;
             background-position: center top;
             background-size: 100%;
@@ -124,8 +124,8 @@
 
         #pic1 {
             position: absolute;
-            top: 100px;
-            left: 100px;
+            top: 200px;
+            left: 20px;
             width: 600px;
             height: 200px;
             size: 100%;
@@ -159,7 +159,6 @@
 
 
     <div class="bg1">
-
         <div class="box1">
 
             <div class="nav">
@@ -177,7 +176,7 @@
 
             <div class="content1">
                 <div class="content1-left">
-                    <!-- <img id="pic1" src="/background/背景1.png" alt=""> -->
+                    <img id="pic1" src="/background/myblog.png" alt="">
                     <ul class="content1-ul">
                         <!-- <li><img src="/background/背景12.png" alt=""></li>
                         <li><img src="/background/背景12.png" alt=""></li>
@@ -215,6 +214,8 @@
     <!-- js文件引入 -->
     <script src="js-self.js"></script>
     <script src="mousemove.js"></script>
+    <!-- <script src="sakura.js"></script> -->
+
     <script>
         $(function () {
             $('#music').hide();
@@ -223,14 +224,16 @@
                 var scroH = $(document).scrollTop();  //滚动高度
                 var viewH = $(window).height();  //可见高度 
                 var contentH = $(document).height();  //内容高度
-
+                var div = $('.info');
                 if (scroH < 400) {
                     $('.info').fadeOut(1000);
                 }
                 if (scroH > 400) {  //距离顶部大于100px时
                     console.log("距离顶部大于800px时");
                     // $('.info').show();
-                    $('.info').fadeIn(1000);
+
+                    // div.animate({ left: '100px' }, "slow");
+                    div.fadeIn(1000);
                 }
 
 
