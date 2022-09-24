@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-
-<body>
-    <div class="test" id="root">
-        <h1>hello {{msg}}</h1>
-        <a @click="showInfo" :href="url.toUpperCase()">百度</a>
-        <input type="text" v-model:value="msg">
-        <button @click="showInfo()">111</button>
-    </div>
-
-
-    <script>
-       const x = new Vue({
-            el:'#root',
-            data:{
-               msg:'java',
-               url:'https://www.baidu.com'
-            },
-            methods: {
-                showInfo (){
-                    alert('222');
-                }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <style>
+            .red {
+                color: red;
             }
-        })
-    </script>
-</body>
+
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="test" id="root">
+            <h1>hello {{msg}}</h1>
+            <a @click="showInfo" :href="url.toUpperCase()">百度</a>
+            <input type="text" v-model="username">
+            <h4>{{username}}</h4>
+            <button @click="showInfo()">111</button>
+            <p :class="classObj">1111</p>
+            <p :class="classObj">1111</p>
+            <p :class="classObj">1111</p>
+            <p :class="classObj">1111</p>
+            <p :class="classObj">1111</p>
+            <p :class="classObj">1111</p>
+            <p :class="classObj">1111</p>
+        </div>
+
+
+        <script>
+            const x = new Vue({
+                el: '#root',
+                data: {
+                    username: '',
+                    msg: 'java',
+                    url: 'https://www.baidu.com',
+                    styleObj: {
+                        fontSize: '60px',
+                        // color: 'red',
+                        display: 'none'
+                    },
+                    classObj: {
+                        red: false,
+                        hide: true
+                    }
+                },
+                methods: {
+                    showInfo() {
+                        if (this.classObj.hide == true) {
+                            this.classObj.red = true
+                            this.classObj.hide = false
+                        } else {
+                            this.classObj.red = false
+                            this.classObj.hide = true
+                        }
+                    }
+                },
+            })
+        </script>
+    </body>
 
 </html>
