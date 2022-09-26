@@ -5,27 +5,40 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <title>Document</title>
         <style>
-            .img1 {
-                background-attachment: fixed;
-                height: 200px;
-                background-size: 100%;
-            }
-
-            .box {
-                height: 200px;
+            div {
+                /* width: 00px; */
+                height: 2000px;
+                /* border: 2px black solid;
+                background-position-y: 50px; */
+                background-image: url(/background/sakura_wp1.png);
+                background-repeat: repeat;
+                /* background-position-y: -50px; */
+                background-size: 30%;
+                background-attachment: scroll;
             }
         </style>
     </head>
 
     <body>
 
-        <div style="height: 800px;background-image: url(/background/背景1.png);background-attachment: scroll;"></div>
-        <!-- <div style="height: 800px;background-image: url(/background/背景1.png);background-attachment: scroll;"></div>
-        <div style="height: 800px;background-image: url(/background/背景1.png);background-attachment: scroll;"></div>
-        <div style="height: 800px;background-image: url(/background/背景1.png);background-attachment: scroll;"></div> -->
-        <!-- <script src="sakura.js"></script> -->
+        <div id=#root>
+        </div>
+        <script>
+            new Vue({
+                el: '#root',
+                data: {
+
+                },
+                methods: {
+                    show() {
+
+                    }
+                }
+            })
+        </script>
     </body>
 
 </html>

@@ -173,10 +173,13 @@
             <iframe id="music" v-show="false" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330
                 height=86 src="https://music.163.com/outchain/player?type=2&id=440403794&auto=1&height=66"></iframe>
 
-
+            <!-- 背景图片1 -->
             <div class="bg1">
+
+                <!-- 第一个大盒子 -->
                 <div class="box1">
 
+                    <!-- 导航栏 -->
                     <div class="nav">
                         <ul class="nav-1">
                             <li><a href="index.html">TOP</a></li>
@@ -185,15 +188,23 @@
                             <li><a href="#">GRAPHIC</a></li>
                             <li><a href="#">SPECIAL</a></li>
                             <li><a href="#">PRODUCT</a></li>
-                            <li><a href="#">BGM</a></li>
+                            <li><a href="#">
+                                    <div
+                                        style="height: 32px;width: 150px;background-image: url(/background/off_bgm.png);background-repeat: no-repeat;margin-top: 1px;">
+                                    </div>
+                                </a></li>
                         </ul>
 
                     </div>
 
+                    <!-- 第一个大盒子中的内容 -->
                     <div class="content1">
                         <div class="content1-left">
                             <img id="pic1" src="/background/myblog.png" alt="">
+
+                            <!-- 可选图片排列 -->
                             <ul class="content1-ul">
+
                                 <!-- <li><img src="/background/背景12.png" alt=""></li>
                         <li><img src="/background/背景12.png" alt=""></li>
                         <li><img src="/background/背景12.png" alt=""></li>
@@ -206,6 +217,7 @@
 
                 </div>
 
+                <!-- 公告栏 -->
                 <div class="info" :class="classObj" v-show="false">
                     <!-- <hr> -->
                     <!-- <h2 style="letter-spacing: 10px;">INFORMATION</h2> -->
@@ -222,6 +234,8 @@
 
 
                 <!-- <div class="box"></div> -->
+
+                <!-- 故事部分 -->
                 <div id="story" v-show="false" style="width: 650px;height: 100px;margin: auto;">
                     <img src="./background/story.png" alt="">
                 </div>
@@ -230,14 +244,13 @@
 
 
 
-
-
-
-
+            <!-- 过度图片 -->
             <div class="bg2" style="height: 300px;">
             </div>
 
+            <!-- 第二张长背景 -->
             <div class="bg1" style="position: relative;height: 2500px;">
+
                 <div id="character" v-show="false"
                     style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
                     <img src="./background/character.png" alt="">
@@ -252,14 +265,8 @@
                 <div class="footer"
                     style="background-image: url(/background/space03.jpg) ;height: 200px;position: relative;top: 1300px;background-attachment: fixed;">
                 </div>
+
             </div>
-
-
-            <!-- <div class="bg1" style="height: 1000px;position: relative;"> -->
-
-
-
-            <!-- </div> -->
 
 
             <!-- 页脚部分 -->

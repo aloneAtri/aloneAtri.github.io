@@ -103,6 +103,7 @@ a:hover {
 .nav a:hover {
     background-color: skyblue;
     text-shadow: 0px 0px 2px greenyellow;
+    /* opacity: 0.8; */
 }
 
 a:active {
