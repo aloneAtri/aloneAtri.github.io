@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
     <head>
         <meta charset="UTF-8">
@@ -22,6 +22,7 @@
 
             body {
                 font-family: "思源宋体 CN";
+                font-weight: 400;
                 background-color: rgb(255, 255, 255);
                 font-size: 1.4em;
                 line-height: 1.5;
@@ -35,7 +36,7 @@
                 background-image: url('./background/sakura.png');
                 background-repeat: no-repeat;
                 background-position: center top;
-                background-size: 100%;
+                background-size: cover;
                 background-attachment: fixed;
                 height: 1500px;
                 text-align: center;
@@ -45,7 +46,7 @@
                 background-image: url('./background/背景21.png');
                 background-repeat: no-repeat;
                 background-position: center top;
-                background-size: 100%;
+                background-size: cover;
                 background-attachment: fixed;
                 height: 600px;
                 text-align: center;
@@ -114,6 +115,7 @@
             }
 
             .content1-ul li {
+                position: relative;
                 width: 500px;
                 height: 130px;
                 margin: 20px;
@@ -142,7 +144,7 @@
             }
 
             .infomation {
-                margin-left: 200px;
+                margin-left: 150px;
                 text-align: left;
             }
 
@@ -152,12 +154,11 @@
                 float: left;
             }
 
-            .hide {
-                display: none;
-            }
-
-            .show {
-                display: block;
+            .footer {
+                height: 130px;
+                background-image: url(./background/footer_wp.jpg);
+                background-size: 100%;
+                background-repeat: no-repeat;
             }
         </style>
     </head>
@@ -206,9 +207,10 @@
                 </div>
 
                 <div class="info" :class="classObj">
-                    <hr>
-                    <h2 style="letter-spacing: 10px;">INFORMATION</h2>
-                    <dl class="infomation">
+                    <!-- <hr> -->
+                    <!-- <h2 style="letter-spacing: 10px;">INFORMATION</h2> -->
+                    <img src="/background/head_info.png" alt="">
+                    <dl class="infomation" style="font-family: '楷体';font-size: 25px;height: 150px;overflow: scroll;">
                         <dt><strong>20220923</strong></dt>
                         <dd>博客界面开始搭建。</dd>
                         <dt><strong>20220923</strong></dt>
@@ -223,6 +225,7 @@
                 <div id="story" v-show="false" style="width: 650px;height: 100px;margin: auto;">
                     <img src="./background/story.png" alt="">
                 </div>
+
             </div>
 
 
@@ -234,19 +237,34 @@
             <div class="bg2" style="height: 300px;">
             </div>
 
-            <div class="bg1" style="position: relative;">
+            <div class="bg1" style="position: relative;height: 2500px;">
                 <div id="character" v-show="false"
-                    style="width: 650px;height: 100px;top: 100px;margin: auto;position: relative;">
+                    style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
                     <img src="./background/character.png" alt="">
                 </div>
 
                 <div class="bg2"
                     style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;top: 600px;">
-                    <img style="width: 450px;height: 636px;position: relative;top: -335px;left: 400px;"
+                    <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1000px;"
                         src="./background/白花1.png" alt="">
+                </div>
+
+                <div class="footer"
+                    style="background-image: url(/background/space03.jpg) ;height: 200px;position: relative;top: 1250px;">
                 </div>
             </div>
 
+
+            <!-- <div class="bg1" style="height: 1000px;position: relative;"> -->
+
+
+
+            <!-- </div> -->
+
+
+            <!-- 页脚部分 -->
+
+            <div class="footer"></div>
 
         </div>
         <!-- js文件引入 -->
@@ -255,6 +273,7 @@
         <!-- <script src="sakura.js"></script> -->
 
         <script>
+            Vue.config.productionTip = false;
             const vm = new Vue({
                 el: '#main',
                 data: {

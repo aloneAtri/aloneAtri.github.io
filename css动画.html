@@ -6,12 +6,26 @@
         <title>菜鸟教程(runoob.com)</title>
         <style>
             div {
+                position: relative;
                 width: 100px;
                 height: 100px;
-                background: red;
-                animation: myfirst 5s 1 forwards;
+                border: 2px black solid;
+                /* background: red; */
+                /* animation: myfirst 5s 1 forwards; */
                 /* animation-name: myfirst;
                 animation-duration: 2s; */
+            }
+
+            div::after {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 50px;
+                left: 40%;
+                border-right: 2px solid black;
+                border-bottom: 2px solid black;
+                transform: rotate(45deg);
             }
 
             @keyframes myfirst {
@@ -20,17 +34,6 @@
                     opacity: 0;
                 }
 
-                /* 25% {
-                    transform: translate(1000px, 0px);
-                }
-
-                50% {
-                    transform: translate(1000px, 500px);
-                }
-
-                75% {
-                    transform: translate(0px, 500px);
-                } */
 
                 100% {
                     transform: translate(1000px, 0px);
@@ -42,10 +45,9 @@
 
     <body>
 
-        <p><b>注意:</b> 该实例在 Internet Explorer 9 及更早 IE 版本是无效的。</p>
+        <div>
 
-        <div></div>
-
+        </div>
     </body>
 
 </html>
