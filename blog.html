@@ -38,7 +38,7 @@
                 background-position: center top;
                 background-size: cover;
                 background-attachment: fixed;
-                height: 1500px;
+                height: 700px;
                 text-align: center;
             }
 
@@ -174,7 +174,7 @@
                 height=86 src="https://music.163.com/outchain/player?type=2&id=440403794&auto=1&height=66"></iframe>
 
             <!-- 背景图片1 -->
-            <div class="bg1">
+            <div class="bg1" style="height: 1500px;">
 
                 <!-- 第一个大盒子 -->
                 <div class="box1">
@@ -245,32 +245,35 @@
 
 
             <!-- 过度图片 -->
-            <div class="bg2" style="height: 300px;">
+            <div class="bg2" style="height: 200px;">
             </div>
 
             <!-- 第二张长背景 -->
-            <div class="bg1" style="position: relative;height: 2500px;">
+            <div class="bg1" style="position: relative;">
 
                 <div id="character" v-show="false"
                     style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
                     <img src="./background/character.png" alt="">
                 </div>
 
-                <div class="bg2"
-                    style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;top: 600px;">
-                    <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1000px;"
-                        src="./background/白花1.png" alt="">
-                </div>
-
-                <div class="footer"
-                    style="background-image: url(/background/space03.jpg) ;height: 200px;position: relative;top: 1300px;background-attachment: fixed;">
-                </div>
 
             </div>
 
+            <div class="bg2"
+                style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;">
 
+                <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1000px;"
+                    src="./background/白花1.png" alt="">
+            </div>
+
+            <div class="bg1"></div>
+
+            <div class="bg2"
+                style="background-image: url(/background/space03.jpg) ;background-attachment: fixed;height: 200px;">
+            </div>
+
+            <div class="bg1"></div>
             <!-- 页脚部分 -->
-
             <div class="footer"></div>
 
         </div>
