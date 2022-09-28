@@ -26,6 +26,7 @@
                 background-color: rgb(255, 255, 255);
                 font-size: 1.4em;
                 line-height: 1.5;
+                cursor: url(./images/mouse1.png), auto;
             }
 
             ::-webkit-scrollbar {
@@ -205,7 +206,7 @@
                     <!-- 第一个大盒子中的内容 -->
                     <div class="content1">
                         <div class="content1-left">
-                            <img id="pic1" src="/background/myblog.png" alt="">
+                            <img v-show="false" id="pic1" src="/background/myblog.png" alt="">
 
                             <!-- 可选图片排列 -->
                             <ul class="content1-ul">
@@ -242,7 +243,7 @@
 
                 <!-- 故事部分 -->
                 <div id="story" v-show="false" style="width: 650px;height: 100px;margin: auto;position: relative;">
-                    <img src="./background/story.png" alt="">
+                    <img src="./background/story.png" alt="" style="position: absolute;left: 0px;top: -50px;">
                 </div>
 
             </div>
@@ -312,7 +313,7 @@
                 // $('#music').hide();
                 // $('#story').hide();
                 // $('.info').hide();
-
+                $('#pic1').fadeIn(2000);
                 $(window).scroll(function () {
                     var x = 0;
                     var scroH = $(document).scrollTop();  //滚动高度
