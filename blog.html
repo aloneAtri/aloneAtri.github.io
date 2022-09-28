@@ -160,6 +160,11 @@
                 background-size: 100%;
                 background-repeat: no-repeat;
             }
+
+            p {
+                border-bottom: 1px dotted black;
+                border-top: 1px dotted black;
+            }
         </style>
     </head>
 
@@ -236,7 +241,7 @@
                 <!-- <div class="box"></div> -->
 
                 <!-- 故事部分 -->
-                <div id="story" v-show="false" style="width: 650px;height: 100px;margin: auto;">
+                <div id="story" v-show="false" style="width: 650px;height: 100px;margin: auto;position: relative;">
                     <img src="./background/story.png" alt="">
                 </div>
 
@@ -282,6 +287,7 @@
                 <div class="footer"></div>
             </footer>
 
+
         </div>
         <!-- js文件引入 -->
         <script src="js-self.js"></script>
@@ -306,13 +312,17 @@
                 // $('#music').hide();
                 // $('#story').hide();
                 // $('.info').hide();
+
                 $(window).scroll(function () {
+                    var x = 0;
                     var scroH = $(document).scrollTop();  //滚动高度
                     var viewH = $(window).height();  //可见高度
                     var contentH = $(document).height();  //内容高度
+                    console.log(scroH);
+                    $('.bg1').css("background-position-y", scroH / 20 - 200);
 
                     if (scroH < 100) {
-                        $('.info').fadeOut(1000);
+                        $('.info').fadeOut(2000);
                     }
                     if (scroH > 100) {  //距离顶部大于100px时
                         $('.info').fadeIn(1000)
@@ -323,11 +333,11 @@
                     if (scroH < 250) {
                         $('#story').fadeOut(2000);
                     }
-                    if (scroH > 1200) {  //距离顶部大于100px时
+                    if (scroH > 1300) {  //距离顶部大于100px时
                         // $('.info').show();
                         $('#character').fadeIn(2000);
                         $('#atri-img1').fadeIn(2000);
-                    } if (scroH < 1200) {
+                    } if (scroH < 1300) {
                         $('#character').fadeOut(2000);
                         $('#atri-img1').fadeOut(2000);
                     }
