@@ -244,6 +244,8 @@
                 <!-- 故事部分 -->
                 <div id="story" v-show="false" style="width: 650px;height: 100px;margin: auto;position: relative;">
                     <img src="./background/story.png" alt="" style="position: absolute;left: 0px;top: -50px;">
+                    <img src="/background/story-text.png" alt=""
+                        style="width: 500px;height: 500px;position: absolute;top: 50px;;">
                 </div>
 
             </div>
@@ -268,10 +270,13 @@
             <div class="bg2"
                 style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;">
 
+                <img v-show="false" id="atri-logo" src="/background/logo.svg" alt=""
+                    style="position: absolute;left: 900px;top:-550px;width: 400px;height: 150px;">
+
                 <img id="atri-img1" v-show="false" src="/background/atri.png" alt=""
                     style="width: 900px;height: 810px;position: absolute;left: 300px;size: 100%;top: -600px;">
 
-                <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1000px;"
+                <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1050px;"
                     src="./background/白花1.png" alt="">
 
             </div>
@@ -338,9 +343,11 @@
                         // $('.info').show();
                         $('#character').fadeIn(2000);
                         $('#atri-img1').fadeIn(2000);
+                        $('#atri-logo').fadeIn(2000);
                     } if (scroH < 1300) {
                         $('#character').fadeOut(2000);
                         $('#atri-img1').fadeOut(2000);
+                        $('#atri-logo').fadeOut(2000);
                     }
 
 
