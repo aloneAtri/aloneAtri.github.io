@@ -262,7 +262,7 @@
             <div class="bg2"
                 style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;">
 
-                <img src="/background/atri.png" alt=""
+                <img id="atri-img1" v-show="false" src="/background/atri.png" alt=""
                     style="width: 900px;height: 810px;position: absolute;left: 300px;size: 100%;top: -600px;">
 
                 <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1000px;"
@@ -278,7 +278,9 @@
 
             <div class="bg1"></div>
             <!-- 页脚部分 -->
-            <div class="footer"></div>
+            <footer>
+                <div class="footer"></div>
+            </footer>
 
         </div>
         <!-- js文件引入 -->
@@ -308,17 +310,14 @@
                     var scroH = $(document).scrollTop();  //滚动高度
                     var viewH = $(window).height();  //可见高度
                     var contentH = $(document).height();  //内容高度
-                    var div = $('.info');
 
                     if (scroH < 100) {
                         $('.info').fadeOut(1000);
                     }
                     if (scroH > 100) {  //距离顶部大于100px时
-                        // $('.info').show();
-                        div.fadeIn(1000);
+                        $('.info').fadeIn(1000)
                     }
                     if (scroH > 250) {  //距离顶部大于100px时
-                        // $('.info').show();
                         $('#story').fadeIn(2000);
                     }
                     if (scroH < 250) {
@@ -327,7 +326,12 @@
                     if (scroH > 1200) {  //距离顶部大于100px时
                         // $('.info').show();
                         $('#character').fadeIn(2000);
+                        $('#atri-img1').fadeIn(2000);
+                    } if (scroH < 1200) {
+                        $('#character').fadeOut(2000);
+                        $('#atri-img1').fadeOut(2000);
                     }
+
 
                 });
             })
