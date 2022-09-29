@@ -177,7 +177,7 @@
 
             <!-- 音乐模块 -->
             <iframe id="music" v-show="false" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330
-                height=86 src="https://music.163.com/outchain/player?type=2&id=440403794&auto=1&height=66"></iframe>
+                height=86 src="https://music.163.com/outchain/player?type=2&id=29129656&auto=1&height=66"></iframe>
 
             <!-- 背景图片1 -->
             <div class="bg1" style="height: 1500px;">
@@ -245,7 +245,7 @@
                 <div id="story" v-show="false" style="width: 650px;height: 100px;margin: auto;position: relative;">
                     <img src="./background/story.png" alt="" style="position: absolute;left: 0px;top: -50px;">
                     <img src="/background/story-text.png" alt=""
-                        style="width: 500px;height: 500px;position: absolute;top: 50px;;">
+                        style="width: 500px;height: 500px;position: absolute;top: 50px;right: -100px;">
                 </div>
 
             </div>
@@ -257,7 +257,8 @@
             </div>
 
             <!-- 第二张长背景 -->
-            <div class="bg1" style="position: relative;">
+            <div class="bg1"
+                style="position: relative;background-image: url(/background/atri-bg.png);background-size: 100%;">
 
                 <div id="character" v-show="false"
                     style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
@@ -271,10 +272,22 @@
                 style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;">
 
                 <img v-show="false" id="atri-logo" src="/background/logo.svg" alt=""
-                    style="position: absolute;left: 900px;top:-550px;width: 400px;height: 150px;">
+                    style="position: absolute;left: 50px;top:-200px;width: 400px;height: 150px;">
 
                 <img id="atri-img1" v-show="false" src="/background/atri.png" alt=""
                     style="width: 900px;height: 810px;position: absolute;left: 300px;size: 100%;top: -600px;">
+
+
+                <img v-show="false" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
+                    style="position: absolute;width: 200px;height: 400px;top: -450px;left: 850px;">
+                <img v-show="false" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
+                    style="position: absolute;width: 200px;height: 400px;top: -450px;left: 400px;">
+                <img v-show="false" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
+                    style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;">
+                <img v-show="false" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
+                    style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;">
+
+
 
                 <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1090px;"
                     src="./background/白花1.png" alt="">
@@ -320,11 +333,12 @@
                 // $('.info').hide();
                 $('#pic1').fadeIn(2000);
                 $(window).scroll(function () {
-                    var x = 0;
                     var scroH = $(document).scrollTop();  //滚动高度
                     var viewH = $(window).height();  //可见高度
                     var contentH = $(document).height();  //内容高度
-                    console.log(scroH);
+
+                    console.log($('#atri-txt').children().eq(0));;
+
                     $('.bg1').css("background-position-y", scroH / 20 - 200);
 
                     if (scroH < 100) {
@@ -342,12 +356,24 @@
                     if (scroH > 1300) {  //距离顶部大于100px时
                         // $('.info').show();
                         $('#character').fadeIn(2000);
-                        $('#atri-img1').fadeIn(2000);
+                        $('#atri-img1').fadeIn(5000);
                         $('#atri-logo').fadeIn(2000);
+                        // $('#atri-txt').fadeIn(2000)
+
+                        $('#atri-txt1').fadeIn(2000);
+                        $('#atri-txt2').fadeIn(2000);
+                        $('#atri-txt3').fadeIn(4000);
+                        $('#atri-txt4').fadeIn(4000);
+
                     } if (scroH < 1300) {
                         $('#character').fadeOut(2000);
                         $('#atri-img1').fadeOut(2000);
                         $('#atri-logo').fadeOut(2000);
+
+                        $('#atri-txt1').fadeOut(2000);
+                        $('#atri-txt2').fadeOut(2000);
+                        $('#atri-txt3').fadeOut(2000);
+                        $('#atri-txt4').fadeOut(2000);
                     }
 
 
