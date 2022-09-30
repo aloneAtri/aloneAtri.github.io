@@ -189,8 +189,8 @@
                     <div class="nav">
                         <ul class="nav-1">
                             <li><a href="index.html">TOP</a></li>
-                            <li><a href="#">STORY</a></li>
-                            <li><a href="#">CHARACTER</a></li>
+                            <li><a href="#info">STORY</a></li>
+                            <li><a href="#transit">CHARACTER</a></li>
                             <li><a href="#">GRAPHIC</a></li>
                             <li><a href="#">SPECIAL</a></li>
                             <li><a href="#">PRODUCT</a></li>
@@ -224,7 +224,7 @@
                 </div>
 
                 <!-- 公告栏 -->
-                <div class="info" :class="classObj" v-show="false">
+                <div id="info" class="info" :class="classObj" v-show="false">
                     <!-- <hr> -->
                     <!-- <h2 style="letter-spacing: 10px;">INFORMATION</h2> -->
                     <img src="/background/head_info.png" alt="">
@@ -253,7 +253,7 @@
 
 
             <!-- 过度图片 -->
-            <div class="bg2" style="height: 300px;">
+            <div id="transit" class="bg2" style="height: 300px;">
             </div>
 
             <!-- 第二张长背景 -->
@@ -365,16 +365,17 @@
                         $('#atri-txt3').fadeIn(4000);
                         $('#atri-txt4').fadeIn(4000);
 
-                    } if (scroH < 1300) {
-                        $('#character').fadeOut(2000);
-                        $('#atri-img1').fadeOut(2000);
-                        $('#atri-logo').fadeOut(2000);
-
-                        $('#atri-txt1').fadeOut(2000);
-                        $('#atri-txt2').fadeOut(2000);
-                        $('#atri-txt3').fadeOut(2000);
-                        $('#atri-txt4').fadeOut(2000);
                     }
+                    // if (scroH < 1300) {
+                    //     $('#character').fadeOut(2000);
+                    //     $('#atri-img1').fadeOut(2000);
+                    //     $('#atri-logo').fadeOut(2000);
+
+                    //     $('#atri-txt1').fadeOut(2000);
+                    //     $('#atri-txt2').fadeOut(2000);
+                    //     $('#atri-txt3').fadeOut(2000);
+                    //     $('#atri-txt4').fadeOut(2000);
+                    // }
 
 
                 });
