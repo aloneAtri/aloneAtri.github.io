@@ -12,6 +12,11 @@
         <script src="jquery.min.js"></script>
         <!-- vue导入 -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- 网页自适应 -->
+        <meta name="viewport"
+            content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
+
 
 
         <style>
@@ -261,6 +266,7 @@
             <div class="bg1"
                 style="position: relative;background-image: url(/background/atri-bg.png);background-size: 100%;">
 
+                <!-- 角色文本 -->
                 <div id="character" v-show="false"
                     style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
                     <img src="./background/character.png" alt="">
@@ -269,16 +275,20 @@
 
             </div>
 
+            <!-- 樱花树和人物定位 -->
             <div class="bg2"
                 style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;">
 
+                <!-- atri-logo -->
                 <img v-show="false" id="atri-logo" src="/background/logo.svg" alt=""
                     style="position: absolute;left: 50px;top:-200px;width: 400px;height: 150px;">
 
+                <!-- 人物 -->
                 <img id="atri-img1" v-show="false" src="/background/atri.png" alt=""
                     style="width: 900px;height: 810px;position: absolute;left: 300px;size: 100%;top: -600px;">
 
 
+                <!-- 文字部分 -->
                 <img v-show="false" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
                     style="position: absolute;width: 200px;height: 400px;top: -450px;left: 850px;">
                 <img v-show="false" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
@@ -295,15 +305,20 @@
 
             </div>
 
+            <!-- 樱花背景 -->
             <div class="bg1"></div>
 
+            <!-- 蓝天背景 -->
             <div class="bg2"
                 style="background-image: url(/background/space03.jpg) ;background-attachment: fixed;height: 200px;">
             </div>
 
+            <!-- 樱花背景 -->
             <div class="bg1"></div>
+
             <!-- 页脚部分 -->
             <footer>
+                <!-- 花圈 -->
                 <div class="footer"></div>
             </footer>
 
@@ -328,6 +343,24 @@
             })
 
             $(function () {
+                //禁止用户缩放页面
+                document.addEventListener('mousewheel', function (e) {
+                    e = e || window.event;
+                    if ((e.wheelDelta && event.ctrlKey) || e.detail) {
+                        event.preventDefault();
+                    }
+                }, {
+                    capture: false,
+                    passive: false
+                });
+                document.addEventListener('keydown', function (event) {
+                    if ((event.ctrlKey === true || event.metaKey === true)
+                        && (event.keyCode === 61 || event.keyCode === 107
+                            || event.keyCode === 173 || event.keyCode === 109
+                            || event.keyCode === 187 || event.keyCode === 189)) {
+                        event.preventDefault();
+                    }
+                }, false);
 
                 // $('#music').hide();
                 // $('#story').hide();
@@ -337,8 +370,6 @@
                     var scroH = $(document).scrollTop();  //滚动高度
                     var viewH = $(window).height();  //可见高度
                     var contentH = $(document).height();  //内容高度
-
-                    console.log($('#atri-txt').children().eq(0));;
 
                     $('.bg1').css("background-position-y", scroH / 20 - 200);
 
