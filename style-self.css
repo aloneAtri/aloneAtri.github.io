@@ -113,9 +113,9 @@ a:active {
 .nav {
     position: relative;
     text-align: center;
-    /* background-color: rgb(33, 30, 23); */
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0.5)66%, rgba(0, 0, 0, 0)99%);
-    /* opacity: 0.8; */
+    background-color: rgb(33, 30, 23);
+    /* background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0.5)66%, rgba(0, 0, 0, 0)99%); */
+    opacity: 0.8;
     /* 透明度 */
 }
 

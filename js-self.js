@@ -79,8 +79,9 @@ $(function () {
     //主题1
     $('#nav1').children().eq(0).click(
         function () {
-            $('.nav').css('background', '-webkit-linear-gradient(top, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0.5)66%, rgba(0, 0, 0, 0)99%)');
+            // $('.nav').css('background', '-webkit-linear-gradient(top, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0.5)66%, rgba(0, 0, 0, 0)99%)');
             // $('.nav').css('background-color', 'rgb(33, 30, 23)');
+            $('.nav').css('background-color', 'rgba(0,0,0,0.8');
             $('.border').css('background-color', 'rgba(33, 30, 23, 0.4)');
             // $('.nav ul').css('background-color', 'pink');
             $('.nav a').css('color', 'white');
@@ -91,7 +92,8 @@ $(function () {
     //主题2
     $('#nav1').children().eq(1).click(
         function () {
-            $('.nav').css('background', '-webkit-linear-gradient(top, rgba(255,255,255,1)0%,rgba(255,255,255,0.5)66%, rgba(255,255,255,0)99%');
+            // $('.nav').css('background', '-webkit-linear-gradient(top, rgba(255,255,255,1)0%,rgba(255,255,255,0.5)66%, rgba(255,255,255,0)99%');
+            $('.nav').css('background-color', 'rgba(255,255,255,0.8');
             $('.border').css('background-color', 'rgba(255, 255, 255, 0.4)');
             $('.nav a').css('color', 'black');
             // $('.nav a').css('font-weight', 'bolder');
