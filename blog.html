@@ -33,7 +33,7 @@
                 height=86 src="https://music.163.com/outchain/player?type=2&id=29129656&auto=1&height=66"></iframe>
 
             <!-- 背景图片1 -->
-            <div class="bg1" style="height: 1500px;">
+            <div class="bg1" :style="{backgroundPositionY: this.scroH / 20 - 200 + 'px'}" style="height: 1500px;">
 
                 <!-- 第一个大盒子 -->
                 <div class="box1">
@@ -113,7 +113,7 @@
             </div>
 
             <!-- 第二张长背景 -->
-            <div class="bg1"
+            <div class="bg1" :style="{backgroundPositionY: this.scroH / 20 - 200 + 'px'}"
                 style="position: relative;background-image: url(/background/atri-bg.png);background-size: 100%;">
 
                 <!-- 角色文本 -->
@@ -157,7 +157,7 @@
             </div>
 
             <!-- 樱花背景 -->
-            <div class="bg1"></div>
+            <div class="bg1" :style="{backgroundPositionY: this.scroH / 20 - 200 + 'px'}"></div>
 
             <!-- 蓝天背景 -->
             <div class="bg2"
@@ -165,7 +165,7 @@
             </div>
 
             <!-- 樱花背景 -->
-            <div class="bg1"></div>
+            <div class="bg1" :style="{backgroundPositionY: this.scroH / 20 - 200 + 'px'}"></div>
 
             <!-- 页脚部分 -->
             <footer>
@@ -186,7 +186,10 @@
                 el: '#main',
                 data: {
                     classObj: {
-                        hide: true
+                        hide: true,
+                    },
+                    styleBg: {
+                        backgroundPositionY: this.scroH / 20 - 200 + 'px',
                     },
                     scroH: 0,
                     showLeft: {
@@ -206,7 +209,6 @@
                     //监听滚动方法
                     handleScroll(e) {
                         // console.log(document.documentElement.scrollTop, '距离顶部的距离')
-                        // var x = document.documentElement.scrollTop;
                         this.scroH = document.documentElement.scrollTop;
                     },
                 },
@@ -236,7 +238,7 @@
                 }, false);
                 $(window).scroll(function () {
                     var scroH = $(document).scrollTop();  //滚动高度
-                    $('.bg1').css("background-position-y", scroH / 20 - 200);
+                    // $('.bg1').css("background-position-y", scroH / 20 - 200);
                 })
 
 

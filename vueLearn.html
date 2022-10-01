@@ -20,38 +20,9 @@
     </head>
 
     <body>
-        <div class="test" id="root" style="height: 200px;" @scroll="log()">
-            <h1>hello {{msg}}</h1>
-            <a @click="showInfo" :href="url.toUpperCase()">百度</a>
-            <input type="text" v-model="msg">
-            <h4>{{username}}</h4>
-            <button @click="showInfo()">{{msg}}</button>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br>
-            <input type="text" v-model="msg"><br><input type="text" v-model="msg"><br>
-
-            <input type="text" v-model="msg"><input type="text" v-model="msg">
-            <p @click="showScroll()" :class="classObj">{{msg}}</p>
-            <h1>hello {{msg}}</h1>
+        <!-- background-position-y: 200px; -->
+        <div :style="{backgroundPositionY:'100%'}" class="test" id="root"
+            style="height: 200px;background-image:url(/background/背景4.png);" @scroll="log()">
 
 
         </div>

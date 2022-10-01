@@ -201,3 +201,7 @@
  .showRight {
      animation: right 2s;
  }
+
+ .moveBg {
+     background-position: 0px;
+ }
