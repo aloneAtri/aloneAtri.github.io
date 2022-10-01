@@ -29,10 +29,10 @@
 
             <!-- 音乐模块 -->
             <iframe id="music" v-show="false" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330
-                height=86 src="https://music.163.com/outchain/player?type=2&id=29129656&auto=1&height=66"></iframe>
+                height=86 :src="music"></iframe>
 
             <!-- 背景图片1 -->
-            <div class="bg1" :style=" {backgroundPositionY: this.scroH / 20 - 200 + 'px'}" style="height: 1500px;">
+            <div class="bg1" :style="{backgroundPositionY: this.scroH / 20 - 200 + 'px'}" style="height: 1500px;">
 
                 <!-- 第一个大盒子 -->
                 <div class="box1">
@@ -46,8 +46,8 @@
                             <li><a href="#">GRAPHIC</a></li>
                             <li><a href="#">SPECIAL</a></li>
                             <li><a href="#">PRODUCT</a></li>
-                            <li><a href="#">
-                                    <div
+                            <li><a href="#" @click="closeMusic()">
+                                    <div :style=" styleMusic"
                                         style="height: 32px;width: 150px;background-image: url(/background/off_bgm.png);background-repeat: no-repeat;margin-top: 1px;">
                                     </div>
                                 </a></li>
@@ -181,14 +181,25 @@
 
 
         <script>
+
             const vm = new Vue({
                 el: '#main',
                 data: {
+                    music: "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66",
                     classObj: {
                         hide: true,
                     },
+                    styleMusic: {
+                        backgroundPositionY: -32 + 'px',
+                    },
+                    styleMusic3: {
+                        backgroundPositionY: -32 + 'px',
+                    },
+                    styleMusic2: {
+                        backgroundPositionY: 0 + 'px',
+                    },
                     styleBg: {
-                        backgroundPositionY: this.scroH / 20 - 200 + 'px',
+                        backgroundPositionY: this.sakuraFall + 'px',
                     },
                     scroH: 0,
                     showLeft: {
@@ -210,10 +221,25 @@
                         // console.log(document.documentElement.scrollTop, '距离顶部的距离')
                         this.scroH = document.documentElement.scrollTop;
                     },
+                    closeMusic() {
+                        if (this.music != '') {
+                            this.music = '';
+                            this.styleMusic = this.styleMusic2;
+                        }
+                        else {
+                            this.music = "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66";
+                            this.styleMusic = this.styleMusic3;
+                        }
+                    },
                 },
                 mounted() {
                     window.addEventListener('scroll', this.handleScroll, true)
                 },
+                computed: {
+                    sakuraFall() {
+                        return ((this.scroH / 20) - 200);
+                    }
+                }
             })
 
             $(function () {
