@@ -97,9 +97,9 @@
 
                 <!-- 故事部分 -->
                 <div id="story" v-if="scroH>200" style="width: 650px;height: 100px;margin: auto;position: relative;">
-                    <img :class="imgAnimation.showLeft" src="./background/story.png" alt=""
+                    <img :class="imgAnimation.showLeftSlow" src="./background/story.png" alt=""
                         style="position: absolute;left: 0px;top: -50px;">
-                    <img :class="imgAnimation.showLeft" src="/background/story-text.png" alt=""
+                    <img :class="imgAnimation.showLeftSlow" src="/background/story-text.png" alt=""
                         style="width: 600px;height: 525px;position: absolute;top: 50px;right: -100px;">
                 </div>
 
@@ -205,6 +205,9 @@
                     imgAnimation: {
                         showLeft: {
                             showLeft: true,
+                        },
+                        showLeftSlow: {
+                            showLeftSlow: true,
                         },
                         fadeIn: {
                             fadeIn: true,

@@ -198,6 +198,10 @@
      animation: left 2s;
  }
 
+ .showLeftSlow {
+     animation: left 3s;
+ }
+
  .showRight {
      animation: right 2s;
  }
