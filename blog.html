@@ -171,6 +171,40 @@
                 border-bottom: 1px dotted black;
                 border-top: 1px dotted black;
             }
+
+            @keyframes left {
+                from {
+                    transform: translateX(50%);
+                    /* transform: translateY(100px); */
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateX(0px);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes right {
+                from {
+                    transform: translateX(-50%);
+                    /* transform: translateY(100px); */
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateX(0px);
+                    opacity: 1;
+                }
+            }
+
+            .show-left {
+                animation: left 2s;
+            }
+
+            .show-right {
+                animation: right 2s;
+            }
         </style>
     </head>
 
@@ -291,15 +325,16 @@
 
 
                 <!-- 文字部分 -->
-                <img v-show="false" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
-                    style="position: absolute;width: 200px;height: 400px;top: -450px;left: 850px;">
-                <img v-show="false" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
-                    style="position: absolute;width: 200px;height: 400px;top: -450px;left: 400px;">
-                <img v-show="false" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
-                    style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;">
-                <img v-show="false" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
-                    style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;">
-
+                <div id="atri-txt" v-show="false">
+                    <img id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
+                        style="position: absolute;width: 200px;height: 400px;top: -450px;left: 850px;">
+                    <img id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
+                        style="position: absolute;width: 200px;height: 400px;top: -450px;left: 400px;">
+                    <img id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
+                        style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;">
+                    <img id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
+                        style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;">
+                </div>
 
 
                 <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1090px;"
@@ -382,7 +417,9 @@
                         $('.info').fadeIn(1000)
                     }
                     if (scroH > 250) {  //距离顶部大于100px时
-                        $('#story').fadeIn(2000);
+                        // $('#story').fadeIn(2000);
+                        $('#story').show();
+                        $('#story img').addClass("show-left");
                     }
                     if (scroH < 250) {
                         $('#story').fadeOut(2000);
@@ -393,11 +430,14 @@
                         $('#atri-img1').fadeIn(5000);
                         $('#atri-logo').fadeIn(2000);
                         // $('#atri-txt').fadeIn(2000)
+                        $('#atri-txt').show();
+                        $('#atri-txt1').addClass("show-left");
+                        $('#atri-txt2').addClass("show-right");
+                        $('#atri-txt3').addClass("show-left");
+                        $('#atri-txt4').addClass("show-right");
+                        $('#atri-logo').show();
+                        $('#atri-logo').addClass("show-right");
 
-                        $('#atri-txt1').fadeIn(2000);
-                        $('#atri-txt2').fadeIn(2000);
-                        $('#atri-txt3').fadeIn(4000);
-                        $('#atri-txt4').fadeIn(4000);
 
                     }
                     // if (scroH < 1300) {
