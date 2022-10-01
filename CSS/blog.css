@@ -1,0 +1,203 @@
+ * {
+     padding: 0%;
+     margin: 0%;
+ }
+
+ body {
+     font-family: "思源宋体 CN", "微软雅黑";
+     font-weight: 400;
+     background-color: rgb(255, 255, 255);
+     font-size: 1.4em;
+     line-height: 1.5;
+     cursor: url(../images/mouse1.png), auto;
+ }
+
+ ::-webkit-scrollbar {
+     display: none;
+ }
+
+ .bg1 {
+     background-image: url('../background/sakura.png');
+     background-repeat: no-repeat;
+     background-position: center top;
+     background-size: cover;
+     background-attachment: fixed;
+     height: 700px;
+     text-align: center;
+ }
+
+ .bg2 {
+     background-image: url('../background/背景21.png');
+     background-repeat: no-repeat;
+     background-position: center top;
+     background-size: cover;
+     background-attachment: fixed;
+     height: 600px;
+     text-align: center;
+ }
+
+ .box1 {
+     height: 800px;
+     background-image: url('/background/背景16.png');
+     background-repeat: no-repeat;
+     background-position: center top;
+     background-size: 100%;
+     background-attachment: fixed;
+     margin-bottom: -200px;
+ }
+
+ a:link {
+     color: black;
+     text-decoration: none;
+ }
+
+ ul {
+     margin-top: 5px;
+     list-style: none;
+ }
+
+ .nav {
+     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1)0%, rgba(255, 255, 255, 0.5)66%, rgba(255, 255, 255, 0)99%);
+     height: 50px;
+ }
+
+ .nav :visited {
+     color: black;
+ }
+
+ .nav a:hover {
+     color: white;
+     text-shadow: 0px 0px 3px yellowgreen;
+ }
+
+ .nav-1 {
+     display: inline-block;
+ }
+
+ .nav-1 li {
+     margin-right: 50px;
+     float: left;
+     font-weight: 500;
+ }
+
+ .content1 {
+     height: 600px;
+     width: 1200px;
+     margin: auto;
+     /* background-color: #fff; */
+ }
+
+ .content1-left {
+     position: absolute;
+     float: left;
+     width: 200px;
+
+ }
+
+ .content1-ul {
+     margin-top: 300px;
+ }
+
+ .content1-ul li {
+     position: relative;
+     width: 500px;
+     height: 130px;
+     margin: 20px;
+     margin-left: 100px;
+ }
+
+ .content1-ul img {
+     width: 500px;
+     height: 130px;
+     size: 100%;
+ }
+
+ #pic1 {
+     position: absolute;
+     top: 200px;
+     left: 20px;
+     width: 600px;
+     height: 200px;
+     size: 100%;
+ }
+
+ .info {
+     width: 1200px;
+     margin: auto;
+     margin-bottom: 100px;
+ }
+
+ .infomation {
+     margin-left: 150px;
+     text-align: left;
+ }
+
+
+ .infomation dt {
+     margin-right: 20px;
+     float: left;
+ }
+
+ .footer {
+     height: 130px;
+     background-image: url(../background/footer_wp.jpg);
+     background-size: 100%;
+     background-repeat: no-repeat;
+ }
+
+ p {
+     border-bottom: 1px dotted black;
+     border-top: 1px dotted black;
+ }
+
+ @keyframes left {
+     from {
+         transform: translateX(50%);
+         /* transform: translateY(100px); */
+         opacity: 0;
+     }
+
+     to {
+         transform: translateX(0px);
+         opacity: 1;
+     }
+ }
+
+ @keyframes right {
+     from {
+         transform: translateX(-50%);
+         /* transform: translateY(100px); */
+         opacity: 0;
+     }
+
+     to {
+         transform: translateX(0px);
+         opacity: 1;
+     }
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ .fadeIn {
+     animation: fadeIn 2s;
+ }
+
+ .fadeInSlow {
+     animation: fadeIn 5s;
+ }
+
+ .showLeft {
+     animation: left 2s;
+ }
+
+ .showRight {
+     animation: right 2s;
+ }

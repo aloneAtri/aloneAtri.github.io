@@ -12,200 +12,13 @@
         <script src="jquery.min.js"></script>
         <!-- vue导入 -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- vue开发者警告去除 -->
+        <script>Vue.config.productionTip = false </script>
         <!-- 网页自适应 -->
         <meta name="viewport"
             content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-
-
-
-
-        <style>
-            * {
-                padding: 0%;
-                margin: 0%;
-            }
-
-            body {
-                font-family: "思源宋体 CN", "微软雅黑";
-                font-weight: 400;
-                background-color: rgb(255, 255, 255);
-                font-size: 1.4em;
-                line-height: 1.5;
-                cursor: url(./images/mouse1.png), auto;
-            }
-
-            ::-webkit-scrollbar {
-                display: none;
-            }
-
-            .bg1 {
-                background-image: url('./background/sakura.png');
-                background-repeat: no-repeat;
-                background-position: center top;
-                background-size: cover;
-                background-attachment: fixed;
-                height: 700px;
-                text-align: center;
-            }
-
-            .bg2 {
-                background-image: url('./background/背景21.png');
-                background-repeat: no-repeat;
-                background-position: center top;
-                background-size: cover;
-                background-attachment: fixed;
-                height: 600px;
-                text-align: center;
-            }
-
-            .box1 {
-                height: 800px;
-                background-image: url('/background/背景16.png');
-                background-repeat: no-repeat;
-                background-position: center top;
-                background-size: 100%;
-                background-attachment: fixed;
-                margin-bottom: -200px;
-            }
-
-            a:link {
-                color: black;
-                text-decoration: none;
-            }
-
-            ul {
-                margin-top: 5px;
-                list-style: none;
-            }
-
-            .nav {
-                background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1)0%, rgba(255, 255, 255, 0.5)66%, rgba(255, 255, 255, 0)99%);
-                height: 50px;
-            }
-
-            .nav :visited {
-                color: black;
-            }
-
-            .nav a:hover {
-                color: white;
-                text-shadow: 0px 0px 3px yellowgreen;
-            }
-
-            .nav-1 {
-                display: inline-block;
-            }
-
-            .nav-1 li {
-                margin-right: 50px;
-                float: left;
-                font-weight: 500;
-            }
-
-            .content1 {
-                height: 600px;
-                width: 1200px;
-                margin: auto;
-                /* background-color: #fff; */
-            }
-
-            .content1-left {
-                position: absolute;
-                float: left;
-                width: 200px;
-
-            }
-
-            .content1-ul {
-                margin-top: 300px;
-            }
-
-            .content1-ul li {
-                position: relative;
-                width: 500px;
-                height: 130px;
-                margin: 20px;
-                margin-left: 100px;
-            }
-
-            .content1-ul img {
-                width: 500px;
-                height: 130px;
-                size: 100%;
-            }
-
-            #pic1 {
-                position: absolute;
-                top: 200px;
-                left: 20px;
-                width: 600px;
-                height: 200px;
-                size: 100%;
-            }
-
-            .info {
-                width: 1200px;
-                margin: auto;
-                margin-bottom: 100px;
-            }
-
-            .infomation {
-                margin-left: 150px;
-                text-align: left;
-            }
-
-
-            .infomation dt {
-                margin-right: 20px;
-                float: left;
-            }
-
-            .footer {
-                height: 130px;
-                background-image: url(./background/footer_wp.jpg);
-                background-size: 100%;
-                background-repeat: no-repeat;
-            }
-
-            p {
-                border-bottom: 1px dotted black;
-                border-top: 1px dotted black;
-            }
-
-            @keyframes left {
-                from {
-                    transform: translateX(50%);
-                    /* transform: translateY(100px); */
-                    opacity: 0;
-                }
-
-                to {
-                    transform: translateX(0px);
-                    opacity: 1;
-                }
-            }
-
-            @keyframes right {
-                from {
-                    transform: translateX(-50%);
-                    /* transform: translateY(100px); */
-                    opacity: 0;
-                }
-
-                to {
-                    transform: translateX(0px);
-                    opacity: 1;
-                }
-            }
-
-            .show-left {
-                animation: left 2s;
-            }
-
-            .show-right {
-                animation: right 2s;
-            }
-        </style>
+        <!-- css引入 -->
+        <link rel="stylesheet" href="/CSS/blog.css">
     </head>
 
     <body>
@@ -244,9 +57,9 @@
                     </div>
 
                     <!-- 第一个大盒子中的内容 -->
-                    <div class="content1">
+                    <div class="content1" :class="fadeIn">
                         <div class="content1-left">
-                            <img v-show="false" id="pic1" src="/background/myblog.png" alt="">
+                            <img v-show="true" id="pic1" src="/background/myblog.png" alt="">
 
                             <!-- 可选图片排列 -->
                             <ul class="content1-ul">
@@ -264,7 +77,7 @@
                 </div>
 
                 <!-- 公告栏 -->
-                <div id="info" class="info" :class="classObj" v-show="false">
+                <div id="info" class="info" v-if="scroH>=0" :class="fadeIn">
                     <!-- <hr> -->
                     <!-- <h2 style="letter-spacing: 10px;">INFORMATION</h2> -->
                     <img src="/background/head_info.png" alt="">
@@ -284,7 +97,8 @@
                 <!-- <div class="box"></div> -->
 
                 <!-- 故事部分 -->
-                <div id="story" v-show="false" style="width: 650px;height: 100px;margin: auto;position: relative;">
+                <div id="story" v-if="scroH>200" :class="showLeft"
+                    style="width: 650px;height: 100px;margin: auto;position: relative;">
                     <img src="./background/story.png" alt="" style="position: absolute;left: 0px;top: -50px;">
                     <img src="/background/story-text.png" alt=""
                         style="width: 600px;height: 525px;position: absolute;top: 50px;right: -100px;">
@@ -303,7 +117,7 @@
                 style="position: relative;background-image: url(/background/atri-bg.png);background-size: 100%;">
 
                 <!-- 角色文本 -->
-                <div id="character" v-show="false"
+                <div id="character" v-if="scroH>1200" :class="fadeInSlow"
                     style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
                     <img src="./background/character.png" alt="">
                 </div>
@@ -316,23 +130,23 @@
                 style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;">
 
                 <!-- atri-logo -->
-                <img v-show="false" id="atri-logo" src="/background/logo.svg" alt=""
+                <img v-if="scroH>1200" :class="showRight" id="atri-logo" src="/background/logo.svg" alt=""
                     style="position: absolute;left: 50px;top:-200px;width: 400px;height: 150px;">
 
                 <!-- 人物 -->
-                <img id="atri-img1" v-show="false" src="/background/atri.png" alt=""
+                <img id="atri-img1" :class="fadeInSlow" v-if="scroH>1200" src="/background/atri.png" alt=""
                     style="width: 900px;height: 810px;position: absolute;left: 300px;size: 100%;top: -600px;">
 
 
                 <!-- 文字部分 -->
-                <div id="atri-txt" v-show="false">
-                    <img id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
+                <div id="atri-txt" v-if="scroH>1200">
+                    <img :class="showLeft" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -450px;left: 850px;">
-                    <img id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
+                    <img :class="showRight" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -450px;left: 400px;">
-                    <img id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
+                    <img :class="showLeft" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;">
-                    <img id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
+                    <img :class="showRight" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;">
                 </div>
 
@@ -366,17 +180,39 @@
         <script src="mousemove.js"></script>
         <!-- <script src="sakura.js"></script> -->
 
+
         <script>
-            Vue.config.productionTip = false;
             const vm = new Vue({
                 el: '#main',
                 data: {
                     classObj: {
                         hide: true
                     },
-                    method: {
-                    }
-                }
+                    scroH: 0,
+                    showLeft: {
+                        showLeft: true,
+                    },
+                    fadeIn: {
+                        fadeIn: true,
+                    },
+                    fadeInSlow: {
+                        fadeInSlow: true,
+                    },
+                    showRight: {
+                        showRight: true,
+                    },
+                },
+                methods: {
+                    //监听滚动方法
+                    handleScroll(e) {
+                        // console.log(document.documentElement.scrollTop, '距离顶部的距离')
+                        // var x = document.documentElement.scrollTop;
+                        this.scroH = document.documentElement.scrollTop;
+                    },
+                },
+                mounted() {
+                    window.addEventListener('scroll', this.handleScroll, true)
+                },
             })
 
             $(function () {
@@ -398,61 +234,12 @@
                         event.preventDefault();
                     }
                 }, false);
-
-                // $('#music').hide();
-                // $('#story').hide();
-                // $('.info').hide();
-                $('#pic1').fadeIn(2000);
                 $(window).scroll(function () {
                     var scroH = $(document).scrollTop();  //滚动高度
-                    var viewH = $(window).height();  //可见高度
-                    var contentH = $(document).height();  //内容高度
-
                     $('.bg1').css("background-position-y", scroH / 20 - 200);
-
-                    if (scroH < 100) {
-                        $('.info').fadeOut(2000);
-                    }
-                    if (scroH > 100) {  //距离顶部大于100px时
-                        $('.info').fadeIn(1000)
-                    }
-                    if (scroH > 250) {  //距离顶部大于100px时
-                        // $('#story').fadeIn(2000);
-                        $('#story').show();
-                        $('#story img').addClass("show-left");
-                    }
-                    if (scroH < 250) {
-                        $('#story').fadeOut(2000);
-                    }
-                    if (scroH > 1300) {  //距离顶部大于100px时
-                        // $('.info').show();
-                        $('#character').fadeIn(2000);
-                        $('#atri-img1').fadeIn(5000);
-                        $('#atri-logo').fadeIn(2000);
-                        // $('#atri-txt').fadeIn(2000)
-                        $('#atri-txt').show();
-                        $('#atri-txt1').addClass("show-left");
-                        $('#atri-txt2').addClass("show-right");
-                        $('#atri-txt3').addClass("show-left");
-                        $('#atri-txt4').addClass("show-right");
-                        $('#atri-logo').show();
-                        $('#atri-logo').addClass("show-right");
+                })
 
 
-                    }
-                    // if (scroH < 1300) {
-                    //     $('#character').fadeOut(2000);
-                    //     $('#atri-img1').fadeOut(2000);
-                    //     $('#atri-logo').fadeOut(2000);
-
-                    //     $('#atri-txt1').fadeOut(2000);
-                    //     $('#atri-txt2').fadeOut(2000);
-                    //     $('#atri-txt3').fadeOut(2000);
-                    //     $('#atri-txt4').fadeOut(2000);
-                    // }
-
-
-                });
             })
 
         </script>

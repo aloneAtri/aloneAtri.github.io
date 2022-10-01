@@ -26,45 +26,30 @@
             <input type="text" v-model="msg">
             <h4>{{username}}</h4>
             <button @click="showInfo()">{{msg}}</button>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br>
+            <input type="text" v-model="msg"><br><input type="text" v-model="msg"><br>
 
-            <p :class="classObj">{{msg}}</p>
-
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
-            <p :class="classObj">{{msg}}</p>
+            <input type="text" v-model="msg"><input type="text" v-model="msg">
             <p @click="showScroll()" :class="classObj">{{msg}}</p>
             <h1>hello {{msg}}</h1>
 
@@ -107,8 +92,19 @@
                         console.log(document.documentElement.scrollTop);
                     },
                     log() {
-                        // console.log({{ msg }});
-                    }
+                        console.log("页面滚动了");
+                    },
+                    handleScroll(e) {
+                        // console.log(document.documentElement.scrollTop, '距离顶部的距离')
+                        var x = document.documentElement.scrollTop;
+                        // console.log(x);
+                        if (x > 200) {
+                            console.log(1);
+                        }
+                    },
+                },
+                mounted() {
+                    window.addEventListener('scroll', this.handleScroll, true)
                 },
             })
         </script>
