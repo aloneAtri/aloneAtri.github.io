@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="jquery.min.js"></script>
         <style>
             .red {
                 color: red;
@@ -19,28 +20,68 @@
     </head>
 
     <body>
-        <div class="test" id="root">
-            <h1 v-show="false">hello {{msg}}</h1>
+        <div class="test" id="root" style="height: 200px;" @scroll="log()">
+            <h1>hello {{msg}}</h1>
             <a @click="showInfo" :href="url.toUpperCase()">百度</a>
-            <input type="text" v-model="username">
+            <input type="text" v-model="msg">
             <h4>{{username}}</h4>
-            <button @click="showInfo()">111</button>
-            <p :class="classObj">1111</p>
-            <p :class="classObj">1111</p>
-            <p :class="classObj">1111</p>
-            <p :class="classObj">1111</p>
-            <p :class="classObj">1111</p>
-            <p :class="classObj">1111</p>
-            <p :class="classObj">1111</p>
+            <button @click="showInfo()">{{msg}}</button>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+
+            <p :class="classObj">{{msg}}</p>
+
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p :class="classObj">{{msg}}</p>
+            <p @click="showScroll()" :class="classObj">{{msg}}</p>
+            <h1>hello {{msg}}</h1>
+
+
         </div>
 
 
         <script>
+            // $(window).scroll(function () {
+            //     // var scroH = $(document).scrollTop();  //滚动高度
+            //     console.log(document.documentElement.scrollTop);
+            // });
             const x = new Vue({
                 el: '#root',
                 data: {
                     username: '',
-                    msg: 'java',
+                    msg: document.documentElement.scrollTop,
                     url: 'https://www.baidu.com',
                     styleObj: {
                         fontSize: '60px',
@@ -61,6 +102,12 @@
                             this.classObj.red = false
                             this.classObj.hide = true
                         }
+                    },
+                    showScroll() {
+                        console.log(document.documentElement.scrollTop);
+                    },
+                    log() {
+                        // console.log({{ msg }});
                     }
                 },
             })
