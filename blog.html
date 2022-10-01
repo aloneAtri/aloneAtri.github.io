@@ -56,7 +56,7 @@
                     </div>
 
                     <!-- 第一个大盒子中的内容 -->
-                    <div class="content1" :class="fadeIn">
+                    <div class="content1" :class="imgAnimation.fadeIn">
                         <div class="content1-left">
                             <img v-show="true" id="pic1" src="/background/myblog.png" alt="">
 
@@ -76,7 +76,7 @@
                 </div>
 
                 <!-- 公告栏 -->
-                <div id="info" class="info" v-if="scroH>=150" :class="fadeIn">
+                <div id="info" class="info" v-if="scroH>=150" :class="imgAnimation.fadeIn">
                     <!-- <hr> -->
                     <!-- <h2 style="letter-spacing: 10px;">INFORMATION</h2> -->
                     <img src="/background/head_info.png" alt="">
@@ -97,9 +97,9 @@
 
                 <!-- 故事部分 -->
                 <div id="story" v-if="scroH>200" style="width: 650px;height: 100px;margin: auto;position: relative;">
-                    <img :class="showLeft" src="./background/story.png" alt=""
+                    <img :class="imgAnimation.showLeft" src="./background/story.png" alt=""
                         style="position: absolute;left: 0px;top: -50px;">
-                    <img :class="showLeft" src="/background/story-text.png" alt=""
+                    <img :class="imgAnimation.showLeft" src="/background/story-text.png" alt=""
                         style="width: 600px;height: 525px;position: absolute;top: 50px;right: -100px;">
                 </div>
 
@@ -116,7 +116,7 @@
                 style="position: relative;background-image: url(/background/atri-bg.png);background-size: 100%;">
 
                 <!-- 角色文本 -->
-                <div id="character" v-if="scroH>1200" :class="fadeInSlow"
+                <div id="character" v-if="scroH>1200" :class="imgAnimation.fadeInSlow"
                     style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
                     <img src="./background/character.png" alt="">
                 </div>
@@ -129,23 +129,23 @@
                 style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;">
 
                 <!-- atri-logo -->
-                <img v-if="scroH>1200" :class="showRight" id="atri-logo" src="/background/logo.svg" alt=""
+                <img v-if="scroH>1200" :class="imgAnimation.showRight" id="atri-logo" src="/background/logo.svg" alt=""
                     style="position: absolute;left: 50px;top:-200px;width: 400px;height: 150px;">
 
                 <!-- 人物 -->
-                <img id="atri-img1" :class="fadeInSlow" v-if="scroH>1200" src="/background/atri.png" alt=""
+                <img id="atri-img1" :class="imgAnimation.fadeInSlow" v-if="scroH>1200" src="/background/atri.png" alt=""
                     style="width: 900px;height: 810px;position: absolute;left: 300px;size: 100%;top: -600px;">
 
 
                 <!-- 文字部分 -->
                 <div id="atri-txt" v-if="scroH>1200">
-                    <img :class="showLeft" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
+                    <img :class="imgAnimation.showLeft" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -450px;left: 850px;">
-                    <img :class="showRight" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
+                    <img :class="imgAnimation.showRight" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -450px;left: 400px;">
-                    <img :class="showLeft" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
+                    <img :class="imgAnimation.showLeft" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;">
-                    <img :class="showRight" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
+                    <img :class="imgAnimation.showRight" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;">
                 </div>
 
@@ -202,18 +202,20 @@
                         backgroundPositionY: this.sakuraFall + 'px',
                     },
                     scroH: 0,
-                    showLeft: {
-                        showLeft: true,
-                    },
-                    fadeIn: {
-                        fadeIn: true,
-                    },
-                    fadeInSlow: {
-                        fadeInSlow: true,
-                    },
-                    showRight: {
-                        showRight: true,
-                    },
+                    imgAnimation: {
+                        showLeft: {
+                            showLeft: true,
+                        },
+                        fadeIn: {
+                            fadeIn: true,
+                        },
+                        fadeInSlow: {
+                            fadeInSlow: true,
+                        },
+                        showRight: {
+                            showRight: true,
+                        },
+                    }
                 },
                 methods: {
                     //监听滚动方法
