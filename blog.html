@@ -140,13 +140,13 @@
                 <!-- 文字部分 -->
                 <div id="atri-txt" v-if="scroH>1200">
                     <img :class="imgAnimation.showLeft" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
-                        style="position: absolute;width: 200px;height: 400px;top: -450px;left: 850px;">
+                        style="position: absolute;width: 200px;height: 400px;top: -520px;left: 850px;">
                     <img :class="imgAnimation.showRight" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
-                        style="position: absolute;width: 200px;height: 400px;top: -450px;left: 400px;">
+                        style="position: absolute;width: 200px;height: 400px;top: -420px;left: 400px;">
                     <img :class="imgAnimation.showLeft" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
-                        style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;">
+                        style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;filter: blur(3px);">
                     <img :class="imgAnimation.showRight" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
-                        style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;">
+                        style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;filter: blur(3px);">
                 </div>
 
 
@@ -186,9 +186,6 @@
                 el: '#main',
                 data: {
                     music: "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66",
-                    classObj: {
-                        hide: true,
-                    },
                     styleMusic: {
                         backgroundPositionY: -32 + 'px',
                     },
