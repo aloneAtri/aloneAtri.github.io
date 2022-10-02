@@ -76,11 +76,14 @@
                 </div>
 
                 <!-- 公告栏 -->
-                <div id="info" class="info" v-if="scroH>=150" :class="imgAnimation.showTop">
-                    <!-- <hr> -->
-                    <!-- <h2 style="letter-spacing: 10px;">INFORMATION</h2> -->
+                <div id="info" class="info" v-if="scroH>=100" :class="imgAnimation.showTop">
+                    <!-- 公告栏标题 -->
+
                     <img src="/background/head_info.png" alt="">
+                    <!-- 公告栏具体内容 -->
                     <dl class="infomation" style="font-family: '楷体';font-size: 25px;height: 150px;overflow: scroll;">
+                        <dt><strong>20221001</strong></dt>
+                        <dd>用Vue2技术重写了网页,优化了加载速度。</dd>
                         <dt><strong>20220930</strong></dt>
                         <dd>增加和补充了一些图片文字和动画,使页面更加美化。</dd>
                         <dt><strong>20220923</strong></dt>
@@ -93,14 +96,19 @@
                 </div>
 
 
-                <!-- <div class="box"></div> -->
-
                 <!-- 故事部分 -->
-                <div id="story" v-if="scroH>200" style="width: 650px;height: 100px;margin: auto;position: relative;">
+                <div id="story" v-if="scroH>250" style="width: 650px;height: 100px;margin: auto;position: relative;">
+
+                    <!-- 故事标题 -->
                     <img :class="imgAnimation.showBottom" src="./background/story.png" alt=""
                         style="position: absolute;left: 0px;top: -50px;">
-                    <img :class="imgAnimation.showLeftSlow" src="/background/story-text.png" alt=""
-                        style="width: 600px;height: 525px;position: absolute;top: 50px;right: -100px;">
+
+                    <!-- 故事内容文本 -->
+                    <img :class="imgAnimation.showBottomBlur" src="/background/txt/story-1.png" alt=""
+                        style="width: 120px;height: 525px;position: absolute;top: 50px;left: 180px;">
+
+                    <img :class="imgAnimation.showLeftSlow" src="/background/txt/story-2.png" alt=""
+                        style="width: 450px;height: 525px;position: absolute;top: 50px;right: -100px;">
                 </div>
 
             </div>
@@ -116,7 +124,7 @@
                 style="position: relative;background-image: url(/background/atri-bg.png);background-size: 100%;">
 
                 <!-- 角色文本 -->
-                <div id="character" v-if="scroH>1200" :class="imgAnimation.fadeInSlow"
+                <div id="character" v-if="scroH>1200" :class="imgAnimation.showBottom"
                     style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
                     <img src="./background/character.png" alt="">
                 </div>
@@ -139,17 +147,21 @@
 
                 <!-- 文字部分 -->
                 <div id="atri-txt" v-if="scroH>1200">
+                    <!-- 右一文字 -->
                     <img :class="imgAnimation.showLeft" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -520px;left: 850px;">
+                    <!-- 右二文字 -->
                     <img :class="imgAnimation.showRight" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -420px;left: 400px;">
+                    <!-- 左一文字 -->
                     <img :class="imgAnimation.showLeft" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;filter: blur(3px);">
+                    <!-- 左二文字 -->
                     <img :class="imgAnimation.showRight" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
                         style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;filter: blur(3px);">
                 </div>
 
-
+                <!-- 樱花树上人物 -->
                 <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1090px;"
                     src="./background/白花1.png" alt="">
 
@@ -181,11 +193,12 @@
 
 
         <script>
-
+            // vue实例管理网页
             const vm = new Vue({
                 el: '#main',
                 data: {
                     music: "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66",
+                    // 切换音乐图标
                     styleMusic: {
                         backgroundPositionY: -32 + 'px',
                     },
@@ -217,6 +230,9 @@
                         },
                         showBottom: {
                             showBottom: true,
+                        },
+                        showBottomBlur: {
+                            showBottomBlur: true,
                         },
                         showTop: {
                             showTop: true,

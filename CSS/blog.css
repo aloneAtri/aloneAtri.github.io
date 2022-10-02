@@ -205,6 +205,20 @@
      }
  }
 
+ @keyframes bottomBlur {
+     from {
+         transform: translateY(-30%);
+         filter: blur(3px);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(0px);
+         filter: blur(0px);
+         opacity: 1;
+     }
+ }
+
  @keyframes top {
      from {
          transform: translateY(30%);
@@ -231,6 +245,10 @@
 
  .showBottom {
      animation: bottom 3s;
+ }
+
+ .showBottomBlur {
+     animation: bottomBlur 3s;
  }
 
  .showLeft {
