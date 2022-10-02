@@ -97,7 +97,7 @@
 
                 <!-- 故事部分 -->
                 <div id="story" v-if="scroH>200" style="width: 650px;height: 100px;margin: auto;position: relative;">
-                    <img :class="imgAnimation.showLeftSlow" src="./background/story.png" alt=""
+                    <img :class="imgAnimation.showBottom" src="./background/story.png" alt=""
                         style="position: absolute;left: 0px;top: -50px;">
                     <img :class="imgAnimation.showLeftSlow" src="/background/story-text.png" alt=""
                         style="width: 600px;height: 525px;position: absolute;top: 50px;right: -100px;">
@@ -108,7 +108,7 @@
 
 
             <!-- 过渡图片 -->
-            <div id="transit" class="bg2" style="height: 300px;">
+            <div id="transit" class="bg2" style="height: 300px;border-image: url(/background/);">
             </div>
 
             <!-- 第二张长背景 -->
@@ -214,6 +214,9 @@
                         },
                         showRight: {
                             showRight: true,
+                        },
+                        showBottom: {
+                            showBottom: true,
                         },
                     }
                 },

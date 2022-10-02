@@ -186,12 +186,28 @@
      }
  }
 
+ @keyframes bottom {
+     from {
+         transform: translateY(-100%);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(0px);
+         opacity: 1;
+     }
+ }
+
  .fadeIn {
      animation: fadeIn 2s;
  }
 
  .fadeInSlow {
      animation: fadeIn 5s;
+ }
+
+ .showBottom {
+     animation: bottom 3s;
  }
 
  .showLeft {
