@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
         <title>我的博客</title>
         <link rel="stylesheet" href="留言板页面图标\iconfont.css">
         <link rel="icon" href="/images/图标.ico" type="image/gif">
@@ -56,7 +56,7 @@
                     </div>
 
                     <!-- 第一个大盒子中的内容 -->
-                    <div class="content1" :class="imgAnimation.fadeIn">
+                    <div class="content1" :class="imgAnimation.showTop">
                         <div class="content1-left">
                             <img v-show="true" id="pic1" src="/background/myblog.png" alt="">
 
@@ -76,7 +76,7 @@
                 </div>
 
                 <!-- 公告栏 -->
-                <div id="info" class="info" v-if="scroH>=150" :class="imgAnimation.fadeIn">
+                <div id="info" class="info" v-if="scroH>=150" :class="imgAnimation.showTop">
                     <!-- <hr> -->
                     <!-- <h2 style="letter-spacing: 10px;">INFORMATION</h2> -->
                     <img src="/background/head_info.png" alt="">
@@ -217,6 +217,9 @@
                         },
                         showBottom: {
                             showBottom: true,
+                        },
+                        showTop: {
+                            showTop: true,
                         },
                     }
                 },

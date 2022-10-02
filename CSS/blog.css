@@ -12,10 +12,12 @@
      cursor: url(../images/mouse1.png), auto;
  }
 
+ /* 取消滚动条 */
  ::-webkit-scrollbar {
      display: none;
  }
 
+ /* 樱花下落长背景 */
  .bg1 {
      background-image: url('../background/sakura.png');
      background-repeat: no-repeat;
@@ -150,15 +152,18 @@
      border-top: 1px dotted black;
  }
 
+ /* css3动画 */
  @keyframes left {
      from {
          transform: translateX(50%);
          /* transform: translateY(100px); */
+         filter: blur(5px);
          opacity: 0;
      }
 
      to {
          transform: translateX(0px);
+         filter: blur(0px);
          opacity: 1;
      }
  }
@@ -167,11 +172,13 @@
      from {
          transform: translateX(-50%);
          /* transform: translateY(100px); */
+         filter: blur(5px);
          opacity: 0;
      }
 
      to {
          transform: translateX(0px);
+         filter: blur(0px);
          opacity: 1;
      }
  }
@@ -188,12 +195,24 @@
 
  @keyframes bottom {
      from {
-         transform: translateY(-100%);
+         transform: translateY(-30%);
          opacity: 0;
      }
 
      to {
          transform: translateY(0px);
+         opacity: 1;
+     }
+ }
+
+ @keyframes top {
+     from {
+         transform: translateY(30%);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(0);
          opacity: 1;
      }
  }
@@ -204,6 +223,10 @@
 
  .fadeInSlow {
      animation: fadeIn 5s;
+ }
+
+ .showTop {
+     animation: top 2s;
  }
 
  .showBottom {
