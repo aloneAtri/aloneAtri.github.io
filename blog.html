@@ -22,9 +22,15 @@
     </head>
 
     <body>
-        <div class="loading"><img src="/background/load.svg" alt=""
+        <div id="loading"><img src="/background/load.svg" alt=""
                 style="width: 100px;height: 100px;position: absolute;top:45%;left:45%;"> </div>
+
+        <div id="loading2"><img src="/background/load2.png" alt=""
+                style="width: 600px;height: 700px;position: absolute;top:5%;left:30%;"> </div>
+
+
         <div id="main">
+
             <!-- 鼠标移动特效 -->
             <span class="js-cursor-container"></span>
 
@@ -269,10 +275,19 @@
 
             $(function () {
                 $('#main').hide();
+                $('#loading2').hide();
+
                 document.onreadystatechange = function () {
+                    if (document.readyState == 'loading') {
+                        $('#loading').show();
+                    }
                     if (document.readyState == 'complete') {
-                        $('.loading').fadeOut();
-                        $('#main').show();
+                        $('#loading').hide();
+                        $('#loading2').fadeIn();
+                        $('#loading2').fadeOut(1500);
+                        setTimeout(() => {
+                            $('#main').show();
+                        }, 1000);
                     }
                 };
                 //禁止用户缩放页面

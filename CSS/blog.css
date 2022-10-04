@@ -207,7 +207,7 @@
 
  @keyframes bottomBlur {
      from {
-         transform: translateY(-30%);
+         transform: translateY(-20%);
          filter: blur(3px);
          opacity: 0;
      }
