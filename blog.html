@@ -22,7 +22,8 @@
     </head>
 
     <body>
-
+        <div class="loading"><img src="/background/load.svg" alt=""
+                style="width: 100px;height: 100px;position: absolute;top:45%;left:45%;"> </div>
         <div id="main">
             <!-- 鼠标移动特效 -->
             <span class="js-cursor-container"></span>
@@ -267,6 +268,13 @@
             })
 
             $(function () {
+                $('#main').hide();
+                document.onreadystatechange = function () {
+                    if (document.readyState == 'complete') {
+                        $('.loading').fadeOut();
+                        $('#main').show();
+                    }
+                };
                 //禁止用户缩放页面
                 document.addEventListener('mousewheel', function (e) {
                     e = e || window.event;
