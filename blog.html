@@ -7,6 +7,8 @@
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
         <title>我的博客</title>
         <link rel="stylesheet" href="留言板页面图标\iconfont.css">
+        <!-- jq动画导入 -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
         <link rel="icon" href="/images/图标.ico" type="image/gif">
         <!-- jq导入 -->
         <script src="jquery.min.js"></script>
@@ -15,6 +17,7 @@
         <!-- vue开发者警告去除 -->
         <script>Vue.config.productionTip = false </script>
         <!-- 网页自适应 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <meta name="viewport"
             content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
         <!-- css引入 -->
@@ -283,8 +286,8 @@
                     }
                     if (document.readyState == 'complete') {
                         $('#loading').hide();
-                        $('#loading2').fadeIn();
-                        $('#loading2').fadeOut(1500);
+                        $('#loading2').fadeIn(1000);
+                        $('#loading2').fadeOut(1000);
                         setTimeout(() => {
                             $('#main').show();
                         }, 1000);
