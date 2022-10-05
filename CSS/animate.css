@@ -1,0 +1,166 @@
+ /* css3动画 */
+ @keyframes left {
+     from {
+         transform: translateX(50%);
+         /* transform: translateY(100px); */
+         filter: blur(5px);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateX(0px);
+         filter: blur(0px);
+         opacity: 1;
+     }
+ }
+
+ @keyframes right {
+     from {
+         transform: translateX(-50%);
+         /* transform: translateY(100px); */
+         filter: blur(5px);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateX(0px);
+         filter: blur(0px);
+         opacity: 1;
+     }
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ @keyframes bottom {
+     from {
+         transform: translateY(-30%);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(0px);
+         opacity: 1;
+     }
+ }
+
+ @keyframes bottomBlur {
+     from {
+         transform: translateY(-20%);
+         filter: blur(3px);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(0px);
+         filter: blur(0px);
+         opacity: 1;
+     }
+ }
+
+ @keyframes top {
+     from {
+         transform: translateY(30%);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(0);
+         opacity: 1;
+     }
+ }
+
+ .fadeIn {
+     animation: fadeIn 2s;
+ }
+
+ .fadeInSlow {
+     animation: fadeIn 5s;
+ }
+
+ .showTop {
+     animation: top 2s;
+ }
+
+ .showBottom {
+     animation: bottom 3s;
+ }
+
+ .showBottomBlur {
+     animation: bottomBlur 3s;
+ }
+
+ .showLeft {
+     animation: left 2s;
+ }
+
+ .showLeftSlow {
+     animation: left 3s;
+ }
+
+ .showRight {
+     animation: right 2s;
+ }
+
+ .moveBg {
+     background-position: 0px;
+ }
+
+
+
+ /* vue使用css3动画 */
+
+ .showTop-enter-active {
+     animation: top 2s;
+ }
+
+ .showTop-leave-active {
+     animation: top 2s reverse;
+ }
+
+ .showBottom-enter-active {
+     animation: bottom 2s;
+ }
+
+ .showBottom-leave-active {
+     animation: bottom 2s reverse;
+ }
+
+ .showBottomBlur-enter-active {
+     animation: bottomBlur 3s;
+ }
+
+ .showBottomBlur-leave-active {
+     animation: bottomBlur 1s reverse;
+ }
+
+ .showLeftBlur-enter-active {
+     animation: left 3s;
+ }
+
+ .showLeftBlur-leave-active {
+     animation: left 1s reverse;
+ }
+
+ .showRight-enter-active {
+     animation: right 2s;
+ }
+
+ .showRight-leave-active {
+     animation: right 1s reverse;
+ }
+
+ .fadeInSlow-enter-active {
+     animation: fadeIn 5s;
+ }
+
+ .fadeInSlow-leave-active {
+     animation: fadeIn 5s reverse;
+ }

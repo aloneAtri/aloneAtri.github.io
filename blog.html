@@ -13,7 +13,8 @@
         <!-- jq导入 -->
         <script src="jquery.min.js"></script>
         <!-- vue导入 -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+        <script src="/JS/vue.js"></script>
         <!-- vue开发者警告去除 -->
         <script>Vue.config.productionTip = false </script>
         <!-- 网页自适应 -->
@@ -22,6 +23,8 @@
             content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
         <!-- css引入 -->
         <link rel="stylesheet" href="/CSS/blog.css">
+        <link rel="stylesheet" href="/CSS/animate.css">
+
     </head>
 
     <body>
@@ -69,7 +72,6 @@
                     <div class="content1" :class="imgAnimation.showTop">
                         <div class="content1-left">
                             <img v-show="true" id="pic1" src="/background/myblog.png" alt="">
-
                             <!-- 可选图片排列 -->
                             <ul class="content1-ul">
 
@@ -88,41 +90,53 @@
                 <!-- 定位标签 -->
                 <div id="info1"></div>
 
-                <!-- 公告栏 -->
-                <div id="info" class="info" v-if="scroH>=100" :class="imgAnimation.showTop">
-                    <!-- 公告栏标题 -->
-
-                    <img src="/background/head_info.png" alt="">
-                    <!-- 公告栏具体内容 -->
-                    <dl class="infomation" style="font-family: '楷体';font-size: 25px;height: 150px;overflow: scroll;">
-                        <dt><strong>20221001</strong></dt>
-                        <dd>用Vue2技术替代jquery重写了网页,优化了加载速度。</dd>
-                        <dt><strong>20220930</strong></dt>
-                        <dd>增加和补充了一些图片文字和动画,使页面更加美化。</dd>
-                        <dt><strong>20220923</strong></dt>
-                        <dd>博客界面开始搭建。</dd>
-                        <dt><strong>20220923</strong></dt>
-                        <dd>本网站的初衷是用来分享一些自己的作品,记录一下自己的学习记录写写博客。</dd>
-                        <dt><strong>20220923</strong></dt>
-                        <dd>随着时间的推移,希望能加入更多的模块,更好的完善网站。</dd>
-                    </dl>
-                </div>
+                <transition name="showTop">
+                    <!-- 公告栏 -->
+                    <div id="info" class="info" v-if="scroH>=100">
+                        <!-- 公告栏标题 -->
+                        <img src="/background/head_info.png" alt="">
+                        <!-- 公告栏具体内容 -->
+                        <dl class="infomation"
+                            style="font-family: '楷体';font-size: 25px;height: 150px;overflow: scroll;">
+                            <dt><strong>20221001</strong></dt>
+                            <dd>用Vue2技术替代jquery重写了网页,优化了加载速度。</dd>
+                            <dt><strong>20220930</strong></dt>
+                            <dd>增加和补充了一些图片文字和动画,使页面更加美化。</dd>
+                            <dt><strong>20220923</strong></dt>
+                            <dd>博客界面开始搭建。</dd>
+                            <dt><strong>20220923</strong></dt>
+                            <dd>本网站的初衷是用来分享一些自己的作品,记录一下自己的学习记录写写博客。</dd>
+                            <dt><strong>20220923</strong></dt>
+                            <dd>随着时间的推移,希望能加入更多的模块,更好的完善网站。</dd>
+                        </dl>
+                    </div>
+                </transition>
 
 
                 <!-- 故事部分 -->
-                <div id="story" v-if="scroH>250" style="width: 650px;height: 100px;margin: auto;position: relative;">
+
+                <div id="story" style="width: 650px;height: 100px;margin: auto;position: relative;">
 
                     <!-- 故事标题 -->
-                    <img :class="imgAnimation.showBottom" src="./background/story.png" alt=""
-                        style="position: absolute;left: 0px;top: -50px;">
+                    <transition name="showBottom">
+                        <img v-if="scroH>300" src="./background/story.png" alt=""
+                            style="position: absolute;left: 0px;top: -50px;">
+                    </transition>
 
                     <!-- 故事内容文本 -->
-                    <img :class="imgAnimation.showBottomBlur" src="/background/txt/story-1.png" alt=""
-                        style="width: 120px;height: 525px;position: absolute;top: 50px;left: 180px;">
+                    <transition name="showBottomBlur">
+                        <img v-if="scroH>300" src="/background/txt/story-1.png" alt=""
+                            style="width: 120px;height: 525px;position: absolute;top: 50px;left: 180px;">
+                    </transition>
 
-                    <img :class="imgAnimation.showLeftSlow" src="/background/txt/story-2.png" alt=""
-                        style="width: 450px;height: 525px;position: absolute;top: 50px;right: -100px;">
+                    <transition name="showLeftBlur">
+                        <img v-if="scroH>300" src="/background/txt/story-2.png" alt=""
+                            style="width: 450px;height: 525px;position: absolute;top: 50px;right: -100px;">
+                    </transition>
                 </div>
+
+
+
 
             </div>
 
@@ -137,9 +151,12 @@
                 style="position: relative;background-image: url(/background/atri-bg.png);background-size: 100%;">
 
                 <!-- 角色文本 -->
-                <div id="character" v-if="scroH>1200" :class="imgAnimation.showBottom"
+                <div id="character"
                     style="width: 650px;height: 100px;margin: auto;position: absolute;left: 450px;top: 20px;">
-                    <img src="./background/character.png" alt="">
+
+                    <transition name="showBottom">
+                        <img v-if="scroH>1200" src="./background/character.png" alt="">
+                    </transition>
                 </div>
 
 
@@ -150,13 +167,18 @@
                 style="background-image: url(/background/sakuraTree.jpg);height: 300px; position: relative;">
 
                 <!-- atri-logo -->
-                <img v-if="scroH>1200" :class="imgAnimation.showRight" id="atri-logo" src="/background/logo.svg" alt=""
-                    style="position: absolute;left: 50px;top:-200px;width: 400px;height: 150px;">
+                <transition name="showRight">
+                    <img v-if="scroH>1200" id="atri-logo" src="/background/logo.svg" alt=""
+                        style="position: absolute;left: 50px;top:-200px;width: 400px;height: 150px;">
+                </transition>
 
                 <!-- 人物 -->
-                <img id="atri-img1" :class="imgAnimation.fadeInSlow" v-if="scroH>1200" src="/background/atri.png" alt=""
-                    style="width: 900px;height: 810px;position: absolute;left: 300px;size: 100%;top: -600px;">
 
+                <transition name="fadeInSlow">
+                    <img id="atri-img1" v-if="scroH>1200" src="/background/atri.png" alt=""
+                        style="width: 900px;height: 810px;position: absolute;left: 300px;size: 100%;top: -600px;">
+
+                </transition>
 
                 <!-- 文字部分 -->
                 <div id="atri-txt" v-if="scroH>1200">
@@ -209,47 +231,49 @@
             // vue实例管理网页
             const vm = new Vue({
                 el: '#main',
-                data: {
-                    music: "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66",
-                    // 切换音乐图标
-                    styleMusic: {
-                        backgroundPositionY: -32 + 'px',
-                    },
-                    styleMusic3: {
-                        backgroundPositionY: -32 + 'px',
-                    },
-                    styleMusic2: {
-                        backgroundPositionY: 0 + 'px',
-                    },
-                    styleBg: {
-                        backgroundPositionY: this.sakuraFall + 'px',
-                    },
-                    scroH: 0,
-                    imgAnimation: {
-                        showLeft: {
-                            showLeft: true,
+                data() {
+                    return {
+                        music: "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66",
+                        // 切换音乐图标
+                        styleMusic: {
+                            backgroundPositionY: -32 + 'px',
                         },
-                        showLeftSlow: {
-                            showLeftSlow: true,
+                        styleMusic3: {
+                            backgroundPositionY: -32 + 'px',
                         },
-                        fadeIn: {
-                            fadeIn: true,
+                        styleMusic2: {
+                            backgroundPositionY: 0 + 'px',
                         },
-                        fadeInSlow: {
-                            fadeInSlow: true,
+                        styleBg: {
+                            backgroundPositionY: this.sakuraFall + 'px',
                         },
-                        showRight: {
-                            showRight: true,
-                        },
-                        showBottom: {
-                            showBottom: true,
-                        },
-                        showBottomBlur: {
-                            showBottomBlur: true,
-                        },
-                        showTop: {
-                            showTop: true,
-                        },
+                        scroH: 0,
+                        imgAnimation: {
+                            showLeft: {
+                                showLeft: true,
+                            },
+                            showLeftSlow: {
+                                showLeftSlow: true,
+                            },
+                            fadeIn: {
+                                fadeIn: true,
+                            },
+                            fadeInSlow: {
+                                fadeInSlow: true,
+                            },
+                            showRight: {
+                                showRight: true,
+                            },
+                            showBottom: {
+                                showBottom: true,
+                            },
+                            showBottomBlur: {
+                                showBottomBlur: true,
+                            },
+                            showTop: {
+                                showTop: true,
+                            },
+                        }
                     }
                 },
                 methods: {
