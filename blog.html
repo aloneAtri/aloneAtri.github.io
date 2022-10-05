@@ -181,20 +181,23 @@
                 </transition>
 
                 <!-- 文字部分 -->
-                <div id="atri-txt" v-if="scroH>1200">
-                    <!-- 右一文字 -->
-                    <img :class="imgAnimation.showLeft" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
-                        style="position: absolute;width: 200px;height: 400px;top: -520px;left: 850px;">
-                    <!-- 右二文字 -->
-                    <img :class="imgAnimation.showRight" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
-                        style="position: absolute;width: 200px;height: 400px;top: -420px;left: 400px;">
-                    <!-- 左一文字 -->
-                    <img :class="imgAnimation.showLeft" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
-                        style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;filter: blur(3px);">
-                    <!-- 左二文字 -->
-                    <img :class="imgAnimation.showRight" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
-                        style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;filter: blur(3px);">
-                </div>
+                <template v-if="scroH>1200">
+                    <div id="atri-txt">
+                        <!-- 右一文字 -->
+                        <img :class="imgAnimation.showLeft" id="atri-txt1" src="/background/txt/txt_1.svg" alt=""
+                            style="position: absolute;width: 200px;height: 400px;top: -520px;left: 850px;">
+                        <!-- 右二文字 -->
+                        <img :class="imgAnimation.showRight" id="atri-txt2" src="/background/txt/txt_2.svg" alt=""
+                            style="position: absolute;width: 200px;height: 400px;top: -420px;left: 400px;">
+                        <!-- 左一文字 -->
+                        <img :class="imgAnimation.showLeft" id="atri-txt3" src="/background/txt/txt_3.svg" alt=""
+                            style="position: absolute;width: 200px;height: 400px;top: -650px;left:280px;filter: blur(3px);">
+                        <!-- 左二文字 -->
+                        <img :class="imgAnimation.showRight" id="atri-txt4" src="/background/txt/txt_4.svg" alt=""
+                            style="position: absolute;width: 200px;height: 400px;top: -550px;left: 950px;filter: blur(3px);">
+                    </div>
+                </template>
+
 
                 <!-- 樱花树上人物 -->
                 <img style="width: 450px;height: 636px;position: absolute;top: -335px;left: 1090px;"
