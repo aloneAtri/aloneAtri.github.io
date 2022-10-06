@@ -136,8 +136,6 @@
                 </div>
 
 
-
-
             </div>
 
 
@@ -241,12 +239,12 @@
                         styleMusic: {
                             backgroundPositionY: -32 + 'px',
                         },
-                        styleMusic3: {
-                            backgroundPositionY: -32 + 'px',
-                        },
-                        styleMusic2: {
-                            backgroundPositionY: 0 + 'px',
-                        },
+                        // styleMusic3: {
+                        //     backgroundPositionY: -32 + 'px',
+                        // },
+                        // styleMusic2: {
+                        //     backgroundPositionY: 0 + 'px',
+                        // },
                         styleBg: {
                             backgroundPositionY: this.sakuraFall + 'px',
                         },
@@ -288,11 +286,11 @@
                     closeMusic() {
                         if (this.music != '') {
                             this.music = '';
-                            this.styleMusic = this.styleMusic2;
+                            this.styleMusic = { backgroundPositionY: 0 + 'px' };
                         }
                         else {
                             this.music = "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66";
-                            this.styleMusic = this.styleMusic3;
+                            this.styleMusic = { backgroundPositionY: -32 + 'px' };
                         }
                     },
                 },
