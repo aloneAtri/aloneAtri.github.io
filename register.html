@@ -1,119 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>注册界面</title>
-    <link rel="stylesheet" href="style-self.css">
-    <link rel="stylesheet" href="iconfont.css">
-    <style>
-        #interface {
-            text-align: center;
-            margin: auto;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>注册界面</title>
+        <link rel="stylesheet" href="style-self.css">
+        <link rel="stylesheet" href="/留言板页面图标/iconfont.css">
+        <style>
+            #interface {
+                text-align: center;
+                margin: auto;
+            }
 
-        input {
-            margin: 10px 20px;
-            width: 150px;
-            height: 20px;
-            background: linear-gradient(35deg, #CCFFFF, #FFCCCC)
-        }
-    </style>
-    <script src="jquery.min.js"></script>
-</head>
+            input {
+                margin: 10px 20px;
+                width: 150px;
+                height: 20px;
+                background: linear-gradient(35deg, #CCFFFF, #FFCCCC)
+            }
+        </style>
+        <script src="jquery.min.js"></script>
+    </head>
 
 
-<!-- 背景图片 -->
+    <!-- 背景图片 -->
 
-<body style="background-image: url(./background/背景16.png); background-repeat: no-repeat;background-position: center top;
+    <body style="background-image: url(./background/背景16.png); background-repeat: no-repeat;background-position: center top;
 background-size: 100%;background-attachment: fixed;">
 
-    <!-- 鼠标移动特效 -->
-    <span class="js-cursor-container"></span>
+        <!-- 鼠标移动特效 -->
+        <span class="js-cursor-container"></span>
 
-    <!-- 导航栏 -->
-    <div class="nav">
-        <div><a href="blogger.html" id="top"><span class="iconfont icon-bokeyuan"></span> 我的博客</a></div>
-        <div><a href="index.html"><span class="iconfont icon-shouye"></span> 首页</a></div>
-        <div id="theme" style="position: relative;">
-            <a href="#"><span class="iconfont icon-zhuti"></span> 主题切换</a>
-            <!-- 下拉列表 -->
-            <ul id="nav1" class="nav">
-                <li>
-                    <div><a href="#">主题1</a></div>
-                </li>
-                <li>
-                    <div><a href="#">主题2</a></div>
-                </li>
-            </ul>
+        <!-- 导航栏 -->
+        <div class="nav">
+            <div><a href="blog.html" id="top"><span class="iconfont icon-bokeyuan"></span> 我的博客</a></div>
+            <div><a href="index.html"><span class="iconfont icon-shouye"></span> 首页</a></div>
+            <div id="theme" style="position: relative;">
+                <a href="#"><span class="iconfont icon-zhuti"></span> 主题切换</a>
+                <!-- 下拉列表 -->
+                <ul id="nav1" class="nav">
+                    <li>
+                        <div><a href="#">主题1</a></div>
+                    </li>
+                    <li>
+                        <div><a href="#">主题2</a></div>
+                    </li>
+                </ul>
+            </div>
+            <div><a href="#"><span class="iconfont icon-shoucang"></span> 收藏夹</a></div>
+            <div id="wallpaper" style="position: relative;;">
+                <a href="#"><span class="iconfont icon-tupianbizhi"></span> 壁纸</a>
+                <ul id="nav2" class="nav">
+                    <li id="hidewp"><a href="#">隐藏界面</a></li>
+                    <li id="obvious"><a href="#">显示界面</a></li>
+                </ul>
+            </div>
+            <div><a href="message-board.html"><span class="iconfont icon-liuyan"></span> 留言板</a></div>
         </div>
-        <div><a href="#"><span class="iconfont icon-shoucang"></span> 收藏夹</a></div>
-        <div id="wallpaper" style="position: relative;;">
-            <a href="#"><span class="iconfont icon-tupianbizhi"></span> 壁纸</a>
-            <ul id="nav2" class="nav">
-                <li id="hidewp"><a href="#">隐藏界面</a></li>
-                <li id="obvious"><a href="#">显示界面</a></li>
-            </ul>
-        </div>
-        <div><a href="#"><span class="iconfont icon-liuyan"></span> 留言板</a></div>
-    </div>
 
-    <!-- 注册账号界面 -->
-    <div class="border" style="width: 600px;margin: 40px auto;">
-        <table id="interface" style="color: yellow;font-size: 18px;">
-            <tr>
-                <td>昵称</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
+        <!-- 注册账号界面 -->
+        <form id="regForm" action="">
+            <div class="border" style="width: 600px;margin: 40px auto;">
+                <table id="interface" style="color: yellow;font-size: 18px;">
+                    <tr>
+                        <td>昵称</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <!-- <tr>
                 <td>邮箱</td>
                 <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>用户名</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>密码</td>
-                <td><input class="password" type="password"></td>
-                <td style="width: 170px;" class="message">
-                    请输入6~16位数字
-                </td>
-            </tr>
-            <tr>
-                <td>重复密码</td>
-                <td><input class="password" type="password"></td>
-                <td class="message">
-                    与之前密码不一致
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input style="height: 30px;width: 50px;color: black;" type="button" value="注册"></td>
-            </tr>
+            </tr> -->
+                    <tr>
+                        <td>用户名</td>
+                        <td><input type="text" id="username"></td>
+                    </tr>
+                    <tr>
+                        <td>密码</td>
+                        <td><input class="password" type="password" id="password"></td>
+                        <td style="width: 170px;" class="message">
+                            请输入6~16位数字
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>重复密码</td>
+                        <td><input class="password" type="password"></td>
+                        <td class="message">
+                            与之前密码不一致
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input id="regBtn" style="height: 30px;width: 50px;color: black;" type="button" value="注册">
+                        </td>
+                    </tr>
 
-        </table>
-    </div>
-
-
-
-
-
-    <!-- 图片预加载区域 -->
-    <div class="background" style="display: none;">
-    </div>
+                </table>
+            </div>
+        </form>
 
 
-    <!-- <script src="js-self.js"></script> -->
-    <script src="register.js"></script>
-    <script src="mousemove.js"></script>
-    <script src="sakura.js"></script>
-    <script>
 
 
-    </script>
-</body>
+        <!-- 图片预加载区域 -->
+        <div class="background" style="display: none;">
+        </div>
+
+
+        <!-- <script src="js-self.js"></script> -->
+        <script src="register.js"></script>
+        <script src="mousemove.js"></script>
+        <script src="sakura.js"></script>
+        <script>
+            // const xhr = new XMLHttpRequest()
+            $('#regBtn').click(function () {
+                var username1 = $('#username')
+                var password1 = $('#password')
+                $.ajax({
+                    type: 'get',
+                    url: 'register.html',
+                    async: true,
+                    data: {
+                        username1: username.value,
+                        password: password1.value,
+                    },
+                    success(data) {
+                        console.log(username.value);
+                        // console.log(password1.value);
+                    }
+
+                })
+            })
+
+
+
+        </script>
+
+
+        <!-- <script type="text/javascript">
+            document.getElementById('regBtn').onclick = function () {
+                var input_username = document.getElementById("username").value;
+                var input_password = document.getElementById("password").value;
+                // ajax提交用户名+密码到后台程序
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "registerRecv.php");
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send("username=" + input_username + "&password=" + md5(input_password));
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var res = xhr.responseText;
+                        // 后台响应成功则跳转到登录页面
+                        if (res == "register success") {
+                            alert("注册成功");
+                            window.location.href = "index.html";
+                        }
+                        else {
+                            alert(res);
+                        }
+                    }
+                }
+            }
+        </script> -->
+
+    </body>
 
 </html>

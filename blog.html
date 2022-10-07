@@ -28,13 +28,14 @@
     </head>
 
     <body>
+        <!-- 加载界面 -->
         <div id="loading"><img src="/background/load.svg" alt=""
                 style="width: 100px;height: 100px;position: absolute;top:45%;left:45%;"> </div>
 
         <div id="loading2"><img src="/background/load2.png" alt=""
                 style="width: 600px;height: 700px;position: absolute;top:5%;left:30%;"> </div>
 
-
+        <!-- 网页主体 -->
         <div id="main">
 
             <!-- 鼠标移动特效 -->
@@ -97,7 +98,7 @@
                         <img src="/background/head_info.png" alt="">
                         <!-- 公告栏具体内容 -->
                         <dl class="infomation"
-                            style="font-family: '楷体';font-size: 25px;height: 150px;overflow: scroll;">
+                            style="font-family: '楷体';font-size: 1.5rem;height: 150px;overflow: scroll;">
                             <dt><strong>20221001</strong></dt>
                             <dd>用Vue2技术替代jquery重写了网页,优化了加载速度。</dd>
                             <dt><strong>20220930</strong></dt>
@@ -121,6 +122,16 @@
                     <transition name="showBottom">
                         <img v-if="scroH>300" src="./background/story.png" alt=""
                             style="position: absolute;left: 0px;top: -50px;">
+                    </transition>
+
+                    <!-- 故事图片 -->
+                    <transition name="showRight">
+                        <img v-if="scroH>300" src="./images/测试2.png" alt=""
+                            style="height: 200px;width: 350px;position: absolute;left: -30%;top:50%;border: 2px solid skyblue;border-radius: 2px;box-shadow: 0px 0px 5px 2px skyblue;">
+                    </transition>
+                    <transition name="showRight">
+                        <img v-if="scroH>300" src="./background/story-img1.png" alt=""
+                            style="height: 200px;width: 350px;position: absolute;left: -30%;top:300%;border: 2px solid yellow;border-radius: 2px;box-shadow: 0px 0px 5px 2px yellowgreen;">
                     </transition>
 
                     <!-- 故事内容文本 -->
@@ -312,6 +323,7 @@
                         $('#loading2').fadeOut(1000);
                         setTimeout(() => {
                             $('#main').show();
+                            console.log(window.innerWidth);
                         }, 1000);
                     }
                 };

@@ -7,7 +7,8 @@
      font-family: "思源宋体 CN", "微软雅黑";
      font-weight: 400;
      background-color: rgb(255, 255, 255);
-     font-size: 1.4em;
+     /* font-size: 1.4em; */
+     font-size: 16px;
      line-height: 1.5;
      cursor: url(../images/mouse1.png), auto;
  }
@@ -65,6 +66,10 @@
 
  .nav :visited {
      color: black;
+ }
+
+ .nav a {
+     font-size: 1.4rem;
  }
 
  .nav a:hover {
