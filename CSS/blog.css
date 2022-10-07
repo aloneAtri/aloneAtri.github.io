@@ -13,6 +13,7 @@
      cursor: url(../images/mouse1.png), auto;
  }
 
+
  /* 取消滚动条 */
  ::-webkit-scrollbar {
      display: none;
