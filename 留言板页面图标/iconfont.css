@@ -1,12 +1,12 @@
 @font-face {
   font-family: "iconfont";
   /* Project id  */
-  src: url('./iconfont.ttf') format('truetype');
+  src: url('/留言板页面图标/iconfont.ttf') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
