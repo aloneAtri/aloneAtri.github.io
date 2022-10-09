@@ -13,6 +13,10 @@
      cursor: url(../images/mouse1.png), auto;
  }
 
+ .enlarge:hover {
+     transform: scale(1.1);
+ }
+
 
  /* 取消滚动条 */
  ::-webkit-scrollbar {
