@@ -40,19 +40,36 @@
             <button @click="show = !show">Toggle show</button>
             <transition name="top">
                 <p v-if="show">111111</p>
+                <ul>
+                    <li v-for="p in person" :key="p.id">{{p.id}}+{{p.name}}</li>
+                </ul>
             </transition>
-            <a href=""><span class="icon-bokeyuan"></span>111</a>
+            <school></school>
         </div>
         <script>
+            const school = Vue.extend({
+                template: `<div>
+                    <h2>学校名称:{{ schoolName }}</h2>
+                </div>`,
+                data() {
+                    return {
+                        schoolName: 'itheima'
+                    }
+                }
+
+
+            })
 
             new Vue({
                 el: '#example-2',
                 data() {
                     return {
                         show: true,
-                        test: 'java'
+                        test: 'java',
+                        person: [{ id: 2, name: "xiaoxie" }, { id: 1, name: "xiaoxie" }, { id: 3, name: "xiaoxie" }]
                     }
-                }
+                },
+                components: { school }
             })
 
             // $(window).scroll(function () {
