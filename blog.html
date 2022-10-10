@@ -129,6 +129,7 @@
                         <img class="enlarge" v-if="scroH>300" src="./background/story-img2.bmp" alt=""
                             style="height: 200px;width: 53.8%;position: absolute;left: -30%;top:50%;border: 2px solid pink;border-radius: 2px;box-shadow: 0px 0px 5px 2px hotpink;">
                     </transition>
+
                     <transition name="showRight">
                         <img class="enlarge" v-if="scroH>300" src="./background/story-img1.bmp" alt=""
                             style="height: 200px;width: 53.8%;position: absolute;left: -30%;top:300%;border: 2px solid yellow;border-radius: 2px;box-shadow: 0px 0px 5px 2px yellowgreen;">
@@ -144,6 +145,11 @@
                         <img v-if="scroH>300" src="/background/txt/story-2.png" alt=""
                             style="width: 69.2%;height: 525px;position: absolute;top: 50px;right: -100px;">
                     </transition>
+
+                    <transition name="showLeftBlur">
+                        <img v-if="scroH>300" src="/background/img-insert/ETC_e002a.bmp" alt=""
+                            style="height: 200px;width: 50%;position: absolute;top: 180px;right: -420px;border: 2px solid skyblue;border-radius: 2px;box-shadow: 0px 0px 5px 2px skyblue;">
+                    </transition>
                 </div>
 
 
@@ -152,7 +158,14 @@
 
 
             <!-- 过渡图片 -->
-            <div id="transit" class="bg2" style="height: 300px;">
+            <div id="transit" class="bg2" :style="{backgroundPositionY: - 300 + 'px'}"
+                style="height: 300px;background-image: url(/background/bg02fp.jpg);position: relative;">
+
+                <transition name="showLeftBlur">
+                    <img v-if="scroH>900" src="/background/txt/transit-txt.png" alt=""
+                        style="position:absolute ;top: 80px;right: 0px;">
+                </transition>
+
             </div>
 
             <!-- 第二张长背景 -->
