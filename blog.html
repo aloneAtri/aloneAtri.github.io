@@ -139,6 +139,7 @@
                         <img class="enlarge" v-if="scroH>300" src="/background/img-insert/ETC_e002a.bmp" alt=""
                             style="height: 200px;width: 50%;position: absolute;top: 180px;right: -420px;border: 2px solid skyblue;border-radius: 2px;box-shadow: 0px 0px 5px 2px skyblue;">
                     </transition>
+
                     <!-- 故事内容文本 -->
                     <transition name="showBottomBlur">
                         <img v-if="scroH>300" src="/background/txt/story-1.png" alt=""
@@ -259,7 +260,8 @@
                 el: '#main',
                 data() {
                     return {
-                        music: "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66",
+                        // music: "https://music.163.com/outchain/player?type=2&id=448316824&auto=1&height=66",
+                        music: "https://music.163.com/outchain/player?type=2&id=1367158075&auto=1&height=66",
                         // 切换音乐图标
                         styleMusic: {
                             backgroundPositionY: -32 + 'px',
