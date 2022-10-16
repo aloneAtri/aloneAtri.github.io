@@ -7,65 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-      }
-
-      .div1 {
-        width: 200px;
-        height: 200px;
-        background-color: antiquewhite;
-      }
-
-      .div2 {
-        width: 200px;
-        height: 200px;
-        background-color: aqua;
-      }
-
-      .mask {
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        position: absolute;
-        opacity: 0.8;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        display: none;
-
-      }
-
-      button {
-        width: 300px;
-        height: 100px;
-        font-size: 20px;
-        line-height: 100px;
-        text-align: center;
-      }
-
       .close {
+        background: black;
+        color: white;
+        border-radius: 12px;
+        line-height: 20px;
+        text-align: center;
+        height: 20px;
+        width: 20px;
+        font-size: 18px;
+        padding: 1px;
+        top: -10px;
+        right: -10px;
         position: absolute;
-        top: 50%;
-        left: 10%;
-        transform: translate(-50%, -50%);
-        display: none;
-        z-index: 10;
+      }
+
+      /* use cross as close button */
+      .close::before {
+        content: "\2716";
       }
     </style>
   </head>
 
   <body>
-    <button class="open">点击启用遮罩层</button>
-    <button class="close">点击关闭遮罩层</button>
 
-    <div class="mask"></div>
-    <div id="vi"
-      style="display:none;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 100;">
-      <video id="vi1" style="height: 600px;width: 800px;" src="/1111.mkv" controls></video>
-    </div>
+
+    <div style="height: 100px; width: 100px; border: 1px solid black; position: relative;">
+      <span class="close"></span>
   </body>
 
 
@@ -74,23 +42,23 @@
   <script>
 
     //遮罩层mask
-    var mask = document.querySelector(".mask");
-    var open = document.querySelector(".open")
-    var close = document.querySelector(".close")
-    var vi = document.querySelector('#vi')
-    var vi1 = document.querySelector('#vi1')
-    open.onclick = function () {
-      mask.style.display = 'block'
-      close.style.display = "block"
-      vi.style.display = 'block'
-    }
-    close.onclick = function () {
-      mask.style.display = 'none'
-      close.style.display = 'none'
-      vi.style.display = 'none'
-      vi1.pause()
+    // var mask = document.querySelector(".mask");
+    // var open = document.querySelector(".open")
+    // var close = document.querySelector(".close")
+    // var vi = document.querySelector('#vi')
+    // var vi1 = document.querySelector('#vi1')
+    // open.onclick = function () {
+    //   mask.style.display = 'block'
+    //   close.style.display = "block"
+    //   vi.style.display = 'block'
+    // }
+    // close.onclick = function () {
+    //   mask.style.display = 'none'
+    //   close.style.display = 'none'
+    //   vi.style.display = 'none'
+    //   vi1.pause()
 
-    }
+    // }
 
   </script>
 
