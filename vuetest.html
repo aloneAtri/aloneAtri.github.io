@@ -6,28 +6,66 @@
     <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
     <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+    <style>
+      * {
+        padding: 0%;
+        margin: 0%;
+      }
+
+      video {
+        height: 100%;
+        width: 1200px;
+      }
+    </style>
   </head>
 
   <body>
     <div id="app">
-      {{ info }}
+      <button @click="play">点我切换</button>
+      <button @click="pause">点我暂停</button>
+
+      <!-- <video id="vi" src="/1111.mkv" controls=""></video> -->
+      <!-- 音乐模块 -->
+      <!-- <iframe id="music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+        src="https://music.163.com/outchain/player?type=2&id=1367158075&auto=1&height=66"></iframe> -->
+      <audio controls="" id="music" src="/忍 - 忘れたいはずのなにか.mp3"></audio>
     </div>
     <script type="text/javascript">
-      new Vue({
+      const vm = new Vue({
         el: '#app',
         data() {
           return {
-            info: null
+            info: null,
+            music: true
           }
         },
+        methods: {
+          play() {
+            var m = document.getElementById('music')
+            if (music) {
+              m.play()
+              music = false
+            } else {
+              m.pause()
+              music = true
+            }
+
+
+          },
+          pause() {
+            var m = document.getElementById('music')
+            m.pause()
+
+          },
+        },
         mounted() {
-          axios
-            .post('/try/ajax/demo_axios_post.php')
-            .then(response => (this.info = response))
-            .catch(function (error) { // 请求失败处理
-              console.log(error);
-            });
-        }
+          // axios
+          //   .post('/try/ajax/demo_axios_post.php')
+          //   .then(response => (this.info = response))
+          //   .catch(function (error) { // 请求失败处理
+          //     console.log(error);
+          //   });
+        },
       })
     </script>
   </body>
