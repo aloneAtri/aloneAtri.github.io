@@ -42,12 +42,12 @@
         methods: {
           play() {
             var m = document.getElementById('music')
-            if (music) {
+            if (this.music) {
               m.play()
-              music = false
+              this.music = false
             } else {
               m.pause()
-              music = true
+              this.music = true
             }
 
 
