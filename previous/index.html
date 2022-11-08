@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>aloneAtri</title>
+        <link rel="stylesheet" href="style-self.css">
+        <link rel="stylesheet" href="留言板页面图标\iconfont.css">
+        <link rel="icon" href="/images/图标.ico" type="image/gif">
+        <!-- jq导入 -->
+        <script src="jquery.min.js"></script>
+        <!-- vue导入 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    </head>
+
+    <body>
+
+
+        <!-- 背景图片 -->
+        <div id="bgc"></div>
+
+        <!-- 鼠标移动特效 -->
+        <span class="js-cursor-container"></span>
+
+
+        <!-- 导航栏 -->
+        <div class="nav">
+            <div><a href="/blog/index.html" id="top"><span class="iconfont icon-bokeyuan"></span> 我的博客</a></div>
+            <div><a href="index.html"><span class="iconfont icon-shouye"></span> 首页</a></div>
+            <div id="theme" style="position: relative;">
+                <a href="#"><span class="iconfont icon-zhuti"></span> 主题切换</a>
+                <!-- 下拉列表 -->
+                <ul id="nav1" class="nav">
+                    <li>
+                        <div><a href="#">主题1</a></div>
+                    </li>
+                    <li>
+                        <div><a href="#">主题2</a></div>
+                    </li>
+                </ul>
+            </div>
+            <div><a href="#"><span class="iconfont icon-shoucang"></span> 收藏夹</a></div>
+            <div id="wallpaper" style="position: relative;;">
+                <a href="#"><span class="iconfont icon-tupianbizhi"></span> 壁纸</a>
+                <ul id="nav2" class="nav">
+                    <li id="hidewp"><a href="#">隐藏界面</a></li>
+                    <li id="obvious"><a href="#">显示界面</a></li>
+                </ul>
+            </div>
+            <div><a href="message-board.html"><span class="iconfont icon-liuyan"></span> 留言板</a></div>
+        </div>
+
+
+
+
+        <!-- 顶端部分 -->
+        <div class="top">
+            <!-- 公告栏 -->
+            <div class="announce border">
+                <h1 style="text-shadow: 0px 0px 5px  black;">公告看留言板块</h1>
+            </div>
+            <!-- 搜索栏 -->
+            <div class="search">
+                <form>
+                    <div style="display: inline-block;">
+                        <input id="search" type="text" value="输入搜索内容" style="width: 240px;margin-top: 10px;">
+                    </div>
+                    <!-- <div style="display: inline-block;">
+                    <input style="margin:0px ;margin-left: 10px;" class="button" type="submit" value="搜索">
+                </div> -->
+                    <span
+                        style="display: inline-block;color: white;font-size: 25px;vertical-align: middle;margin-left: 5px;"
+                        class="iconfont icon-sousuo"></span>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- 网页主体部分 -->
+        <div class="main">
+            <!-- 鼠标图片 -->
+            <!-- <img id="mouse-move" src="./images/鼠标图片.png" alt=""> -->
+
+            <!-- 右侧浮动栏 -->
+            <div class="right-float">
+                <div style="width: 150px;height: 150px;margin-bottom: 10px;">
+                    <a href="#top"><img src="./images/智乃.png" alt=""></a>
+                </div>
+                <div>
+                    <a href="#top"><img class="border" src="./images/return-top.png" alt=""></a>
+                </div>
+            </div>
+
+            <!-- 左侧 -->
+            <div class="left">
+                <!-- 左侧大盒子01 -->
+                <div class="box1 border" style="position: relative;">
+                    <div class="theme"><a href="#">更新日志</a></div>
+                    <div>
+                        <div class="box-font"> 2022.07.12</div>
+                    </div>
+                    <!-- 轮播图 -->
+                    <div id="left-box1" class="image01">
+                        <!-- 滚动区域 -->
+                        <ul id="lunbo-list" style="width: 3500px;">
+                            <li>
+                                <!-- <div id="left-box1" class="image01" style="background-image: url(./images/测试2.png);"></div> -->
+                                <div class="lunbo-img" style="background-image: url(./images/测试2.png);"></div>
+                            </li>
+                            <li>
+                                <div class="lunbo-img" style="background-image: url(./images/测试8.png);"></div>
+                            </li>
+                            <li>
+                                <div class="lunbo-img" style="background-image: url(./images/测试7.png);"></div>
+                            </li>
+                            <li>
+                                <div class="lunbo-img" style="background-image: url(./images/测试6.png);"></div>
+                            </li>
+                            <li>
+                                <!-- <div id="left-box1" class="image01" style="background-image: url(./images/测试2.png);"></div> -->
+                                <div class="lunbo-img" style="background-image: url(./images/测试2.png);"></div>
+                            </li>
+                        </ul>
+                        <!-- 左右箭头 -->
+                        <div id="left-arrow" style="left:0%;"></div>
+                        <div id="right-arrow" style="right:0%;transform: rotate(180deg);"></div>
+                        <div id="turn-box">
+                            <ul id="turn-img">
+                                <li>
+                                    <div data-index="0" class="turn-img"></div>
+                                </li>
+                                <li>
+                                    <div data-index="1" class="turn-img"></div>
+
+                                </li>
+                                <li>
+                                    <div data-index="2" class="turn-img"></div>
+                                </li>
+                                <li>
+                                    <div data-index="3" class="turn-img"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 左侧大盒子02 -->
+                <div class="box1 border">
+                    <div>
+                        <div class="theme" style="width: 300px;"><a href="若能与你再次相见.html">若能再次与你相见</a></div>
+                        <div class="box-font">2022.07.14</div>
+                        <a href="若能与你再次相见.html">
+                            <div class="image01" style="background-image: url(./images/测试5.jpg);"></div>
+                    </div></a>
+                </div>
+
+                <!-- 左侧大盒子03 -->
+                <div class="box1 border">
+                    <div>
+                        <div class="theme"><a href="#">纸上魔法使</a></div>
+                        <div class="box-font">2021.07.20</div>
+                        <a href="#">
+                            <div class="image01" style="background-image: url(./images/纸上魔法使.png);"></div>
+                    </div></a>
+                </div>
+            </div>
+
+            <!-- 右侧 -->
+            <div class="right">
+
+                <!-- 音乐模块 -->
+                <!-- <iframe class="border" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                src="https://music.163.com/outchain/player?type=2&id=440403794&auto=1&height=66"></iframe> -->
+
+                <iframe class="border" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                    src="https://music.163.com/outchain/player?type=2&id=29129665&auto=1&height=66"></iframe>
+
+                <!-- 登陆界面 -->
+                <div class="load border">
+                    <form method="post">
+                        <table>
+                            <tr>
+                                <td style="color: white;"> <label for="username"><span style="font-size: 18px;"
+                                            class="iconfont icon-yonghu"></span>用户</label></td>
+                                <td><input type="text" name="username" id="username"></td>
+                            </tr>
+                            <tr>
+                                <td style="color: white;"><label for="password"><span style="font-size: 20px;"
+                                            class="iconfont icon-mima"></span>密码
+                                </td></label>
+                                <td><input type="password" name="password" id="password"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input id="load" class="button" type="submit" value="登陆"><input id="register"
+                                        class="button" type="button" value="注册"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+                <!-- 留言板垮，链接索引 -->
+                <div class="board border">
+                    <h2 style="color: yellow;">近期更新</h2>
+                    <ul>
+                        <li>
+                            <h3 style="color: white;">7月12日完成初步结构</h3>
+                        </li>
+                        <br>
+                        <li>
+                            <h3 style="color: white;">8月14日页面搭建完成</h3>
+                        </li>
+                    </ul>
+                    <br />
+                    <ul>
+                        <li> <a href="gameLink\galgame测试.rar"> <strong>我的游戏下载01</strong></a></li>
+                        <br>
+                        <li> <a href="gameLink\东方永夜抄.rar"> <strong>我的游戏下载02</strong></a></li>
+                        <br>
+                        <li> <a href="gameLink\game.rar"> <strong>我的游戏下载02.jar</strong></a></li>
+                    </ul>
+                </div>
+
+                <!-- 文章索引 -->
+                <div class="text border">
+                    <a href="blogger.html">
+                        <h1 style="color:greenyellow;text-shadow: 0px 0px 0px 10px green;">我的博客</h1>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 图片预加载区域 -->
+        <div class="background" style="display: none;">
+            <img src="./background/背景1.png" alt="">
+            <img src="./background/背景2.png" alt="">
+            <img src="./background/背景3.png" alt="">
+            <img src="./background/背景4.png" alt="">
+            <img src="./background/背景5.png" alt="">
+            <img src="./background/背景6.png" alt="">
+            <img src="./background/背景7.png" alt="">
+            <img src="./background/背景8.png" alt="">
+            <img src="./background/背景9.png" alt="">
+            <img src="./background/背景10.png" alt="">
+            <img src="./background/背景11.png" alt="">
+            <img src="./background/背景12.png" alt="">
+            <img src="./background/背景13.png" alt="">
+            <img src="./background/背景14.png" alt="">
+            <img src="./background/背景15.png" alt="">
+            <img src="./background/背景16.png" alt="">
+            <img src="./background/背景17.png" alt="">
+            <img src="./background/背景18.png" alt="">
+            <img src="./background/背景19.png" alt="">
+            <img src="./background/背景20.png" alt="">
+        </div>
+
+
+
+
+        <!-- js文件引入 -->
+        <script src="js-self.js"> </script>
+        <script src="js-index.js"></script>
+        <script src="mousemove.js"></script>
+        <!-- vue -->
+        <script>
+
+        </script>
+        <!-- <script src="sakura.js"></script> -->
+    </body>
+
+
+</html>
